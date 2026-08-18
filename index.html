@@ -847,28 +847,30 @@
           <div>
             <div class="card-title" id="time-title">Chuỗi Thời Gian Tìm Kiếm Google (2026)</div>
             <div class="card-desc" id="time-desc">Đường liền nét: Đo lường thực tế | Đường đứt nét: Dự phóng theo mốc sự kiện</div>
-          <div class="card-header">
+        <div class="card-header">
           <div>
-            <div class="card-title">Mạng Lưới Tình Báo Tên Miền & Kênh Thực Tế Đang Hoạt Động (13 Kênh)</div>
-            <div class="card-desc">Ghi nhận thực địa từ Google Search SERP, Meta Ad Library & Mạng lưới sàn phân phối F1</div>
+            <div class="card-title">Mạng Lưới Tình Báo 11 Kênh Thực Tế Đang Có Dữ Liệu & Đấu Thầu (11 Kênh)</div>
+            <div class="card-desc">Chỉ giữ lại các trang thực sự có tin đăng, bài viết hoặc đang chạy quảng cáo từ khóa Maison Privée</div>
           </div>
-          <span class="badge badge-actual">100% Khảo Sát Thực Tế</span>
+          <span class="badge badge-actual">100% Dữ Liệu Thực Tế</span>
         </div>
 
         <!-- REALITY STATUS NOTICE -->
-        <div style="background: rgba(197, 160, 89, 0.08); border-left: 3px solid var(--gold-primary); padding: 10px 14px; margin: 12px 0; font-size: 0.82rem; color: var(--text-main); border-radius: 0 4px 4px 0;">
-          📢 <strong>Thực trạng truyền thông báo chí:</strong> 
-          Dự án Maison Privée hiện đang trong giai đoạn <em>Rumor / Chuẩn bị Kick-off đợt 1</em>. 
-          Chủ đầu tư CapitaLand <strong>CHƯA KÍCH HOẠT chiến dịch PR thương mại diện rộng trên các báo lớn (CafeF, VietnamNet, VnExpress)</strong>. 
-          Toàn bộ hoạt động truyền thông hiện tại 100% do các <strong>Sàn môi giới F1 đón đầu</strong> và <strong>Đối thủ cạnh tranh chạy Ads chặn từ khóa</strong>.
+        <div style="background: rgba(197, 160, 89, 0.08); border-left: 3px solid var(--gold-primary); padding: 12px 16px; margin: 12px 0; font-size: 0.82rem; color: var(--text-main); border-radius: 0 4px 4px 0; line-height: 1.5;">
+          📢 <strong>Thực trạng truyền thông chính thức:</strong> 
+          <ul style="margin: 6px 0 0 16px; padding: 0;">
+            <li>Cổng website chính thức của <strong>CapitaLand Việt Nam</strong> và <strong>Nomura Real Estate</strong> hiện <strong>CHƯA NIÊM YẾT</strong> dự án Maison Privée trong danh mục dự án công khai (do đang trong giai đoạn tiền mở bán / rumor nội bộ).</li>
+            <li>Các báo lớn (CafeF, VietnamNet, VnExpress) <strong>CHƯA LÊN BÀI PR</strong> chính thức.</li>
+            <li><strong>100% dữ liệu và hoạt động truyền thông hiện tại</strong> chỉ xuất phát từ <strong>Sàn môi giới F1 (Tân Long, Galia, Căn hộ Ciputra, House in Hanoi)</strong> và <strong>Các đối thủ cạnh tranh tại Ciputra (Sunshine Noble, Kita Capital)</strong> đang chạy Ads chặn từ khóa.</li>
+          </ul>
         </div>
 
         <!-- FILTER CHIPS & SEARCH -->
         <div class="filter-bar">
-          <button class="filter-chip active" onclick="filterDomains('all')">Tất Cả (13)</button>
+          <button class="filter-chip active" onclick="filterDomains('all')">Tất Cả (11)</button>
           <button class="filter-chip" onclick="filterDomains('satellite')">Sàn F1 & Vệ Tinh Môi Giới (6)</button>
           <button class="filter-chip" onclick="filterDomains('competitor')">Đối Thủ Đấu Thầu Chéo (4)</button>
-          <button class="filter-chip" onclick="filterDomains('official')">CĐT & Cổng Listing (3)</button>
+          <button class="filter-chip" onclick="filterDomains('official')">Cổng Listing Môi Giới (1)</button>
           <input type="text" id="domainSearch" class="search-input" placeholder="🔍 Tìm tên miền / từ khóa..." onkeyup="searchDomainTable()">
         </div>
 
@@ -879,7 +881,7 @@
                 <th>Tên Miền / Kênh Thực Tế</th>
                 <th>Phân Loại</th>
                 <th>Hiện Trạng Hoạt Động Thật</th>
-                <th>Mẫu Headline / Nội Dung Ghi Nhận</th>
+                <th>Nội Dung / Động Thái Ghi Nhận</th>
                 <th>Chiến Thuật / Mục Đích</th>
                 <th>Hành Động</th>
               </tr>
@@ -1019,33 +1021,7 @@
                 </td>
               </tr>
 
-              <!-- CĐT & KÊNH CHÍNH THỨC -->
-              <tr class="clickable-row domain-row official">
-                <td><a href="https://www.capitaland.com/vn/vi.html" target="_blank" rel="noopener noreferrer" class="domain-table-link">capitaland.com (CLD VN) ↗</a></td>
-                <td><span class="badge badge-actual">CĐT Chính Thức</span></td>
-                <td><span>Cổng Thông Tin Tập Đoàn</span></td>
-                <td>CapitaLand Development Vietnam – Danh mục phát triển nhà ở</td>
-                <td>Cổng thông tin chính thức của CĐT CapitaLand tại thị trường Việt Nam.</td>
-                <td>
-                  <div class="action-group">
-                    <button class="btn-action-view" onclick="openDrawer('domain_capitaland')">🔍 Phân Tích</button>
-                    <a href="https://www.capitaland.com/vn/vi.html" target="_blank" rel="noopener noreferrer" class="btn-action-link">🌐 Mở CapitaLand VN ↗</a>
-                  </div>
-                </td>
-              </tr>
-              <tr class="clickable-row domain-row official">
-                <td><a href="https://www.nomura-re-vn.com/" target="_blank" rel="noopener noreferrer" class="domain-table-link">nomura-re-vn.com ↗</a></td>
-                <td><span class="badge badge-actual">Đối Tác Nhật</span></td>
-                <td><span>Cổng Thông Tin Đối Tác</span></td>
-                <td>Nomura Real Estate Development Vietnam</td>
-                <td>Kênh hiện diện của đối tác Nhật Bản cùng CapitaLand tại Hà Nội.</td>
-                <td>
-                  <div class="action-group">
-                    <button class="btn-action-view" onclick="openDrawer('domain_nomura')">🔍 Phân Tích</button>
-                    <a href="https://www.nomura-re-vn.com/" target="_blank" rel="noopener noreferrer" class="btn-action-link">🌐 Mở Nomura VN ↗</a>
-                  </div>
-                </td>
-              </tr>
+              <!-- CỔNG LISTING BĐS -->
               <tr class="clickable-row domain-row official">
                 <td><a href="https://batdongsan.com.vn/" target="_blank" rel="noopener noreferrer" class="domain-table-link">batdongsan.com.vn ↗</a></td>
                 <td><span class="badge badge-actual">Cổng Listing BĐS</span></td>
@@ -1736,41 +1712,6 @@
         </div>
       `
     },
-    domain_capitaland: {
-      title: "Tình Báo: capitaland.com",
-      sub: "CapitaLand Development Vietnam",
-      body: `
-        <div class="direct-link-card">
-          <div>
-            <span style="font-size: 0.72rem; color: var(--text-muted); text-transform: uppercase; display: block; margin-bottom: 2px;">🔗 Cổng CĐT CapitaLand Việt Nam:</span>
-            <a href="https://www.capitaland.com/vn/vi.html" target="_blank" rel="noopener noreferrer" class="direct-link-url">https://www.capitaland.com/vn/vi.html ↗</a>
-          </div>
-          <a href="https://www.capitaland.com/vn/vi.html" target="_blank" rel="noopener noreferrer" class="btn-action-view" style="padding: 6px 12px; font-size: 0.8rem;">Mở CapitaLand VN ↗</a>
-        </div>
-        <div class="drawer-section">
-          <h4>Kênh Thông Tin CĐT:</h4>
-          <p>Cổng chính thức cập nhật danh mục dự án, hồ sơ phát triển và các thông điệp truyền thông của tập đoàn tại Việt Nam.</p>
-          <span class="source-tag">Nguồn: Official Portal</span>
-        </div>
-      `
-    },
-    domain_nomura: {
-      title: "Tình Báo: nomura-re-vn.com",
-      sub: "Nomura Real Estate Development (Nhật Bản)",
-      body: `
-        <div class="direct-link-card">
-          <div>
-            <span style="font-size: 0.72rem; color: var(--text-muted); text-transform: uppercase; display: block; margin-bottom: 2px;">🔗 Cổng Đối Tác Nomura VN:</span>
-            <a href="https://www.nomura-re-vn.com/" target="_blank" rel="noopener noreferrer" class="direct-link-url">https://www.nomura-re-vn.com/ ↗</a>
-          </div>
-          <a href="https://www.nomura-re-vn.com/" target="_blank" rel="noopener noreferrer" class="btn-action-view" style="padding: 6px 12px; font-size: 0.8rem;">Mở Nomura VN ↗</a>
-        </div>
-        <div class="drawer-section">
-          <h4>Báo Cáo Đối Tác:</h4>
-          <p>Kênh giới thiệu sự hiện diện của tập đoàn phát triển bất động sản hàng đầu Nhật Bản tại thị trường Việt Nam.</p>
-        </div>
-      `
-    },
     domain_batdongsan: {
       title: "Tình Báo: batdongsan.com.vn",
       sub: "Cổng thông tin BĐS số 1 Việt Nam",
@@ -1783,8 +1724,8 @@
           <a href="https://batdongsan.com.vn/" target="_blank" rel="noopener noreferrer" class="btn-action-view" style="padding: 6px 12px; font-size: 0.8rem;">Mở Batdongsan ↗</a>
         </div>
         <div class="drawer-section">
-          <h4>Hiện Trạng:</h4>
-          <p>Kênh đăng tin và khảo sát nhu cầu mua bán, chuyển nhượng căn hộ Ciputra sôi động nhất miền Bắc.</p>
+          <h4>Hiện Trạng Hoạt Động:</h4>
+          <p>Nơi tập trung các tin đăng rumor và khảo sát lượng quan tâm thực tế của khách hàng đối với phân khúc căn hộ cao cấp KĐT Ciputra.</p>
         </div>
       `
     }
