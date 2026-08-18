@@ -794,47 +794,66 @@
 
   <!-- ROW 2: SẢN PHẨM & TIME-SERIES -->
   <div class="section-grid">
-    <!-- PRODUCT MIX (5 COLS) -->
+    <!-- PRODUCT MIX / UNIT CATALOG (5 COLS) -->
     <div class="col-5">
       <div class="card">
         <div class="card-header">
           <div>
-            <div class="card-title">Cơ Cấu Sản Phẩm & Nhu Cầu</div>
-            <div class="card-desc">Bấm vào từng loại căn để trượt bảng thông số chi tiết</div>
+            <div class="card-title">Danh Mục Dòng Căn Hộ Dự Kiến</div>
+            <div class="card-desc">Bấm vào từng loại căn để xem thông số & mặt bằng chi tiết</div>
           </div>
-          <span class="badge badge-actual">Thực tế CĐT</span>
+          <span class="badge badge-actual">Hồ Sơ Quy Hoạch</span>
         </div>
-        <div class="chart-box" style="max-height: 210px;">
-          <canvas id="productMixChart"></canvas>
+
+        <!-- REALITY DISCLAIMER -->
+        <div style="background: rgba(197, 160, 89, 0.08); border-left: 3px solid var(--gold-primary); padding: 10px 14px; margin-bottom: 12px; font-size: 0.78rem; color: var(--text-main); border-radius: 0 4px 4px 0; line-height: 1.45;">
+          📌 <strong>Hiện trạng công bố:</strong> Tổng quy mô toàn dự án là <strong>490 căn (02 tháp 35 tầng)</strong>. CĐT <em>chưa phát hành bảng chia số lượng chi tiết từng trục căn</em> (Dự kiến công bố tại Lễ Kick-off).
         </div>
-        <div class="tile-grid">
-          <div class="tile-btn" onclick="openDrawer('unit_3pn')">
+
+        <!-- UNIT CATALOG LIST -->
+        <div style="display: flex; flex-direction: column; gap: 10px;">
+          <div class="tile-btn" onclick="openDrawer('unit_3pn')" style="display: flex; justify-content: space-between; align-items: center; padding: 12px 14px;">
             <div>
-              <h5>3PN+ (123-158m²)</h5>
-              <p>42% Cầu • Sản phẩm chủ lực</p>
+              <h5 style="color: var(--gold-bright); font-size: 0.88rem; font-weight: 700; margin-bottom: 3px;">Căn Hộ 3PN+ (123 – 158 m²)</h5>
+              <p style="font-size: 0.78rem; color: var(--text-muted); margin: 0;">Sảnh thang máy riêng • View Sân Golf Ciputra & Hồ Tây</p>
             </div>
-            <span style="color: var(--gold-bright); font-size: 0.85rem;">➔</span>
+            <div style="text-align: right; display: flex; align-items: center; gap: 8px;">
+              <span class="badge badge-actual" style="font-size: 0.7rem;">Sản phẩm chủ lực</span>
+              <span style="color: var(--gold-bright); font-size: 0.9rem;">➔</span>
+            </div>
           </div>
-          <div class="tile-btn" onclick="openDrawer('unit_4pn')">
+
+          <div class="tile-btn" onclick="openDrawer('unit_4pn')" style="display: flex; justify-content: space-between; align-items: center; padding: 12px 14px;">
             <div>
-              <h5>4PN+ (197-221m²)</h5>
-              <p>25% Cầu • View Golf & Sông</p>
+              <h5 style="color: var(--gold-bright); font-size: 0.88rem; font-weight: 700; margin-bottom: 3px;">Căn Hộ 4PN+ (197 – 221 m²)</h5>
+              <p style="font-size: 0.78rem; color: var(--text-muted); margin: 0;">Dinh thự trên không (Sky Mansion) • View Panorama 270°</p>
             </div>
-            <span style="color: var(--gold-bright); font-size: 0.85rem;">➔</span>
+            <div style="text-align: right; display: flex; align-items: center; gap: 8px;">
+              <span class="badge badge-actual" style="font-size: 0.7rem;">Dinh thự trên cao</span>
+              <span style="color: var(--gold-bright); font-size: 0.9rem;">➔</span>
+            </div>
           </div>
-          <div class="tile-btn" onclick="openDrawer('unit_2pn')">
+
+          <div class="tile-btn" onclick="openDrawer('unit_2pn')" style="display: flex; justify-content: space-between; align-items: center; padding: 12px 14px;">
             <div>
-              <h5>2PN+ (98m²)</h5>
-              <p>15% Cầu • Doanh nhân trẻ</p>
+              <h5 style="color: var(--gold-bright); font-size: 0.88rem; font-weight: 700; margin-bottom: 3px;">Căn Hộ 2PN+ (~98 m²)</h5>
+              <p style="font-size: 0.78rem; color: var(--text-muted); margin: 0;">Thiết kế thông minh • Phòng đa năng linh hoạt làm việc</p>
             </div>
-            <span style="color: var(--gold-bright); font-size: 0.85rem;">➔</span>
+            <div style="text-align: right; display: flex; align-items: center; gap: 8px;">
+              <span class="badge badge-actual" style="font-size: 0.7rem;">Doanh nhân trẻ</span>
+              <span style="color: var(--gold-bright); font-size: 0.9rem;">➔</span>
+            </div>
           </div>
-          <div class="tile-btn" onclick="openDrawer('unit_duplex')">
+
+          <div class="tile-btn" onclick="openDrawer('unit_duplex')" style="display: flex; justify-content: space-between; align-items: center; padding: 12px 14px;">
             <div>
-              <h5>Duplex & Penthouse</h5>
-              <p>18% Cầu • Dinh thự đỉnh tháp</p>
+              <h5 style="color: var(--gold-bright); font-size: 0.88rem; font-weight: 700; margin-bottom: 3px;">Duplex & Penthouse (273 – 398 m²)</h5>
+              <p style="font-size: 0.78rem; color: var(--text-muted); margin: 0;">Duplex thông tầng 288m² • Penthouse sân vườn & hồ bơi riêng</p>
             </div>
-            <span style="color: var(--gold-bright); font-size: 0.85rem;">➔</span>
+            <div style="text-align: right; display: flex; align-items: center; gap: 8px;">
+              <span class="badge badge-actual" style="font-size: 0.7rem;">Phiên bản giới hạn</span>
+              <span style="color: var(--gold-bright); font-size: 0.9rem;">➔</span>
+            </div>
           </div>
         </div>
       </div>
@@ -1452,60 +1471,67 @@
     },
     unit_3pn: {
       title: "Căn Hộ 3 Phòng Ngủ+ (3PN+)",
-      sub: "Dòng sản phẩm chủ lực – Chiếm 42% tổng cầu",
+      sub: "Dòng sản phẩm chủ lực – Sảnh thang máy riêng",
       body: `
         <div class="drawer-section">
-          <h4>Thông Số & Thiết Kế:</h4>
+          <h4>Thông Số & Thiết Kế Dự Kiến:</h4>
           <ul>
-            <li><strong>Diện tích:</strong> 123 m² – 158 m².</li>
+            <li><strong>Khoảng diện tích:</strong> 123 m² – 158 m².</li>
             <li><strong>Đặc quyền:</strong> Có sảnh thang máy riêng (Private Lift Lobby).</li>
             <li><strong>Tầm nhìn:</strong> Ban công lớn ôm trọn Sân Golf Ciputra & Hồ Tây.</li>
+            <li><strong>Số lượng căn:</strong> <em>CĐT chưa công bố bảng chia số lượng chi tiết.</em></li>
             <li><strong>Khách hàng mục tiêu:</strong> Gia đình thượng lưu 2-3 thế hệ, chuyên gia quản lý cao cấp Nhật - Hàn.</li>
           </ul>
-          <span class="source-tag">Xác thực: Bảng cơ cấu sản phẩm CĐT</span>
+          <span class="source-tag">Nguồn: Hồ sơ quy hoạch dự án</span>
         </div>
       `
     },
     unit_4pn: {
       title: "Căn Hộ 4 Phòng Ngủ+ (4PN+)",
-      sub: "Tư dinh trên cao – Chiếm 25% tổng cầu",
+      sub: "Dinh thự trên cao – View Panorama 270°",
       body: `
         <div class="drawer-section">
-          <h4>Thông Số & Thiết Kế:</h4>
+          <h4>Thông Số & Thiết Kế Dự Kiến:</h4>
           <ul>
-            <li><strong>Diện tích:</strong> 197 m² – 221 m².</li>
+            <li><strong>Khoảng diện tích:</strong> 197 m² – 221 m².</li>
             <li><strong>Đặc quyền:</strong> Sảnh thang máy riêng biệt, tầm nhìn Panorama 270 độ Sông Hồng & Sân Golf.</li>
             <li><strong>Không gian:</strong> Biệt thự đơn lập trên không (Sky Mansion).</li>
+            <li><strong>Số lượng căn:</strong> <em>CĐT chưa công bố bảng chia số lượng chi tiết.</em></li>
             <li><strong>Khách hàng mục tiêu:</strong> Giới siêu giàu, chủ tịch tập đoàn lớn tại Hà Nội.</li>
           </ul>
+          <span class="source-tag">Nguồn: Hồ sơ quy hoạch dự án</span>
         </div>
       `
     },
     unit_2pn: {
       title: "Căn Hộ 2 Phòng Ngủ+ (2PN+)",
-      sub: "Tối ưu không gian – Chiếm 15% tổng cầu",
+      sub: "Tối ưu không gian – Doanh nhân trẻ & Expat",
       body: `
         <div class="drawer-section">
-          <h4>Thông Số & Thiết Kế:</h4>
+          <h4>Thông Số & Thiết Kế Dự Kiến:</h4>
           <ul>
-            <li><strong>Diện tích:</strong> 98 m².</li>
+            <li><strong>Khoảng diện tích:</strong> ~98 m².</li>
             <li><strong>Điểm nhấn:</strong> Thiết kế thông minh, phòng đa năng linh hoạt làm việc.</li>
+            <li><strong>Số lượng căn:</strong> <em>CĐT chưa công bố bảng chia số lượng chi tiết.</em></li>
             <li><strong>Khách hàng mục tiêu:</strong> Doanh nhân độc thân thành đạt, chuyên gia quốc tế, vợ chồng trẻ.</li>
           </ul>
+          <span class="source-tag">Nguồn: Hồ sơ quy hoạch dự án</span>
         </div>
       `
     },
     unit_duplex: {
       title: "Duplex & Penthouse Đỉnh Tháp",
-      sub: "Bộ sưu tập giới hạn – Chiếm 18% tổng cầu",
+      sub: "Bộ sưu tập giới hạn – Dinh thự độc bản",
       body: `
         <div class="drawer-section">
-          <h4>Thông Số & Thiết Kế:</h4>
+          <h4>Thông Số & Thiết Kế Dự Kiến:</h4>
           <ul>
-            <li><strong>Duplex thông tầng:</strong> 288 m² (Trần cao thông tầng sang trọng).</li>
+            <li><strong>Duplex thông tầng:</strong> ~288 m² (Trần cao thông tầng sang trọng).</li>
             <li><strong>Penthouse độc bản:</strong> 273 m² – 398 m² (Sân vườn & hồ bơi riêng).</li>
+            <li><strong>Số lượng căn:</strong> <em>CĐT chưa công bố bảng chia số lượng chi tiết.</em></li>
             <li><strong>Khách hàng mục tiêu:</strong> Giới tài phiệt, nhà sưu tầm bất động sản biểu tượng.</li>
           </ul>
+          <span class="source-tag">Nguồn: Hồ sơ quy hoạch dự án</span>
         </div>
       `
     },
