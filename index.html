@@ -1139,39 +1139,13 @@
 </div>
 
 <script>
-  let timeChart, productChart, budgetChart, matrixChart;
+  let timeChart, budgetChart, matrixChart;
 
   document.addEventListener('DOMContentLoaded', () => {
-    initProductMixChart();
     initTimeSeriesChart('hybrid');
     initMediaBudgetChart();
     initPositioningMatrixChart();
   });
-
-  // 1. PRODUCT MIX CHART
-  function initProductMixChart() {
-    const ctx = document.getElementById('productMixChart').getContext('2d');
-    productChart = new Chart(ctx, {
-      type: 'doughnut',
-      data: {
-        labels: ['3PN+ (123-158m²)', '4PN+ (197-221m²)', '2PN+ (98m²)', 'Duplex (288m²)', 'Penthouse (273-398m²)'],
-        datasets: [{
-          data: [42, 25, 15, 10, 8],
-          backgroundColor: ['#C5A059', '#10B981', '#38BDF8', '#A855F7', '#F97316'],
-          borderColor: '#121C2E',
-          borderWidth: 2
-        }]
-      },
-      options: {
-        responsive: true,
-        maintainAspectRatio: false,
-        plugins: {
-          legend: { position: 'right', labels: { color: '#CBD5E1', font: { size: 9.5, family: 'Plus Jakarta Sans' }, boxWidth: 10 } }
-        },
-        cutout: '65%'
-      }
-    });
-  }
 
   // 2. TIME-SERIES HYBRID CHART
   function initTimeSeriesChart(mode) {
