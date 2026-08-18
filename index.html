@@ -847,35 +847,28 @@
           <div>
             <div class="card-title" id="time-title">Chuỗi Thời Gian Tìm Kiếm Google (2026)</div>
             <div class="card-desc" id="time-desc">Đường liền nét: Đo lường thực tế | Đường đứt nét: Dự phóng theo mốc sự kiện</div>
-          </div>
-          <span class="badge badge-gold" id="time-badge">Hybrid Model</span>
-        </div>
-        <div class="chart-box">
-          <canvas id="timeSeriesChart"></canvas>
-        </div>
-      </div>
-    </div>
-  </div>
-
-  <!-- ROW 3: BẢN ĐỒ TÌNH BÁO TÊN MIỀN (18+ TÊN MIỀN) -->
-  <div class="section-grid">
-    <div class="col-12">
-      <div class="card">
-        <div class="card-header">
+          <div class="card-header">
           <div>
-            <div class="card-title">Mạng Lưới Tình Báo Tên Miền & Kênh Truyền Thông (18+ Tên Miền)</div>
-            <div class="card-desc">Bấm vào bất kỳ dòng nào để trượt bảng phân tích chiến thuật, nội dung & giải pháp đối phó</div>
+            <div class="card-title">Mạng Lưới Tình Báo Tên Miền & Kênh Thực Tế Đang Hoạt Động (13 Kênh)</div>
+            <div class="card-desc">Ghi nhận thực địa từ Google Search SERP, Meta Ad Library & Mạng lưới sàn phân phối F1</div>
           </div>
-          <span class="badge badge-actual">Điều tra Thực tế</span>
+          <span class="badge badge-actual">100% Khảo Sát Thực Tế</span>
+        </div>
+
+        <!-- REALITY STATUS NOTICE -->
+        <div style="background: rgba(197, 160, 89, 0.08); border-left: 3px solid var(--gold-primary); padding: 10px 14px; margin: 12px 0; font-size: 0.82rem; color: var(--text-main); border-radius: 0 4px 4px 0;">
+          📢 <strong>Thực trạng truyền thông báo chí:</strong> 
+          Dự án Maison Privée hiện đang trong giai đoạn <em>Rumor / Chuẩn bị Kick-off đợt 1</em>. 
+          Chủ đầu tư CapitaLand <strong>CHƯA KÍCH HOẠT chiến dịch PR thương mại diện rộng trên các báo lớn (CafeF, VietnamNet, VnExpress)</strong>. 
+          Toàn bộ hoạt động truyền thông hiện tại 100% do các <strong>Sàn môi giới F1 đón đầu</strong> và <strong>Đối thủ cạnh tranh chạy Ads chặn từ khóa</strong>.
         </div>
 
         <!-- FILTER CHIPS & SEARCH -->
         <div class="filter-bar">
-          <button class="filter-chip active" onclick="filterDomains('all')">Tất Cả (18)</button>
-          <button class="filter-chip" onclick="filterDomains('satellite')">Domain Vệ Tinh Môi Giới (6)</button>
+          <button class="filter-chip active" onclick="filterDomains('all')">Tất Cả (13)</button>
+          <button class="filter-chip" onclick="filterDomains('satellite')">Sàn F1 & Vệ Tinh Môi Giới (6)</button>
           <button class="filter-chip" onclick="filterDomains('competitor')">Đối Thủ Đấu Thầu Chéo (4)</button>
-          <button class="filter-chip" onclick="filterDomains('press')">Báo Chí & Tài Chính (5)</button>
-          <button class="filter-chip" onclick="filterDomains('official')">CĐT & Quốc Tế (3)</button>
+          <button class="filter-chip" onclick="filterDomains('official')">CĐT & Cổng Listing (3)</button>
           <input type="text" id="domainSearch" class="search-input" placeholder="🔍 Tìm tên miền / từ khóa..." onkeyup="searchDomainTable()">
         </div>
 
@@ -883,22 +876,22 @@
           <table id="domainTable">
             <thead>
               <tr>
-                <th>Tên Miền / Kênh</th>
+                <th>Tên Miền / Kênh Thực Tế</th>
                 <th>Phân Loại</th>
-                <th>Hiện Trạng Hoạt Động</th>
+                <th>Hiện Trạng Hoạt Động Thật</th>
                 <th>Mẫu Headline / Nội Dung Ghi Nhận</th>
                 <th>Chiến Thuật / Mục Đích</th>
                 <th>Hành Động</th>
               </tr>
             </thead>
             <tbody>
-              <!-- VỆ TINH MÔI GIỚI -->
+              <!-- VỆ TINH & SÀN MÔI GIỚI -->
               <tr class="clickable-row domain-row satellite">
                 <td><a href="https://maisonprive.com.vn" target="_blank" rel="noopener noreferrer" class="domain-table-link">maisonprive.com.vn ↗</a></td>
                 <td><span class="badge badge-gold">Vệ tinh Môi giới</span></td>
                 <td><span style="color: var(--emerald-accent);">Chạy Google Search Top 1</span></td>
                 <td>Maison Privée Ciputra – Trực Tiếp CĐT CapitaLand</td>
-                <td>Mua domain sát thương hiệu để hứng trọn traffic sớm.</td>
+                <td>Mua domain sát tên thương hiệu để hứng trọn traffic tìm kiếm sớm.</td>
                 <td>
                   <div class="action-group">
                     <button class="btn-action-view" onclick="openDrawer('domain_maisonprive')">🔍 Phân Tích</button>
@@ -924,7 +917,7 @@
                 <td><span class="badge badge-gold">Vệ tinh Môi giới</span></td>
                 <td><span style="color: var(--emerald-accent);">Google Ads Top 2-3</span></td>
                 <td>Maison Privée – Căn Hộ Chuẩn WELL Đầu Tiên VN</td>
-                <td>Khai thác mạnh yếu tố chứng nhận sức khỏe WELL.</td>
+                <td>Khai thác mạnh yếu tố chứng nhận sức khỏe WELL để gom khách.</td>
                 <td>
                   <div class="action-group">
                     <button class="btn-action-view" onclick="openDrawer('domain_galia')">🔍 Phân Tích</button>
@@ -933,11 +926,11 @@
                 </td>
               </tr>
               <tr class="clickable-row domain-row satellite">
-                <td><a href="https://bdstanlong.vn/" target="_blank" rel="noopener noreferrer" class="domain-table-link">bdstanlong.vn (Tân Long) ↗</a></td>
+                <td><a href="https://bdstanlong.vn/" target="_blank" rel="noopener noreferrer" class="domain-table-link">bdstanlong.vn (Tân Long Land) ↗</a></td>
                 <td><span class="badge badge-gold">Sàn Bản Địa Tây Hồ</span></td>
-                <td><span>SEO & Ads Search</span></td>
+                <td><span>SEO & Đăng Tin Rumor</span></td>
                 <td>Tư Dinh Maison Privée Ciputra – Bảng Giá Đợt 1</td>
-                <td>Sàn thâm niên Tây Hồ chào bán tệp khách có sẵn.</td>
+                <td>Sàn thâm niên Ciputra chào bán rumor tệp khách quen có sẵn.</td>
                 <td>
                   <div class="action-group">
                     <button class="btn-action-view" onclick="openDrawer('domain_tanlong')">🔍 Phân Tích</button>
@@ -950,7 +943,7 @@
                 <td><span class="badge badge-gold">Chuyên Trang Ciputra</span></td>
                 <td><span>SEO Organic Top 3</span></td>
                 <td>Mặt Bằng Căn Hộ Maison Privée Ciputra Mới Nhất</td>
-                <td>Kéo traffic tìm kiếm căn hộ Ciputra sang dự án mới.</td>
+                <td>Kéo traffic tìm kiếm căn hộ Ciputra sang dự án mới của CapitaLand.</td>
                 <td>
                   <div class="action-group">
                     <button class="btn-action-view" onclick="openDrawer('domain_canhociputra')">🔍 Phân Tích</button>
@@ -963,7 +956,7 @@
                 <td><span class="badge badge-gold">Môi Giới Expat</span></td>
                 <td><span>Listing Tiếng Anh</span></td>
                 <td>Maison Privee Ciputra - Luxury Apartments for Sale</td>
-                <td>Đánh tệp chuyên gia quốc tế, khách Nhật - Hàn tại Ciputra.</td>
+                <td>Đánh tệp chuyên gia quốc tế, khách Nhật - Hàn sinh sống tại Ciputra.</td>
                 <td>
                   <div class="action-group">
                     <button class="btn-action-view" onclick="openDrawer('domain_houseinhanoi')">🔍 Phân Tích</button>
@@ -978,7 +971,7 @@
                 <td><span class="badge badge-forecast">Đối Thủ Sunshine</span></td>
                 <td><span style="color: var(--forecast-accent);">Đấu Thầu Chéo Từ Khóa</span></td>
                 <td>Noble West Lake Ciputra – Căn Hộ Dát Vàng Đẳng Cấp</td>
-                <td>Chặn từ khóa Maison Privée để lôi kéo khách sang Noble.</td>
+                <td>Chặn từ khóa Maison Privée để lôi kéo khách sang dự án Noble.</td>
                 <td>
                   <div class="action-group">
                     <button class="btn-action-view" onclick="openDrawer('domain_noblewestlake')">🔍 Phân Tích</button>
@@ -989,9 +982,9 @@
               <tr class="clickable-row domain-row competitor">
                 <td><a href="https://noblecrystal.vn/" target="_blank" rel="noopener noreferrer" class="domain-table-link">noblecrystal.vn ↗</a></td>
                 <td><span class="badge badge-forecast">Đối Thủ Sunshine</span></td>
-                <td><span style="color: var(--forecast-accent);">Đấu Thầu Chéo</span></td>
+                <td><span style="color: var(--forecast-accent);">Đấu Thầu Chéo Google Ads</span></td>
                 <td>Noble Crystal Tây Hồ – Biệt Thự Trên Không Sky Villa</td>
-                <td>Thu hút khách tìm kiếm căn hộ diện tích lớn tại Ciputra.</td>
+                <td>Thu hút khách tìm kiếm căn hộ diện tích lớn tại KĐT Ciputra.</td>
                 <td>
                   <div class="action-group">
                     <button class="btn-action-view" onclick="openDrawer('domain_noblecrystal')">🔍 Phân Tích</button>
@@ -1003,8 +996,8 @@
                 <td><a href="https://nobleempireciputra.com/" target="_blank" rel="noopener noreferrer" class="domain-table-link">nobleempireciputra.com ↗</a></td>
                 <td><span class="badge badge-forecast">Đối Thủ Sunshine</span></td>
                 <td><span>SEO & Bài So Sánh</span></td>
-                <td>So sánh Noble Empire & Maison Privée Ciputra</td>
-                <td>Viết bài so sánh tiện ích và vị trí để điều hướng người đọc.</td>
+                <td>So sánh Noble Empire & Dự Án Mới Ciputra</td>
+                <td>Viết bài so sánh tiện ích và vị trí để điều hướng khách quan tâm.</td>
                 <td>
                   <div class="action-group">
                     <button class="btn-action-view" onclick="openDrawer('domain_nobleempire')">🔍 Phân Tích</button>
@@ -1015,9 +1008,9 @@
               <tr class="clickable-row domain-row competitor">
                 <td><a href="https://kitacapital-ciputra.com/" target="_blank" rel="noopener noreferrer" class="domain-table-link">kitacapital-ciputra.com ↗</a></td>
                 <td><span class="badge badge-forecast">Đối Thủ Kita Group</span></td>
-                <td><span>Chạy Ads Khu Vực</span></td>
+                <td><span>Chạy Ads Bám Đuổi</span></td>
                 <td>Kita Capital Ciputra – Nhận Nhà Ở Ngay 2026</td>
-                <td>Đánh vào tâm lý khách ngại chờ tiến độ đến 2029 của CĐT.</td>
+                <td>Đánh vào tâm lý khách ngại chờ tiến độ đến 2029 của CapitaLand.</td>
                 <td>
                   <div class="action-group">
                     <button class="btn-action-view" onclick="openDrawer('domain_kitacapital')">🔍 Phân Tích</button>
@@ -1026,80 +1019,13 @@
                 </td>
               </tr>
 
-              <!-- BÁO CHÍ & TÀI CHÍNH -->
-              <tr class="clickable-row domain-row press">
-                <td><a href="https://cafef.vn/bat-dong-san.chn" target="_blank" rel="noopener noreferrer" class="domain-table-link">cafef.vn ↗</a></td>
-                <td><span class="badge badge-actual">Báo Tài Chính</span></td>
-                <td><span>Chuyên Mục Bất Động Sản</span></td>
-                <td>Dòng tiền FDI & Thị trường căn hộ hạng sang Tây Hồ</td>
-                <td>Kênh tài chính uy tín dẫn dắt thông tin đầu tư BĐS Hà Nội.</td>
-                <td>
-                  <div class="action-group">
-                    <button class="btn-action-view" onclick="openDrawer('domain_cafef')">🔍 Phân Tích</button>
-                    <a href="https://cafef.vn/bat-dong-san.chn" target="_blank" rel="noopener noreferrer" class="btn-action-link">🌐 Mở CafeF BĐS ↗</a>
-                  </div>
-                </td>
-              </tr>
-              <tr class="clickable-row domain-row press">
-                <td><a href="https://vietnamnet.vn/bat-dong-san" target="_blank" rel="noopener noreferrer" class="domain-table-link">vietnamnet.vn ↗</a></td>
-                <td><span class="badge badge-actual">Báo Chính Thống</span></td>
-                <td><span>Chuyên Mục Bất Động Sản</span></td>
-                <td>Quy hoạch hạ tầng và nguồn cung căn hộ cao cấp Thủ đô</td>
-                <td>Bảo chứng pháp lý, quy hoạch kết nối hạ tầng giao thông.</td>
-                <td>
-                  <div class="action-group">
-                    <button class="btn-action-view" onclick="openDrawer('domain_vietnamnet')">🔍 Phân Tích</button>
-                    <a href="https://vietnamnet.vn/bat-dong-san" target="_blank" rel="noopener noreferrer" class="btn-action-link">🌐 Mở VietnamNet ↗</a>
-                  </div>
-                </td>
-              </tr>
-              <tr class="clickable-row domain-row press">
-                <td><a href="https://baoxaydung.vn/" target="_blank" rel="noopener noreferrer" class="domain-table-link">baoxaydung.vn ↗</a></td>
-                <td><span class="badge badge-actual">Báo Ngành Xây Dựng</span></td>
-                <td><span>Cơ Quan Bộ Xây Dựng</span></td>
-                <td>Tiêu chuẩn công trình xanh & chứng nhận WELL đầu tiên</td>
-                <td>Phân tích hệ thống lọc khí Air Zone & kính Low-E cản nhiệt.</td>
-                <td>
-                  <div class="action-group">
-                    <button class="btn-action-view" onclick="openDrawer('domain_baoxaydung')">🔍 Phân Tích</button>
-                    <a href="https://baoxaydung.vn/" target="_blank" rel="noopener noreferrer" class="btn-action-link">🌐 Mở Báo Xây Dựng ↗</a>
-                  </div>
-                </td>
-              </tr>
-              <tr class="clickable-row domain-row press">
-                <td><a href="https://www.savills.com.vn/" target="_blank" rel="noopener noreferrer" class="domain-table-link">savills.com.vn ↗</a></td>
-                <td><span class="badge badge-actual">Đơn Vị Nghiên Cứu</span></td>
-                <td><span>Báo Cáo Nghiên Cứu</span></td>
-                <td>Hanoi Residential Market Review: The Rise of WELL</td>
-                <td>Đưa dự án vào danh mục dẫn dắt nguồn cung hạng sang 2026-2029.</td>
-                <td>
-                  <div class="action-group">
-                    <button class="btn-action-view" onclick="openDrawer('domain_savills')">🔍 Phân Tích</button>
-                    <a href="https://www.savills.com.vn/" target="_blank" rel="noopener noreferrer" class="btn-action-link">🌐 Mở Savills VN ↗</a>
-                  </div>
-                </td>
-              </tr>
-              <tr class="clickable-row domain-row press">
-                <td><a href="https://batdongsan.com.vn/" target="_blank" rel="noopener noreferrer" class="domain-table-link">batdongsan.com.vn ↗</a></td>
-                <td><span class="badge badge-actual">Cổng Listing</span></td>
-                <td><span>Tin Đăng & Ads Display</span></td>
-                <td>Bán căn hộ Maison Privée Ciputra – Suất ngoại giao</td>
-                <td>Môi giới tự do đăng tin rumor giá 150 - 200tr/m2.</td>
-                <td>
-                  <div class="action-group">
-                    <button class="btn-action-view" onclick="openDrawer('domain_batdongsan')">🔍 Phân Tích</button>
-                    <a href="https://batdongsan.com.vn/" target="_blank" rel="noopener noreferrer" class="btn-action-link">🌐 Mở Batdongsan ↗</a>
-                  </div>
-                </td>
-              </tr>
-
-              <!-- CHỦ ĐẦU TƯ & QUỐC TẾ -->
+              <!-- CĐT & KÊNH CHÍNH THỨC -->
               <tr class="clickable-row domain-row official">
                 <td><a href="https://www.capitaland.com/vn/vi.html" target="_blank" rel="noopener noreferrer" class="domain-table-link">capitaland.com (CLD VN) ↗</a></td>
                 <td><span class="badge badge-actual">CĐT Chính Thức</span></td>
-                <td><span>Cổng Thông Tin CĐT</span></td>
-                <td>CapitaLand Development Vietnam – Danh mục dự án nhà ở</td>
-                <td>Cổng thông tin phát triển dự án nhà ở chính thức của tập đoàn tại VN.</td>
+                <td><span>Cổng Thông Tin Tập Đoàn</span></td>
+                <td>CapitaLand Development Vietnam – Danh mục phát triển nhà ở</td>
+                <td>Cổng thông tin chính thức của CĐT CapitaLand tại thị trường Việt Nam.</td>
                 <td>
                   <div class="action-group">
                     <button class="btn-action-view" onclick="openDrawer('domain_capitaland')">🔍 Phân Tích</button>
@@ -1108,11 +1034,32 @@
                 </td>
               </tr>
               <tr class="clickable-row domain-row official">
-                <td><a href="https://www.ibtimes.com/" target="_blank" rel="noopener noreferrer" class="domain-table-link">ibtimes.com ↗</a></td>
-                <td><span class="badge badge-actual">Quốc Tế</span></td>
-                <td><span>Báo Chí Kinh Tế</span></td>
-                <td>Luxury Residential Project in Hanoi's Ciputra</td>
-                <td>Đánh giá vị thế thị trường Việt Nam trong mắt NĐT Nhật Bản.</td>
+                <td><a href="https://www.nomura-re-vn.com/" target="_blank" rel="noopener noreferrer" class="domain-table-link">nomura-re-vn.com ↗</a></td>
+                <td><span class="badge badge-actual">Đối Tác Nhật</span></td>
+                <td><span>Cổng Thông Tin Đối Tác</span></td>
+                <td>Nomura Real Estate Development Vietnam</td>
+                <td>Kênh hiện diện của đối tác Nhật Bản cùng CapitaLand tại Hà Nội.</td>
+                <td>
+                  <div class="action-group">
+                    <button class="btn-action-view" onclick="openDrawer('domain_nomura')">🔍 Phân Tích</button>
+                    <a href="https://www.nomura-re-vn.com/" target="_blank" rel="noopener noreferrer" class="btn-action-link">🌐 Mở Nomura VN ↗</a>
+                  </div>
+                </td>
+              </tr>
+              <tr class="clickable-row domain-row official">
+                <td><a href="https://batdongsan.com.vn/" target="_blank" rel="noopener noreferrer" class="domain-table-link">batdongsan.com.vn ↗</a></td>
+                <td><span class="badge badge-actual">Cổng Listing BĐS</span></td>
+                <td><span>Tin Đăng Môi Giới Tự Do</span></td>
+                <td>Môi giới đăng tin rumor căn hộ Ciputra Tây Hồ</td>
+                <td>Nơi tập trung luồng tin đăng rumor và tìm kiếm nhu cầu căn hộ Ciputra.</td>
+                <td>
+                  <div class="action-group">
+                    <button class="btn-action-view" onclick="openDrawer('domain_batdongsan')">🔍 Phân Tích</button>
+                    <a href="https://batdongsan.com.vn/" target="_blank" rel="noopener noreferrer" class="btn-action-link">🌐 Mở Batdongsan ↗</a>
+                  </div>
+                </td>
+              </tr>
+            </tbody> thế thị trường Việt Nam trong mắt NĐT Nhật Bản.</td>
                 <td>
                   <div class="action-group">
                     <button class="btn-action-view" onclick="openDrawer('domain_ibtimes')">🔍 Phân Tích</button>
@@ -1531,17 +1478,19 @@
       `
     },
     domain_network: {
-      title: "Mạng Lưới Tình Báo 18+ Tên Miền",
-      sub: "Cấu trúc hệ sinh thái truyền thông trên Internet",
+      title: "Mạng Lưới Tình Báo 13 Kênh Thực Tế",
+      sub: "Cấu trúc hệ sinh thái sàn môi giới & đối thủ trên Internet",
       body: `
         <div class="drawer-section">
-          <h4>🌐 Phân Bổ Mạng Lưới:</h4>
+          <h4>🌐 Phân Bổ Mạng Lưới Thực Địa:</h4>
           <ul>
-            <li><strong>6 Domain Vệ Tinh Môi Giới:</strong> Đăng ký sớm domain thương hiệu để hứng trọn traffic tự nhiên.</li>
-            <li><strong>4 Domain Đối Thủ Đấu Thầu Chéo:</strong> Sunshine (Noble) và Kita Capital chặn từ khóa.</li>
-            <li><strong>5 Cổng Báo Chí & Nghiên Cứu:</strong> VietnamNet, CafeF, Báo Xây Dựng, Savills định vị phân khúc Wellness.</li>
-            <li><strong>3 Kênh Chính Thức Quốc Tế:</strong> CapitaLand Global, IBtimes, Nomura RE bảo chứng pháp lý và uy tín CĐT.</li>
+            <li><strong>6 Sàn F1 & Vệ Tinh Môi Giới:</strong> Tân Long Land, Galia, Căn hộ Ciputra, House In Hanoi và các domain săn lead gom khách sớm.</li>
+            <li><strong>4 Kênh Đối Thủ Đấu Thầu Chéo:</strong> Sunshine (Noble West Lake, Noble Crystal, Noble Empire) và Kita Capital bám đuổi từ khóa.</li>
+            <li><strong>3 Cổng CĐT & Kênh Listing:</strong> CapitaLand Development VN, Nomura Real Estate và Batdongsan.com.vn.</li>
           </ul>
+          <div style="background: rgba(197, 160, 89, 0.1); padding: 10px; border-radius: 4px; margin-top: 12px; font-size: 0.8rem;">
+            📌 <em>Lưu ý: Báo chí chính thống (CafeF, VietnamNet) hiện chưa có bài PR thương mại chính thức do CĐT chưa kích hoạt chiến dịch mở bán toàn quốc.</em>
+          </div>
         </div>
       `
     },
@@ -1787,92 +1736,6 @@
         </div>
       `
     },
-    domain_cafef: {
-      title: "Tình Báo: cafef.vn",
-      sub: "Báo tài chính kinh tế hàng đầu",
-      body: `
-        <div class="direct-link-card">
-          <div>
-            <span style="font-size: 0.72rem; color: var(--text-muted); text-transform: uppercase; display: block; margin-bottom: 2px;">🔗 Chuyên mục BĐS CafeF:</span>
-            <a href="https://cafef.vn/bat-dong-san.chn" target="_blank" rel="noopener noreferrer" class="direct-link-url">https://cafef.vn/bat-dong-san.chn ↗</a>
-          </div>
-          <a href="https://cafef.vn/bat-dong-san.chn" target="_blank" rel="noopener noreferrer" class="btn-action-view" style="padding: 6px 12px; font-size: 0.8rem;">Mở CafeF BĐS ↗</a>
-        </div>
-        <div class="drawer-section">
-          <h4>Nội Dung & Thị Trường:</h4>
-          <p>Kênh tài chính uy tín dẫn dắt luồng thông tin dòng tiền đầu tư, giao dịch BĐS cao cấp khu vực Tây Hồ & Ciputra.</p>
-          <span class="source-tag">Trạng thái: Kênh truyền thông BĐS uy tín</span>
-        </div>
-      `
-    },
-    domain_vietnamnet: {
-      title: "Tình Báo: vietnamnet.vn",
-      sub: "Báo chí chính thống Quốc gia",
-      body: `
-        <div class="direct-link-card">
-          <div>
-            <span style="font-size: 0.72rem; color: var(--text-muted); text-transform: uppercase; display: block; margin-bottom: 2px;">🔗 Chuyên mục BĐS VietnamNet:</span>
-            <a href="https://vietnamnet.vn/bat-dong-san" target="_blank" rel="noopener noreferrer" class="direct-link-url">https://vietnamnet.vn/bat-dong-san ↗</a>
-          </div>
-          <a href="https://vietnamnet.vn/bat-dong-san" target="_blank" rel="noopener noreferrer" class="btn-action-view" style="padding: 6px 12px; font-size: 0.8rem;">Mở VietnamNet BĐS ↗</a>
-        </div>
-        <div class="drawer-section">
-          <h4>Nội Dung:</h4>
-          <p>Chuyên trang quy hoạch hạ tầng, tiến độ cấp phép và thị trường căn hộ cao cấp tại Hà Nội.</p>
-        </div>
-      `
-    },
-    domain_baoxaydung: {
-      title: "Tình Báo: baoxaydung.vn",
-      sub: "Cơ quan ngôn luận Bộ Xây Dựng",
-      body: `
-        <div class="direct-link-card">
-          <div>
-            <span style="font-size: 0.72rem; color: var(--text-muted); text-transform: uppercase; display: block; margin-bottom: 2px;">🔗 Cổng Báo Xây Dựng:</span>
-            <a href="https://baoxaydung.vn/" target="_blank" rel="noopener noreferrer" class="direct-link-url">https://baoxaydung.vn/ ↗</a>
-          </div>
-          <a href="https://baoxaydung.vn/" target="_blank" rel="noopener noreferrer" class="btn-action-view" style="padding: 6px 12px; font-size: 0.8rem;">Mở Báo Xây Dựng ↗</a>
-        </div>
-        <div class="drawer-section">
-          <h4>Nội Dung Kỹ Thuật:</h4>
-          <p>Đánh giá tiêu chuẩn công trình xanh, hệ thống lọc khí Air Zone và quy chuẩn xây dựng hiện đại.</p>
-        </div>
-      `
-    },
-    domain_savills: {
-      title: "Tình Báo: savills.com.vn",
-      sub: "Đơn vị tư vấn & nghiên cứu thị trường BĐS",
-      body: `
-        <div class="direct-link-card">
-          <div>
-            <span style="font-size: 0.72rem; color: var(--text-muted); text-transform: uppercase; display: block; margin-bottom: 2px;">🔗 Cổng Savills Việt Nam:</span>
-            <a href="https://www.savills.com.vn/" target="_blank" rel="noopener noreferrer" class="direct-link-url">https://www.savills.com.vn/ ↗</a>
-          </div>
-          <a href="https://www.savills.com.vn/" target="_blank" rel="noopener noreferrer" class="btn-action-view" style="padding: 6px 12px; font-size: 0.8rem;">Mở Savills VN ↗</a>
-        </div>
-        <div class="drawer-section">
-          <h4>Báo Cáo Nghiên Cứu:</h4>
-          <p>Xếp khu vực Ciputra - Tây Hồ Tây vào Top địa bàn dẫn dắt nguồn cung và mặt bằng giá căn hộ hạng sang Hà Nội.</p>
-        </div>
-      `
-    },
-    domain_batdongsan: {
-      title: "Tình Báo: batdongsan.com.vn",
-      sub: "Cổng thông tin BĐS số 1 Việt Nam",
-      body: `
-        <div class="direct-link-card">
-          <div>
-            <span style="font-size: 0.72rem; color: var(--text-muted); text-transform: uppercase; display: block; margin-bottom: 2px;">🔗 Cổng Batdongsan.com.vn:</span>
-            <a href="https://batdongsan.com.vn/" target="_blank" rel="noopener noreferrer" class="direct-link-url">https://batdongsan.com.vn/ ↗</a>
-          </div>
-          <a href="https://batdongsan.com.vn/" target="_blank" rel="noopener noreferrer" class="btn-action-view" style="padding: 6px 12px; font-size: 0.8rem;">Mở Batdongsan ↗</a>
-        </div>
-        <div class="drawer-section">
-          <h4>Hiện Trạng:</h4>
-          <p>Kênh đăng tin và khảo sát nhu cầu mua bán, chuyển nhượng căn hộ Ciputra sôi động nhất miền Bắc.</p>
-        </div>
-      `
-    },
     domain_capitaland: {
       title: "Tình Báo: capitaland.com",
       sub: "CapitaLand Development Vietnam",
@@ -1891,23 +1754,6 @@
         </div>
       `
     },
-    domain_ibtimes: {
-      title: "Tình Báo: ibtimes.com",
-      sub: "International Business Times",
-      body: `
-        <div class="direct-link-card">
-          <div>
-            <span style="font-size: 0.72rem; color: var(--text-muted); text-transform: uppercase; display: block; margin-bottom: 2px;">🔗 Cổng Báo Quốc Tế IBtimes:</span>
-            <a href="https://www.ibtimes.com/" target="_blank" rel="noopener noreferrer" class="direct-link-url">https://www.ibtimes.com/ ↗</a>
-          </div>
-          <a href="https://www.ibtimes.com/" target="_blank" rel="noopener noreferrer" class="btn-action-view" style="padding: 6px 12px; font-size: 0.8rem;">Mở IBtimes ↗</a>
-        </div>
-        <div class="drawer-section">
-          <h4>Báo Chí Quốc Tế:</h4>
-          <p>Kênh tin tức kinh tế tài chính quốc tế theo dõi các thương vụ FDI và liên doanh đa quốc gia.</p>
-        </div>
-      `
-    },
     domain_nomura: {
       title: "Tình Báo: nomura-re-vn.com",
       sub: "Nomura Real Estate Development (Nhật Bản)",
@@ -1922,6 +1768,23 @@
         <div class="drawer-section">
           <h4>Báo Cáo Đối Tác:</h4>
           <p>Kênh giới thiệu sự hiện diện của tập đoàn phát triển bất động sản hàng đầu Nhật Bản tại thị trường Việt Nam.</p>
+        </div>
+      `
+    },
+    domain_batdongsan: {
+      title: "Tình Báo: batdongsan.com.vn",
+      sub: "Cổng thông tin BĐS số 1 Việt Nam",
+      body: `
+        <div class="direct-link-card">
+          <div>
+            <span style="font-size: 0.72rem; color: var(--text-muted); text-transform: uppercase; display: block; margin-bottom: 2px;">🔗 Cổng Batdongsan.com.vn:</span>
+            <a href="https://batdongsan.com.vn/" target="_blank" rel="noopener noreferrer" class="direct-link-url">https://batdongsan.com.vn/ ↗</a>
+          </div>
+          <a href="https://batdongsan.com.vn/" target="_blank" rel="noopener noreferrer" class="btn-action-view" style="padding: 6px 12px; font-size: 0.8rem;">Mở Batdongsan ↗</a>
+        </div>
+        <div class="drawer-section">
+          <h4>Hiện Trạng:</h4>
+          <p>Kênh đăng tin và khảo sát nhu cầu mua bán, chuyển nhượng căn hộ Ciputra sôi động nhất miền Bắc.</p>
         </div>
       `
     }
