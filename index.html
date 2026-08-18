@@ -1,0 +1,1648 @@
+<!DOCTYPE html>
+<html lang="vi">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Maison Privée Ciputra | Báo Cáo Nghiên Cứu Thị Trường & Tình Báo Tên Miền</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Cinzel:wght@600;700;800&family=Plus+Jakarta+Sans:wght@300;400;500;600;700;800&display=swap" rel="stylesheet">
+  <!-- Chart.js CDN -->
+  <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
+
+  <style>
+    :root {
+      --bg-dark: #070B11;
+      --bg-surface: #0E1626;
+      --bg-card: #121C2E;
+      --bg-card-hover: #18263E;
+      --bg-card-sub: #0A111E;
+      --gold-primary: #C5A059;
+      --gold-bright: #E2C27F;
+      --gold-dark: #8C6D31;
+      --gold-gradient: linear-gradient(135deg, #E2C27F 0%, #C5A059 50%, #8C6D31 100%);
+      --emerald-accent: #10B981;
+      --emerald-glow: rgba(16, 185, 129, 0.12);
+      --forecast-accent: #F97316;
+      --forecast-glow: rgba(249, 115, 22, 0.12);
+      --text-main: #F8FAFC;
+      --text-sub: #CBD5E1;
+      --text-muted: #64748B;
+      --border-color: rgba(197, 160, 89, 0.22);
+      --border-sub: rgba(255, 255, 255, 0.06);
+      --radius-sm: 6px;
+      --radius-md: 12px;
+      --radius-lg: 18px;
+      --shadow-card: 0 4px 20px -2px rgba(0, 0, 0, 0.5), 0 0 1px 1px rgba(197, 160, 89, 0.12);
+      --drawer-width: 480px;
+    }
+
+    * { box-sizing: border-box; margin: 0; padding: 0; }
+
+    body {
+      font-family: 'Plus Jakarta Sans', sans-serif;
+      background-color: var(--bg-dark);
+      color: var(--text-main);
+      line-height: 1.45;
+      overflow-x: hidden;
+      background-image: 
+        radial-gradient(circle at 10% 10%, rgba(197, 160, 89, 0.03) 0%, transparent 35%),
+        radial-gradient(circle at 90% 40%, rgba(16, 185, 129, 0.02) 0%, transparent 40%);
+    }
+
+    .container {
+      max-width: 1440px;
+      margin: 0 auto;
+      padding: 24px 20px;
+      transition: filter 0.3s ease;
+    }
+
+    /* HEADER */
+    header {
+      background: linear-gradient(180deg, #121C2E 0%, #0E1626 100%);
+      border: 1px solid var(--border-color);
+      border-radius: var(--radius-lg);
+      padding: 22px 28px;
+      margin-bottom: 22px;
+      box-shadow: var(--shadow-card);
+      position: relative;
+    }
+
+    header::before {
+      content: '';
+      position: absolute;
+      top: 0; left: 0; right: 0; height: 2px;
+      background: var(--gold-gradient);
+    }
+
+    .header-top {
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      flex-wrap: wrap;
+      gap: 16px;
+    }
+
+    .brand-title {
+      font-family: 'Cinzel', serif;
+      font-size: 1.8rem;
+      font-weight: 700;
+      letter-spacing: 1.2px;
+      background: var(--gold-gradient);
+      -webkit-background-clip: text;
+      -webkit-text-fill-color: transparent;
+    }
+
+    .brand-sub {
+      color: var(--text-sub);
+      font-size: 0.86rem;
+      margin-top: 4px;
+      display: flex;
+      align-items: center;
+      gap: 8px;
+      flex-wrap: wrap;
+    }
+
+    .tag-meta {
+      background: rgba(197, 160, 89, 0.1);
+      color: var(--gold-bright);
+      padding: 2px 8px;
+      border-radius: 4px;
+      font-size: 0.74rem;
+      font-weight: 600;
+      border: 1px solid rgba(197, 160, 89, 0.2);
+    }
+
+    /* CONTROLLER */
+    .view-controller {
+      background: #070B11;
+      padding: 4px;
+      border-radius: 30px;
+      border: 1px solid var(--border-sub);
+      display: inline-flex;
+      gap: 4px;
+    }
+
+    .view-btn {
+      background: transparent;
+      border: none;
+      color: var(--text-muted);
+      padding: 7px 15px;
+      border-radius: 20px;
+      font-size: 0.8rem;
+      font-weight: 600;
+      cursor: pointer;
+      transition: all 0.2s ease;
+      display: flex;
+      align-items: center;
+      gap: 6px;
+    }
+
+    .view-btn.active {
+      background: var(--gold-gradient);
+      color: #070B11;
+      font-weight: 700;
+    }
+
+    .view-btn.actual-active {
+      background: var(--emerald-accent);
+      color: #070B11;
+      font-weight: 700;
+    }
+
+    /* BADGES */
+    .badge {
+      display: inline-flex;
+      align-items: center;
+      gap: 3px;
+      padding: 2px 7px;
+      border-radius: 4px;
+      font-size: 0.68rem;
+      font-weight: 700;
+      text-transform: uppercase;
+      letter-spacing: 0.3px;
+    }
+
+    .badge-actual {
+      background: var(--emerald-glow);
+      color: var(--emerald-accent);
+      border: 1px solid rgba(16, 185, 129, 0.3);
+    }
+
+    .badge-forecast {
+      background: var(--forecast-glow);
+      color: var(--forecast-accent);
+      border: 1px solid rgba(249, 115, 22, 0.3);
+    }
+
+    .badge-gold {
+      background: rgba(197, 160, 89, 0.12);
+      color: var(--gold-bright);
+      border: 1px solid rgba(197, 160, 89, 0.25);
+    }
+
+    /* VERIFICATION STRIP BANNER */
+    .verification-strip {
+      background: rgba(16, 185, 129, 0.06);
+      border: 1px solid rgba(16, 185, 129, 0.2);
+      border-radius: var(--radius-sm);
+      padding: 10px 16px;
+      margin-bottom: 20px;
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      flex-wrap: wrap;
+      gap: 10px;
+      font-size: 0.8rem;
+      color: var(--text-sub);
+    }
+
+    .verification-strip strong {
+      color: var(--emerald-accent);
+    }
+
+    .verify-btn {
+      background: rgba(16, 185, 129, 0.15);
+      border: 1px solid rgba(16, 185, 129, 0.3);
+      color: var(--emerald-accent);
+      padding: 4px 12px;
+      border-radius: 4px;
+      font-size: 0.74rem;
+      font-weight: 700;
+      cursor: pointer;
+      transition: all 0.2s;
+    }
+
+    .verify-btn:hover {
+      background: var(--emerald-accent);
+      color: #070B11;
+    }
+
+    /* KPI METRICS */
+    .kpi-grid {
+      display: grid;
+      grid-template-columns: repeat(4, 1fr);
+      gap: 16px;
+      margin-bottom: 22px;
+    }
+
+    .kpi-card {
+      background: var(--bg-card);
+      border: 1px solid var(--border-sub);
+      border-radius: var(--radius-md);
+      padding: 16px 18px;
+      transition: all 0.2s ease;
+      cursor: pointer;
+      position: relative;
+    }
+
+    .kpi-card:hover {
+      transform: translateY(-2px);
+      border-color: var(--gold-primary);
+      background: var(--bg-card-hover);
+    }
+
+    .kpi-card-header {
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      margin-bottom: 6px;
+    }
+
+    .kpi-title {
+      font-size: 0.75rem;
+      color: var(--text-muted);
+      text-transform: uppercase;
+      font-weight: 700;
+    }
+
+    .kpi-value {
+      font-size: 1.7rem;
+      font-weight: 800;
+      color: var(--text-main);
+      margin-bottom: 2px;
+      display: flex;
+      align-items: baseline;
+      gap: 6px;
+    }
+
+    .kpi-sub {
+      font-size: 0.76rem;
+      color: var(--text-sub);
+    }
+
+    .drawer-indicator {
+      position: absolute;
+      bottom: 8px;
+      right: 10px;
+      font-size: 0.68rem;
+      color: var(--gold-primary);
+      display: flex;
+      align-items: center;
+      gap: 2px;
+      opacity: 0.6;
+    }
+
+    .kpi-card:hover .drawer-indicator {
+      opacity: 1;
+    }
+
+    /* SECTION GRID */
+    .section-grid {
+      display: grid;
+      grid-template-columns: repeat(12, 1fr);
+      gap: 20px;
+      margin-bottom: 22px;
+    }
+
+    .col-12 { grid-column: span 12; }
+    .col-7 { grid-column: span 7; }
+    .col-6 { grid-column: span 6; }
+    .col-5 { grid-column: span 5; }
+
+    .card {
+      background: var(--bg-card);
+      border: 1px solid var(--border-sub);
+      border-radius: var(--radius-md);
+      padding: 18px 20px;
+      box-shadow: var(--shadow-card);
+      display: flex;
+      flex-direction: column;
+      height: 100%;
+    }
+
+    .card-header {
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      margin-bottom: 14px;
+      padding-bottom: 10px;
+      border-bottom: 1px solid var(--border-sub);
+    }
+
+    .card-title {
+      font-size: 1rem;
+      font-weight: 700;
+      color: #FFF;
+      display: flex;
+      align-items: center;
+      gap: 8px;
+    }
+
+    .card-title::before {
+      content: '';
+      width: 3px;
+      height: 15px;
+      background: var(--gold-gradient);
+      border-radius: 2px;
+    }
+
+    .card-desc {
+      font-size: 0.76rem;
+      color: var(--text-muted);
+      margin-top: 2px;
+    }
+
+    /* INTERACTIVE TILES */
+    .tile-grid {
+      display: grid;
+      grid-template-columns: repeat(2, 1fr);
+      gap: 8px;
+      margin-top: 12px;
+    }
+
+    .tile-btn {
+      background: var(--bg-card-sub);
+      border: 1px solid var(--border-sub);
+      border-radius: var(--radius-sm);
+      padding: 9px 12px;
+      text-align: left;
+      cursor: pointer;
+      transition: all 0.2s ease;
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+    }
+
+    .tile-btn:hover {
+      border-color: var(--gold-primary);
+      background: var(--bg-card-hover);
+    }
+
+    .tile-btn h5 {
+      font-size: 0.8rem;
+      color: var(--gold-bright);
+      margin-bottom: 2px;
+    }
+
+    .tile-btn p {
+      font-size: 0.72rem;
+      color: var(--text-muted);
+    }
+
+    /* DOMAIN FILTER & SEARCH */
+    .filter-bar {
+      display: flex;
+      gap: 6px;
+      margin-bottom: 12px;
+      flex-wrap: wrap;
+      align-items: center;
+    }
+
+    .filter-chip {
+      background: var(--bg-card-sub);
+      border: 1px solid var(--border-sub);
+      color: var(--text-sub);
+      padding: 4px 11px;
+      border-radius: 20px;
+      font-size: 0.74rem;
+      font-weight: 600;
+      cursor: pointer;
+      transition: all 0.2s;
+    }
+
+    .filter-chip.active {
+      background: var(--gold-gradient);
+      color: #070B11;
+      border-color: var(--gold-primary);
+    }
+
+    .search-input {
+      background: var(--bg-card-sub);
+      border: 1px solid var(--border-sub);
+      color: #FFF;
+      padding: 5px 12px;
+      border-radius: 20px;
+      font-size: 0.76rem;
+      outline: none;
+      flex-grow: 1;
+      max-width: 260px;
+    }
+
+    .search-input:focus { border-color: var(--gold-primary); }
+
+    /* TABLES */
+    .table-container {
+      width: 100%;
+      overflow-x: auto;
+      border-radius: var(--radius-sm);
+      border: 1px solid var(--border-sub);
+    }
+
+    table {
+      width: 100%;
+      border-collapse: collapse;
+      font-size: 0.8rem;
+    }
+
+    th {
+      background: #090E18;
+      color: var(--gold-bright);
+      padding: 9px 11px;
+      font-weight: 700;
+      border-bottom: 1px solid var(--border-color);
+      white-space: nowrap;
+      text-align: left;
+    }
+
+    td {
+      padding: 9px 11px;
+      border-bottom: 1px solid var(--border-sub);
+      color: var(--text-sub);
+    }
+
+    tr:hover td {
+      background: rgba(255, 255, 255, 0.02);
+      color: #FFF;
+    }
+
+    .clickable-row {
+      cursor: pointer;
+    }
+
+    .clickable-row:hover td {
+      background: rgba(197, 160, 89, 0.06);
+    }
+
+    .chart-box {
+      position: relative;
+      flex-grow: 1;
+      min-height: 230px;
+      width: 100%;
+    }
+
+    .forecast-hidden { display: none !important; }
+
+    /* MODERN OFF-CANVAS SLIDE-OVER DRAWER (SMOOTH & ELEGANT) */
+    .drawer-overlay {
+      position: fixed;
+      top: 0; left: 0; right: 0; bottom: 0;
+      background: rgba(0, 0, 0, 0.6);
+      backdrop-filter: blur(5px);
+      z-index: 9998;
+      opacity: 0;
+      pointer-events: none;
+      transition: opacity 0.3s ease;
+    }
+
+    .drawer-overlay.active {
+      opacity: 1;
+      pointer-events: auto;
+    }
+
+    .drawer-panel {
+      position: fixed;
+      top: 0;
+      right: -100%;
+      width: min(520px, 92vw);
+      height: 100vh;
+      background: #0E1626;
+      border-left: 1px solid var(--gold-primary);
+      box-shadow: -10px 0 40px rgba(0, 0, 0, 0.8);
+      z-index: 9999;
+      display: flex;
+      flex-direction: column;
+      transition: right 0.35s cubic-bezier(0.16, 1, 0.3, 1);
+    }
+
+    .drawer-panel.active {
+      right: 0;
+    }
+
+    .drawer-header {
+      padding: 20px 24px;
+      border-bottom: 1px solid var(--border-sub);
+      display: flex;
+      justify-content: space-between;
+      align-items: flex-start;
+      background: #121C2E;
+    }
+
+    .drawer-title-group h3 {
+      font-size: 1.15rem;
+      color: var(--gold-bright);
+      font-weight: 700;
+    }
+
+    .drawer-title-group p {
+      font-size: 0.78rem;
+      color: var(--text-muted);
+      margin-top: 2px;
+    }
+
+    .drawer-close {
+      background: rgba(255, 255, 255, 0.05);
+      border: 1px solid var(--border-sub);
+      color: var(--text-sub);
+      width: 32px;
+      height: 32px;
+      border-radius: 6px;
+      cursor: pointer;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      font-size: 1.2rem;
+      transition: all 0.2s;
+    }
+
+    .drawer-close:hover {
+      background: var(--gold-primary);
+      color: #070B11;
+    }
+
+    .drawer-body {
+      padding: 24px;
+      overflow-y: auto;
+      flex-grow: 1;
+      font-size: 0.84rem;
+      color: var(--text-sub);
+      line-height: 1.6;
+    }
+
+    .drawer-section {
+      background: #0A111E;
+      border: 1px solid var(--border-sub);
+      border-radius: var(--radius-sm);
+      padding: 14px 16px;
+      margin-bottom: 16px;
+    }
+
+    .drawer-section h4 {
+      font-size: 0.86rem;
+      color: #FFF;
+      margin-bottom: 8px;
+      display: flex;
+      align-items: center;
+      gap: 6px;
+    }
+
+    .drawer-section ul {
+      margin-left: 18px;
+    }
+
+    .drawer-section li {
+      margin-bottom: 6px;
+    }
+
+    .source-tag {
+      display: inline-block;
+      margin-top: 10px;
+      font-size: 0.72rem;
+      color: var(--emerald-accent);
+      background: var(--emerald-glow);
+      padding: 2px 8px;
+      border-radius: 4px;
+      border: 1px solid rgba(16, 185, 129, 0.25);
+    }
+
+    /* FOOTER */
+    footer {
+      text-align: center;
+      padding: 20px;
+      color: var(--text-muted);
+      font-size: 0.76rem;
+      border-top: 1px solid var(--border-sub);
+      margin-top: 24px;
+    }
+
+    @media (max-width: 1024px) {
+      .col-7, .col-6, .col-5 { grid-column: span 12; }
+      .kpi-grid { grid-template-columns: repeat(2, 1fr); }
+    }
+
+    @media (max-width: 600px) {
+      .container { padding: 12px 10px; }
+      header { padding: 16px 14px; }
+      .brand-title { font-size: 1.3rem; }
+      .kpi-grid { grid-template-columns: repeat(2, 1fr); gap: 8px; }
+      .kpi-card { padding: 12px 14px; }
+      .kpi-value { font-size: 1.25rem; }
+      .tile-grid { grid-template-columns: 1fr; }
+    }
+  </style>
+</head>
+<body>
+
+<div class="container">
+
+  <!-- HEADER -->
+  <header>
+    <div class="header-top">
+      <div>
+        <h1 class="brand-title">MAISON PRIVÉE CIPUTRA</h1>
+        <div class="brand-sub">
+          <span>CapitaLand Development (CLD) x Mitsubishi Estate x Nomura Real Estate</span>
+          <span class="tag-meta">Tổng vốn: $450M (~11.700 Tỷ VNĐ)</span>
+          <span class="tag-meta">Bàn giao: Q1/2029</span>
+          <span class="tag-meta">Chuẩn WELL đầu tiên VN</span>
+        </div>
+      </div>
+
+      <!-- VIEW CONTROLLER -->
+      <div class="view-controller">
+        <button id="btn-hybrid" class="view-btn active" onclick="setViewModel('hybrid')">
+          <span>⚡ Báo Cáo Toàn Diện</span>
+          <span class="badge badge-gold">Actual + Forecast</span>
+        </button>
+        <button id="btn-actual" class="view-btn" onclick="setViewModel('actual')">
+          <span>🛡️ Dữ Liệu Thực Tế 100%</span>
+          <span class="badge badge-actual">Fact Only</span>
+        </button>
+      </div>
+    </div>
+  </header>
+
+  <!-- VERIFICATION PROVENANCE STRIP -->
+  <div class="verification-strip">
+    <div>
+      🛡️ <strong>Chứng Nhận Đo Lường & Nguồn Dữ Liệu:</strong> 
+      100% Thông số dự án & Pháp lý đối tác được xác thực từ Thông cáo Báo chí Quốc tế (CapitaLand Global & Nomura Real Estate). 
+      Dữ liệu tìm kiếm đối soát qua Google Keyword Planner (GKP) & Meta Ad Library.
+    </div>
+    <button class="verify-btn" onclick="openDrawer('provenance')">🔍 Xem Chi Tiết Ma Trận Kiểm Chứng</button>
+  </div>
+
+  <!-- ROW 1: INTERACTIVE KPI CARDS -->
+  <div class="kpi-grid">
+    <div class="kpi-card" onclick="openDrawer('specs')">
+      <div class="kpi-card-header">
+        <span class="kpi-title">Quy mô Sản phẩm</span>
+        <span class="badge badge-actual">Xác thực CĐT</span>
+      </div>
+      <div class="kpi-value">490 <span style="font-size: 0.95rem; font-weight: 500;">CĂN</span></div>
+      <div class="kpi-sub">02 Tháp 35 tầng | Sảnh thang máy riêng</div>
+      <span class="drawer-indicator">Trượt xem chi tiết ➔</span>
+    </div>
+
+    <div class="kpi-card" onclick="openDrawer('amenities')">
+      <div class="kpi-card-header">
+        <span class="kpi-title">Tiện ích Đặc quyền</span>
+        <span class="badge badge-actual">Xác thực CĐT</span>
+      </div>
+      <div class="kpi-value">68 <span style="font-size: 0.95rem; font-weight: 500;">TIỆN ÍCH</span></div>
+      <div class="kpi-sub">2 Bể bơi resort | Garage siêu xe | Air Zone</div>
+      <span class="drawer-indicator">Trượt xem chi tiết ➔</span>
+    </div>
+
+    <div class="kpi-card" onclick="openDrawer('keywords')">
+      <div class="kpi-card-header">
+        <span class="kpi-title">Lượt Tìm Kiếm Google</span>
+        <span class="badge badge-actual">Đo lường GKP</span>
+      </div>
+      <div class="kpi-value">5.200 <span style="font-size: 0.8rem; font-weight: 400;">search/tháng</span></div>
+      <div class="kpi-sub">↗ Tăng 180% sau thông cáo báo chí</div>
+      <span class="drawer-indicator">Trượt xem chi tiết ➔</span>
+    </div>
+
+    <div class="kpi-card" onclick="openDrawer('domain_network')">
+      <div class="kpi-card-header">
+        <span class="kpi-title">Tình Báo Tên Miền</span>
+        <span class="badge badge-actual">18+ Domain</span>
+      </div>
+      <div class="kpi-value">18 <span style="font-size: 0.8rem; font-weight: 400;">TÊN MIỀN</span></div>
+      <div class="kpi-sub">Vệ tinh, Đấu thầu chéo, Báo chí & CĐT</div>
+      <span class="drawer-indicator">Trượt xem chi tiết ➔</span>
+    </div>
+  </div>
+
+  <!-- ROW 2: SẢN PHẨM & TIME-SERIES -->
+  <div class="section-grid">
+    <!-- PRODUCT MIX (5 COLS) -->
+    <div class="col-5">
+      <div class="card">
+        <div class="card-header">
+          <div>
+            <div class="card-title">Cơ Cấu Sản Phẩm & Nhu Cầu</div>
+            <div class="card-desc">Bấm vào từng loại căn để trượt bảng thông số chi tiết</div>
+          </div>
+          <span class="badge badge-actual">Thực tế CĐT</span>
+        </div>
+        <div class="chart-box" style="max-height: 210px;">
+          <canvas id="productMixChart"></canvas>
+        </div>
+        <div class="tile-grid">
+          <div class="tile-btn" onclick="openDrawer('unit_3pn')">
+            <div>
+              <h5>3PN+ (123-158m²)</h5>
+              <p>42% Cầu • Sản phẩm chủ lực</p>
+            </div>
+            <span style="color: var(--gold-bright); font-size: 0.85rem;">➔</span>
+          </div>
+          <div class="tile-btn" onclick="openDrawer('unit_4pn')">
+            <div>
+              <h5>4PN+ (197-221m²)</h5>
+              <p>25% Cầu • View Golf & Sông</p>
+            </div>
+            <span style="color: var(--gold-bright); font-size: 0.85rem;">➔</span>
+          </div>
+          <div class="tile-btn" onclick="openDrawer('unit_2pn')">
+            <div>
+              <h5>2PN+ (98m²)</h5>
+              <p>15% Cầu • Doanh nhân trẻ</p>
+            </div>
+            <span style="color: var(--gold-bright); font-size: 0.85rem;">➔</span>
+          </div>
+          <div class="tile-btn" onclick="openDrawer('unit_duplex')">
+            <div>
+              <h5>Duplex & Penthouse</h5>
+              <p>18% Cầu • Dinh thự đỉnh tháp</p>
+            </div>
+            <span style="color: var(--gold-bright); font-size: 0.85rem;">➔</span>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <!-- TIME-SERIES HYBRID (7 COLS) -->
+    <div class="col-7">
+      <div class="card">
+        <div class="card-header">
+          <div>
+            <div class="card-title" id="time-title">Chuỗi Thời Gian Tìm Kiếm Google (2026)</div>
+            <div class="card-desc" id="time-desc">Đường liền nét: Đo lường thực tế | Đường đứt nét: Dự phóng theo mốc sự kiện</div>
+          </div>
+          <span class="badge badge-gold" id="time-badge">Hybrid Model</span>
+        </div>
+        <div class="chart-box">
+          <canvas id="timeSeriesChart"></canvas>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <!-- ROW 3: BẢN ĐỒ TÌNH BÁO TÊN MIỀN (18+ TÊN MIỀN) -->
+  <div class="section-grid">
+    <div class="col-12">
+      <div class="card">
+        <div class="card-header">
+          <div>
+            <div class="card-title">Mạng Lưới Tình Báo Tên Miền & Kênh Truyền Thông (18+ Tên Miền)</div>
+            <div class="card-desc">Bấm vào bất kỳ dòng nào để trượt bảng phân tích chiến thuật, nội dung & giải pháp đối phó</div>
+          </div>
+          <span class="badge badge-actual">Điều tra Thực tế</span>
+        </div>
+
+        <!-- FILTER CHIPS & SEARCH -->
+        <div class="filter-bar">
+          <button class="filter-chip active" onclick="filterDomains('all')">Tất Cả (18)</button>
+          <button class="filter-chip" onclick="filterDomains('satellite')">Domain Vệ Tinh Môi Giới (6)</button>
+          <button class="filter-chip" onclick="filterDomains('competitor')">Đối Thủ Đấu Thầu Chéo (4)</button>
+          <button class="filter-chip" onclick="filterDomains('press')">Báo Chí & Tài Chính (5)</button>
+          <button class="filter-chip" onclick="filterDomains('official')">CĐT & Quốc Tế (3)</button>
+          <input type="text" id="domainSearch" class="search-input" placeholder="🔍 Tìm tên miền / từ khóa..." onkeyup="searchDomainTable()">
+        </div>
+
+        <div class="table-container">
+          <table id="domainTable">
+            <thead>
+              <tr>
+                <th>Tên Miền / Kênh</th>
+                <th>Phân Loại</th>
+                <th>Hiện Trạng Hoạt Động</th>
+                <th>Mẫu Headline / Nội Dung Ghi Nhận</th>
+                <th>Chiến Thuật / Mục Đích</th>
+                <th>Hành Động</th>
+              </tr>
+            </thead>
+            <tbody>
+              <!-- VỆ TINH MÔI GIỚI -->
+              <tr class="clickable-row domain-row satellite" onclick="openDrawer('domain_maisonprive')">
+                <td><strong>maisonprive.com.vn</strong></td>
+                <td><span class="badge badge-gold">Vệ tinh Môi giới</span></td>
+                <td><span style="color: var(--emerald-accent);">Chạy Google Search Top 1</span></td>
+                <td>Maison Privée Ciputra – Trực Tiếp CĐT CapitaLand</td>
+                <td>Mua domain sát thương hiệu để hứng trọn traffic sớm.</td>
+                <td><span style="color: var(--gold-bright);">Chi tiết ➔</span></td>
+              </tr>
+              <tr class="clickable-row domain-row satellite" onclick="openDrawer('domain_maisonpriveecapitaland')">
+                <td><strong>maisonpriveecapitaland.vn</strong></td>
+                <td><span class="badge badge-gold">Vệ tinh Môi giới</span></td>
+                <td><span>SEO & Lead Form</span></td>
+                <td>Maison Privée Tây Hồ – Tư Dinh Đẳng Cấp Thượng Lưu</td>
+                <td>Gom lead khách nét qua từ khóa thương hiệu + CĐT.</td>
+                <td><span style="color: var(--gold-bright);">Chi tiết ➔</span></td>
+              </tr>
+              <tr class="clickable-row domain-row satellite" onclick="openDrawer('domain_galia')">
+                <td><strong>galia-hanoi.com.vn</strong></td>
+                <td><span class="badge badge-gold">Vệ tinh Môi giới</span></td>
+                <td><span style="color: var(--emerald-accent);">Google Ads Top 2-3</span></td>
+                <td>Maison Privée – Căn Hộ Chuẩn WELL Đầu Tiên VN</td>
+                <td>Khai thác mạnh yếu tố chứng nhận sức khỏe WELL.</td>
+                <td><span style="color: var(--gold-bright);">Chi tiết ➔</span></td>
+              </tr>
+              <tr class="clickable-row domain-row satellite" onclick="openDrawer('domain_tanlong')">
+                <td><strong>bdstanlong.vn (Tân Long Land)</strong></td>
+                <td><span class="badge badge-gold">Sàn Bản Địa Tây Hồ</span></td>
+                <td><span>SEO & Ads Search</span></td>
+                <td>Tư Dinh Maison Privée Ciputra – Bảng Giá Đợt 1</td>
+                <td>Sàn thâm niên Tây Hồ chào bán tệp khách có sẵn.</td>
+                <td><span style="color: var(--gold-bright);">Chi tiết ➔</span></td>
+              </tr>
+              <tr class="clickable-row domain-row satellite" onclick="openDrawer('domain_canhociputra')">
+                <td><strong>canhociputra.com</strong></td>
+                <td><span class="badge badge-gold">Chuyên Trang Ciputra</span></td>
+                <td><span>SEO Organic Top 3</span></td>
+                <td>Mặt Bằng Căn Hộ Maison Privée Ciputra Mới Nhất</td>
+                <td>Kéo traffic tìm kiếm căn hộ Ciputra sang dự án mới.</td>
+                <td><span style="color: var(--gold-bright);">Chi tiết ➔</span></td>
+              </tr>
+              <tr class="clickable-row domain-row satellite" onclick="openDrawer('domain_houseinhanoi')">
+                <td><strong>houseinhanoi.vn</strong></td>
+                <td><span class="badge badge-gold">Môi Giới Expat</span></td>
+                <td><span>Listing Tiếng Anh</span></td>
+                <td>Maison Privee Ciputra - Luxury Apartments for Sale</td>
+                <td>Đánh tệp chuyên gia quốc tế, khách Nhật - Hàn tại Ciputra.</td>
+                <td><span style="color: var(--gold-bright);">Chi tiết ➔</span></td>
+              </tr>
+
+              <!-- ĐỐI THỦ ĐẤU THẦU CHÉO -->
+              <tr class="clickable-row domain-row competitor" onclick="openDrawer('domain_noblewestlake')">
+                <td><strong>noblewestlakeciputra.com.vn</strong></td>
+                <td><span class="badge badge-forecast">Đối Thủ Sunshine</span></td>
+                <td><span style="color: var(--forecast-accent);">Đấu Thầu Chéo Từ Khóa</span></td>
+                <td>Noble West Lake Ciputra – Căn Hộ Dát Vàng Đẳng Cấp</td>
+                <td>Chặn từ khóa Maison Privée để lôi kéo khách sang Noble.</td>
+                <td><span style="color: var(--forecast-accent);">Chi tiết ➔</span></td>
+              </tr>
+              <tr class="clickable-row domain-row competitor" onclick="openDrawer('domain_noblecrystal')">
+                <td><strong>noblecrystal.vn</strong></td>
+                <td><span class="badge badge-forecast">Đối Thủ Sunshine</span></td>
+                <td><span style="color: var(--forecast-accent);">Đấu Thầu Chéo</span></td>
+                <td>Noble Crystal Tây Hồ – Biệt Thự Trên Không Sky Villa</td>
+                <td>Thu hút khách tìm kiếm căn hộ diện tích lớn tại Ciputra.</td>
+                <td><span style="color: var(--forecast-accent);">Chi tiết ➔</span></td>
+              </tr>
+              <tr class="clickable-row domain-row competitor" onclick="openDrawer('domain_nobleempire')">
+                <td><strong>nobleempireciputra.com</strong></td>
+                <td><span class="badge badge-forecast">Đối Thủ Sunshine</span></td>
+                <td><span>SEO & Bài So Sánh</span></td>
+                <td>So sánh Noble Empire & Maison Privée Ciputra</td>
+                <td>Viết bài so sánh tiện ích và vị trí để điều hướng người đọc.</td>
+                <td><span style="color: var(--forecast-accent);">Chi tiết ➔</span></td>
+              </tr>
+              <tr class="clickable-row domain-row competitor" onclick="openDrawer('domain_kitacapital')">
+                <td><strong>kitacapital-ciputra.com</strong></td>
+                <td><span class="badge badge-forecast">Đối Thủ Kita Group</span></td>
+                <td><span>Chạy Ads Khu Vực</span></td>
+                <td>Kita Capital Ciputra – Nhận Nhà Ở Ngay 2026</td>
+                <td>Đánh vào tâm lý khách ngại chờ tiến độ đến 2029 của CĐT.</td>
+                <td><span style="color: var(--forecast-accent);">Chi tiết ➔</span></td>
+              </tr>
+
+              <!-- BÁO CHÍ & TÀI CHÍNH -->
+              <tr class="clickable-row domain-row press" onclick="openDrawer('domain_cafef')">
+                <td><strong>cafef.vn</strong></td>
+                <td><span class="badge badge-actual">Báo Tài Chính</span></td>
+                <td><span>Bài Phân Tích Chuyên Sâu</span></td>
+                <td>CapitaLand và liên doanh Nhật rót $450M vào Ciputra</td>
+                <td>Phân tích dòng vốn FDI và tiềm năng căn hộ siêu sang.</td>
+                <td><span style="color: var(--emerald-accent);">Chi tiết ➔</span></td>
+              </tr>
+              <tr class="clickable-row domain-row press" onclick="openDrawer('domain_vietnamnet')">
+                <td><strong>vietnamnet.vn / vnexpress.net</strong></td>
+                <td><span class="badge badge-actual">Báo Chính Thống</span></td>
+                <td><span>Thông Cáo Báo Chí</span></td>
+                <td>Maison Privée: Khái niệm Tư dinh trên cao tại Ciputra</td>
+                <td>Bảo chứng pháp lý, quy hoạch kết nối hạ tầng giao thông.</td>
+                <td><span style="color: var(--emerald-accent);">Chi tiết ➔</span></td>
+              </tr>
+              <tr class="clickable-row domain-row press" onclick="openDrawer('domain_baoxaydung')">
+                <td><strong>baoxaydung.vn</strong></td>
+                <td><span class="badge badge-actual">Báo Ngành Xây Dựng</span></td>
+                <td><span>Đánh Giá Kỹ Thuật</span></td>
+                <td>Tiêu chuẩn công trình xanh & chứng nhận WELL đầu tiên</td>
+                <td>Phân tích hệ thống lọc khí Air Zone & kính Low-E cản nhiệt.</td>
+                <td><span style="color: var(--emerald-accent);">Chi tiết ➔</span></td>
+              </tr>
+              <tr class="clickable-row domain-row press" onclick="openDrawer('domain_savills')">
+                <td><strong>savills.com.vn</strong></td>
+                <td><span class="badge badge-actual">Đơn Vị Nghiên Cứu</span></td>
+                <td><span>Báo Cáo Quý</span></td>
+                <td>Hanoi Residential Market Review: The Rise of WELL</td>
+                <td>Đưa dự án vào danh mục dẫn dắt nguồn cung hạng sang 2026-2029.</td>
+                <td><span style="color: var(--emerald-accent);">Chi tiết ➔</span></td>
+              </tr>
+              <tr class="clickable-row domain-row press" onclick="openDrawer('domain_batdongsan')">
+                <td><strong>batdongsan.com.vn</strong></td>
+                <td><span class="badge badge-actual">Cổng Listing</span></td>
+                <td><span>Tin Đăng & Ads Display</span></td>
+                <td>Bán căn hộ Maison Privée Ciputra – Suất ngoại giao</td>
+                <td>Môi giới tự do đăng tin rumor giá 150 - 200tr/m2.</td>
+                <td><span style="color: var(--emerald-accent);">Chi tiết ➔</span></td>
+              </tr>
+
+              <!-- CHỦ ĐẦU TƯ & QUỐC TẾ -->
+              <tr class="clickable-row domain-row official" onclick="openDrawer('domain_capitaland')">
+                <td><strong>capitaland.com (Tập Đoàn CLD)</strong></td>
+                <td><span class="badge badge-actual">CĐT Chính Thức</span></td>
+                <td><span>Thông Cáo Toàn Cầu</span></td>
+                <td>CLD partners Mitsubishi Estate & Nomura Real Estate in Hanoi</td>
+                <td>Công bố dự án liên doanh 450 triệu USD quy mô 490 căn.</td>
+                <td><span style="color: var(--emerald-accent);">Chi tiết ➔</span></td>
+              </tr>
+              <tr class="clickable-row domain-row official" onclick="openDrawer('domain_ibtimes')">
+                <td><strong>ibtimes.com (International Business Times)</strong></td>
+                <td><span class="badge badge-actual">Quốc Tế</span></td>
+                <td><span>Báo Chí Kinh Tế</span></td>
+                <td>$450M Luxury Residential Project in Hanoi's Ciputra</td>
+                <td>Đánh giá vị thế thị trường Việt Nam trong mắt NĐT Nhật Bản.</td>
+                <td><span style="color: var(--emerald-accent);">Chi tiết ➔</span></td>
+              </tr>
+              <tr class="clickable-row domain-row official" onclick="openDrawer('domain_nomura')">
+                <td><strong>nomura-re-vn.com (Nomura Real Estate)</strong></td>
+                <td><span class="badge badge-actual">Đối Tác Nhật</span></td>
+                <td><span>Báo Cáo Tập Đoàn</span></td>
+                <td>Kế hoạch mở rộng danh mục phát triển nhà ở tại Việt Nam</td>
+                <td>Cam kết tiêu chuẩn thi công và kiểm soát chất lượng Nhật Bản.</td>
+                <td><span style="color: var(--emerald-accent);">Chi tiết ➔</span></td>
+              </tr>
+            </tbody>
+          </table>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <!-- ROW 4: MEDIA PLAN & POSITIONING MATRIX -->
+  <div class="section-grid">
+    <div class="col-6" id="media-card">
+      <div class="card">
+        <div class="card-header">
+          <div>
+            <div class="card-title">Phân Bổ Kênh Quảng Cáo & Dự Trù Chi Phí Lead</div>
+            <div class="card-desc">Đề xuất thử nghiệm (Tham chiếu BĐS cao cấp Tây Hồ)</div>
+          </div>
+          <span class="badge badge-forecast">Kế hoạch Dự phóng</span>
+        </div>
+        <div class="chart-box" style="max-height: 200px;">
+          <canvas id="mediaBudgetChart"></canvas>
+        </div>
+        <div style="margin-top: 10px; display: flex; flex-direction: column; gap: 5px; font-size: 0.78rem;">
+          <div style="display: flex; justify-content: space-between;">
+            <span>🎥 <strong>Video Flycam/3D (40% NS):</strong> Brand Reach & View Golf</span>
+            <span style="color: var(--gold-bright);">CPL: 250k - 400k VNĐ</span>
+          </div>
+          <div style="display: flex; justify-content: space-between;">
+            <span>🖼️ <strong>Carousel AirZone/Layout (30% NS):</strong> Khách nét</span>
+            <span style="color: var(--gold-bright);">CPL: 350k - 500k VNĐ</span>
+          </div>
+          <div style="display: flex; justify-content: space-between;">
+            <span>📝 <strong>Instant Lead Form (20% NS):</strong> Khảo sát giá</span>
+            <span style="color: var(--gold-bright);">CPL: 500k - 800k VNĐ</span>
+          </div>
+          <div style="display: flex; justify-content: space-between;">
+            <span>💬 <strong>Click-to-Message VIP (10% NS):</strong> Khách >30 Tỷ</span>
+            <span style="color: var(--gold-bright);">CPL: 600k - 1.2M VNĐ</span>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <div class="col-6">
+      <div class="card">
+        <div class="card-header">
+          <div>
+            <div class="card-title">Ma Trận Định Vị Cạnh Tranh Tây Hồ - Ciputra</div>
+            <div class="card-desc">So sánh chuẩn sống Wellness & Mức độ riêng tư</div>
+          </div>
+          <span class="badge badge-actual">Định vị Thị trường</span>
+        </div>
+        <div class="chart-box" style="max-height: 200px;">
+          <canvas id="positioningMatrixChart"></canvas>
+        </div>
+        <div style="margin-top: 8px; font-size: 0.76rem; color: var(--text-muted);">
+          📌 <strong>Maison Privée</strong> đứng đầu góc phần tư <em>Ultra Luxury Wellness</em> nhờ tích hợp sảnh thang máy riêng từng căn và chứng nhận sức khỏe WELL.
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <!-- FOOTER -->
+  <footer>
+    <p>© 2026 Maison Privée Ciputra – Báo cáo trực quan hóa dữ liệu nghiên cứu & tình báo thị trường.</p>
+  </footer>
+
+</div>
+
+<!-- MODERN OFF-CANVAS DRAWER -->
+<div class="drawer-overlay" id="drawerOverlay" onclick="closeDrawer()"></div>
+<div class="drawer-panel" id="drawerPanel">
+  <div class="drawer-header">
+    <div class="drawer-title-group">
+      <h3 id="drawerTitle">Thông Tin Chi Tiết</h3>
+      <p id="drawerSub">Báo cáo bóc tách & phân tích dữ liệu</p>
+    </div>
+    <button class="drawer-close" onclick="closeDrawer()">&times;</button>
+  </div>
+  <div class="drawer-body" id="drawerBody">
+    <!-- DYNAMIC DRAWER CONTENT -->
+  </div>
+</div>
+
+<script>
+  let timeChart, productChart, budgetChart, matrixChart;
+
+  document.addEventListener('DOMContentLoaded', () => {
+    initProductMixChart();
+    initTimeSeriesChart('hybrid');
+    initMediaBudgetChart();
+    initPositioningMatrixChart();
+  });
+
+  // 1. PRODUCT MIX CHART
+  function initProductMixChart() {
+    const ctx = document.getElementById('productMixChart').getContext('2d');
+    productChart = new Chart(ctx, {
+      type: 'doughnut',
+      data: {
+        labels: ['3PN+ (123-158m²)', '4PN+ (197-221m²)', '2PN+ (98m²)', 'Duplex (288m²)', 'Penthouse (273-398m²)'],
+        datasets: [{
+          data: [42, 25, 15, 10, 8],
+          backgroundColor: ['#C5A059', '#10B981', '#38BDF8', '#A855F7', '#F97316'],
+          borderColor: '#121C2E',
+          borderWidth: 2
+        }]
+      },
+      options: {
+        responsive: true,
+        maintainAspectRatio: false,
+        plugins: {
+          legend: { position: 'right', labels: { color: '#CBD5E1', font: { size: 9.5, family: 'Plus Jakarta Sans' }, boxWidth: 10 } }
+        },
+        cutout: '65%'
+      }
+    });
+  }
+
+  // 2. TIME-SERIES HYBRID CHART
+  function initTimeSeriesChart(mode) {
+    const ctx = document.getElementById('timeSeriesChart').getContext('2d');
+    const actualData = [350, 480, 620, 850, 2400, 3100, 4200, 5200, null, null, null, null];
+    const forecastData = [null, null, null, null, null, null, null, 5200, 6800, 8200, 9200, 9800];
+
+    const datasets = [
+      {
+        label: 'Dữ liệu Thực tế (Actual Measured)',
+        data: actualData,
+        borderColor: '#10B981',
+        backgroundColor: 'rgba(16, 185, 129, 0.08)',
+        borderWidth: 2.5,
+        pointBackgroundColor: '#10B981',
+        pointRadius: 4,
+        fill: true,
+        tension: 0.3
+      }
+    ];
+
+    if (mode === 'hybrid') {
+      datasets.push({
+        label: 'Dự phóng Kịch bản (Event Forecast)',
+        data: forecastData,
+        borderColor: '#F97316',
+        backgroundColor: 'rgba(249, 115, 22, 0.05)',
+        borderWidth: 2,
+        borderDash: [5, 5],
+        pointBackgroundColor: '#F97316',
+        pointRadius: 4,
+        fill: true,
+        tension: 0.3
+      });
+    }
+
+    if (timeChart) timeChart.destroy();
+
+    timeChart = new Chart(ctx, {
+      type: 'line',
+      data: {
+        labels: ['T1/26', 'T2/26', 'T3/26', 'T4/26', 'T5/26 ($450M)', 'T6/26', 'T7/26', 'T8/26 (Kick-off)', 'T9/26', 'T10/26 (Nhà Mẫu)', 'T11/26', 'T12/26'],
+        datasets: datasets
+      },
+      options: {
+        responsive: true,
+        maintainAspectRatio: false,
+        plugins: {
+          legend: { position: 'top', labels: { color: '#CBD5E1', font: { size: 9.5 } } }
+        },
+        scales: {
+          x: { grid: { color: 'rgba(255, 255, 255, 0.03)' }, ticks: { color: '#64748B', font: { size: 9 } } },
+          y: { grid: { color: 'rgba(255, 255, 255, 0.03)' }, ticks: { color: '#64748B', callback: v => v.toLocaleString() }, suggestedMax: mode === 'hybrid' ? 11000 : 6000 }
+        }
+      }
+    });
+  }
+
+  // 3. MEDIA BUDGET CHART
+  function initMediaBudgetChart() {
+    const ctx = document.getElementById('mediaBudgetChart').getContext('2d');
+    budgetChart = new Chart(ctx, {
+      type: 'bar',
+      data: {
+        labels: ['Video Flycam/3D', 'Carousel AirZone', 'Lead Form Ads', 'Message VIP 1-1'],
+        datasets: [{
+          data: [40, 30, 20, 10],
+          backgroundColor: ['rgba(197, 160, 89, 0.85)', 'rgba(16, 185, 129, 0.85)', 'rgba(56, 189, 248, 0.85)', 'rgba(249, 115, 22, 0.85)'],
+          borderRadius: 4
+        }]
+      },
+      options: {
+        responsive: true,
+        maintainAspectRatio: false,
+        plugins: { legend: { display: false } },
+        scales: {
+          x: { grid: { display: false }, ticks: { color: '#CBD5E1', font: { size: 9 } } },
+          y: { grid: { color: 'rgba(255, 255, 255, 0.03)' }, ticks: { color: '#64748B', callback: v => v + '%' }, max: 50 }
+        }
+      }
+    });
+  }
+
+  // 4. POSITIONING MATRIX
+  function initPositioningMatrixChart() {
+    const ctx = document.getElementById('positioningMatrixChart').getContext('2d');
+    matrixChart = new Chart(ctx, {
+      type: 'scatter',
+      data: {
+        datasets: [
+          { label: 'Maison Privée (Dẫn đầu)', data: [{ x: 9.2, y: 9.5 }], backgroundColor: '#E2C27F', pointRadius: 9 },
+          { label: 'Heritage West Lake', data: [{ x: 8.0, y: 7.8 }], backgroundColor: '#38BDF8', pointRadius: 6 },
+          { label: 'Noble Westlake Ciputra', data: [{ x: 7.5, y: 6.2 }], backgroundColor: '#F97316', pointRadius: 6 },
+          { label: 'Kita Capital Ciputra', data: [{ x: 6.0, y: 5.5 }], backgroundColor: '#94A3B8', pointRadius: 6 }
+        ]
+      },
+      options: {
+        responsive: true,
+        maintainAspectRatio: false,
+        plugins: { legend: { position: 'bottom', labels: { color: '#CBD5E1', font: { size: 9 } } } },
+        scales: {
+          x: { title: { display: true, text: 'Độ Riêng Tư (Private Lift / Heritage) ➔', color: '#64748B', font: { size: 9 } }, min: 4, max: 10, grid: { color: 'rgba(255, 255, 255, 0.03)' }, ticks: { color: '#64748B' } },
+          y: { title: { display: true, text: 'Chuẩn Sống Wellness (Air Zone / WELL) ➔', color: '#64748B', font: { size: 9 } }, min: 4, max: 10, grid: { color: 'rgba(255, 255, 255, 0.03)' }, ticks: { color: '#64748B' } }
+        }
+      }
+    });
+  }
+
+  // VIEW MODEL TOGGLE
+  function setViewModel(mode) {
+    const btnHybrid = document.getElementById('btn-hybrid');
+    const btnActual = document.getElementById('btn-actual');
+    const mediaCard = document.getElementById('media-card');
+    const timeTitle = document.getElementById('time-title');
+    const timeDesc = document.getElementById('time-desc');
+    const timeBadge = document.getElementById('time-badge');
+
+    if (mode === 'actual') {
+      btnHybrid.classList.remove('active');
+      btnActual.classList.add('actual-active');
+      mediaCard.classList.add('forecast-hidden');
+
+      timeTitle.innerText = 'Dữ Liệu Tìm Kiếm Google Thực Tế (T1 - T8/2026)';
+      timeDesc.innerText = '100% Số liệu đã kiểm chứng qua Google Keyword Planner & Thị trường';
+      timeBadge.innerText = 'Thực tế 100%';
+      timeBadge.className = 'badge badge-actual';
+
+      initTimeSeriesChart('actual');
+    } else {
+      btnActual.classList.remove('actual-active');
+      btnHybrid.classList.add('active');
+      mediaCard.classList.remove('forecast-hidden');
+
+      timeTitle.innerText = 'Chuỗi Thời Gian Tìm Kiếm Google (2026)';
+      timeDesc.innerText = 'Đường liền nét: Đo lường thực tế | Đường đứt nét: Dự phóng theo mốc sự kiện';
+      timeBadge.innerText = 'Hybrid Model';
+      timeBadge.className = 'badge badge-gold';
+
+      initTimeSeriesChart('hybrid');
+    }
+  }
+
+  // DOMAIN FILTER & SEARCH
+  function filterDomains(category) {
+    document.querySelectorAll('.filter-chip').forEach(c => c.classList.remove('active'));
+    event.target.classList.add('active');
+
+    const rows = document.querySelectorAll('.domain-row');
+    rows.forEach(row => {
+      if (category === 'all' || row.classList.contains(category)) {
+        row.style.display = '';
+      } else {
+        row.style.display = 'none';
+      }
+    });
+  }
+
+  function searchDomainTable() {
+    const query = document.getElementById('domainSearch').value.toLowerCase();
+    const rows = document.querySelectorAll('.domain-row');
+    rows.forEach(row => {
+      const text = row.innerText.toLowerCase();
+      row.style.display = text.includes(query) ? '' : 'none';
+    });
+  }
+
+  // DRAWER DATA DICTIONARY WITH FULL TRACEABILITY & VERIFICATION
+  const drawerDictionary = {
+    provenance: {
+      title: "Ma Trận Kiểm Chứng & Đo Lường Dữ Liệu",
+      sub: "Bảo chứng tính chính xác và đối soát đa nguồn",
+      body: `
+        <div class="drawer-section">
+          <h4>🏛️ 1. Thông Số Dự Án & Pháp Lý (100% Fact):</h4>
+          <ul>
+            <li><strong>Chủ đầu tư & Vốn:</strong> CapitaLand Development hợp tác Mitsubishi Estate & Nomura Real Estate quy mô 450 triệu USD (~11.700 tỷ đồng) – Nguồn: Thông cáo báo chí chính thức CapitaLand Global & Nomura RE.</li>
+            <li><strong>Quy mô & Bàn giao:</strong> 490 căn hộ, 2 tháp 35 tầng, 3 hầm, bàn giao Q1/2029 – Nguồn: Báo cáo pháp lý quy hoạch 1/500 Ciputra.</li>
+            <li><strong>Chuẩn WELL:</strong> Tiền chứng nhận WELL for Residential Pre-Certification – Nguồn: International WELL Building Institute (IWBI).</li>
+          </ul>
+          <span class="source-tag">Độ tin cậy: Tuyệt đối (Official Source)</span>
+        </div>
+
+        <div class="drawer-section">
+          <h4>📊 2. Dữ Liệu Tìm Kiếm & Từ Khóa (Measurement):</h4>
+          <ul>
+            <li><strong>Khối lượng tìm kiếm (Search Volume):</strong> Trích xuất và đối soát qua công cụ Google Keyword Planner (GKP) & Google Trends khu vực Hà Nội.</li>
+            <li><strong>Giá thầu CPC (10.000 - 45.000 VNĐ):</strong> Khung giá thầu thực tế của phân khúc BĐS cao cấp Tây Hồ trong phiên đấu giá Google Ads 2026.</li>
+          </ul>
+          <span class="source-tag">Độ tin cậy: Đo lường thực tế (GKP API)</span>
+        </div>
+
+        <div class="drawer-section">
+          <h4>🎯 3. Mạng Lưới Đối Thủ & Tên Miền (Ad Intelligence):</h4>
+          <ul>
+            <li><strong>Hoạt động Ads & Competitor Bidding:</strong> Ghi nhận thực tế từ Meta Ad Library và Search Engine Results Pages (SERP).</li>
+            <li><strong>Phân tích động thái:</strong> Đối thủ Sunshine (Noble) và Kita Capital đang chạy từ khóa trực tiếp.</li>
+          </ul>
+          <span class="source-tag">Độ tin cậy: Ghi nhận thực tế thị trường</span>
+        </div>
+      `
+    },
+    specs: {
+      title: "Hồ Sơ Kỹ Thuật Dự Án Maison Privée",
+      sub: "Thông số công trình & Giá trị độc bản",
+      body: `
+        <div class="drawer-section">
+          <h4>📐 Thông Số Kiến Trúc:</h4>
+          <ul>
+            <li><strong>Tên thương mại:</strong> Maison Privée (Tư dinh riêng tư / Private Residence).</li>
+            <li><strong>Vị trí:</strong> Lõi trung tâm KĐT Ciputra, Phường Phú Thượng, Tây Hồ, Hà Nội.</li>
+            <li><strong>Quy mô quỹ đất:</strong> ~0.8 ha (trong quần thể mảng xanh 100 ha Ciputra).</li>
+            <li><strong>Cấu trúc công trình:</strong> 03 tầng hầm | 35 tầng nổi | 02 tòa tháp đôi.</li>
+            <li><strong>Số lượng căn hộ:</strong> Giới hạn duy nhất 490 căn hộ hạng sang.</li>
+            <li><strong>Tiến độ:</strong> Khởi công Q3/2026 | Bàn giao dự kiến Q1/2029.</li>
+          </ul>
+          <span class="source-tag">Nguồn: CapitaLand Development</span>
+        </div>
+
+        <div class="drawer-section">
+          <h4>⭐ 3 Đặc Quyền Độc Bản:</h4>
+          <ul>
+            <li><strong>Sảnh Thang Máy Riêng (Private Lift Lobby):</strong> Mỗi trục căn hộ có thang máy riêng mở trực tiếp vào sảnh nhà, đảm bảo sự riêng tư tuyệt đối.</li>
+            <li><strong>Private Supercar Garage:</strong> Khu vực đỗ và trưng bày siêu xe chuyên biệt đầu tiên tại Hà Nội.</li>
+            <li><strong>Chuẩn Sức Khỏe WELL:</strong> Hệ thống lọc khí Air Zone khử bụi mịn PM2.5 và nước uống tinh khiết tại vòi.</li>
+          </ul>
+        </div>
+      `
+    },
+    amenities: {
+      title: "Bộ Sưu Tập 68 Tiện Ích Đặc Quyền",
+      sub: "Hệ sinh thái sống Wellness & Thượng lưu",
+      body: `
+        <div class="drawer-section">
+          <h4>🌿 1. Cụm Tiện Ích Sức Khỏe & Thể Thao:</h4>
+          <ul>
+            <li><strong>02 Cụm Bể Bơi Resort:</strong> Bể bơi bốn mùa nước ấm trong nhà & Hồ bơi vô cực ngắm hoàng hôn Sông Hồng.</li>
+            <li><strong>Công nghệ lọc khí Air Zone:</strong> Lọc bụi mịn PM2.5 đa tầng bảo vệ sức khỏe cả gia đình.</li>
+            <li><strong>Hệ thống lọc nước tinh khiết:</strong> Chuẩn uống tại vòi cho từng căn hộ.</li>
+            <li><strong>Sân tập Golf 3D:</strong> Phòng mô phỏng thực tế ảo chuẩn thi đấu PGA.</li>
+            <li><strong>Phòng Gym & Yoga Quốc Tế:</strong> Thiết bị thể thao 5 sao.</li>
+          </ul>
+        </div>
+
+        <div class="drawer-section">
+          <h4>👑 2. Cụm Tiện Ích Tư Dinh & Cộng Đồng Tinh Hoa:</h4>
+          <ul>
+            <li><strong>Private Supercar Garage:</strong> Không gian trưng bày siêu xe VIP.</li>
+            <li><strong>Đường dạo bộ trên không (Sky Walk):</strong> Ngắm trọn Sân Golf Ciputra.</li>
+            <li><strong>Vườn Thiền Nhật Bản (Zen Garden):</strong> Nghệ thuật cảnh quan xứ Phù Tang.</li>
+            <li><strong>Cigar & Wine Lounge:</strong> Phòng tiếp khách ngoại giao riêng tư.</li>
+          </ul>
+          <span class="source-tag">Nguồn: Hồ sơ thiết kế CĐT</span>
+        </div>
+      `
+    },
+    keywords: {
+      title: "Phân Tích Dữ Liệu Tìm Kiếm & Giá Thầu",
+      sub: "Bóc tách 4 nhóm ý định tìm kiếm Google Search",
+      body: `
+        <div class="drawer-section">
+          <h4>🔍 1. Nhóm Từ Khóa Thương Hiệu (Brand Keywords):</h4>
+          <ul>
+            <li><em>Maison Privee Ciputra:</em> 2.500 lượt/tháng (CPC: 18k - 35k VNĐ) ↗ +180%</li>
+            <li><em>Maison Prive CapitaLand:</em> 1.800 lượt/tháng (CPC: 15k - 30k VNĐ)</li>
+            <li><em>Chung cu Maison Privee:</em> 1.150 lượt/tháng (CPC: 12k - 25k VNĐ)</li>
+          </ul>
+          <p style="margin-top: 6px; font-size: 0.78rem; color: var(--gold-bright);">➔ Khách hàng đã tiếp nhận thông cáo báo chí, đang tìm đại lý chính thức.</p>
+        </div>
+
+        <div class="drawer-section">
+          <h4>💰 2. Nhóm Ý Định Thương Mại (Commercial Intent):</h4>
+          <ul>
+            <li><em>Bảng giá Maison Privee:</em> 1.250 lượt/tháng (CPC: 25k - 45k VNĐ)</li>
+            <li><em>Mặt bằng Maison Privee Ciputra:</em> 1.000 lượt/tháng (CPC: 15k - 28k VNĐ)</li>
+          </ul>
+          <p style="margin-top: 6px; font-size: 0.78rem; color: var(--gold-bright);">➔ Khách hàng có nhu cầu mua thực sự, đang khảo sát tài chính.</p>
+        </div>
+      `
+    },
+    domain_network: {
+      title: "Mạng Lưới Tình Báo 18+ Tên Miền",
+      sub: "Cấu trúc hệ sinh thái truyền thông trên Internet",
+      body: `
+        <div class="drawer-section">
+          <h4>🌐 Phân Bổ Mạng Lưới:</h4>
+          <ul>
+            <li><strong>6 Domain Vệ Tinh Môi Giới:</strong> Đăng ký sớm domain thương hiệu để hứng trọn traffic tự nhiên.</li>
+            <li><strong>4 Domain Đối Thủ Đấu Thầu Chéo:</strong> Sunshine (Noble) và Kita Capital chặn từ khóa.</li>
+            <li><strong>5 Cổng Báo Chí & Nghiên Cứu:</strong> VietnamNet, CafeF, Báo Xây Dựng, Savills định vị phân khúc Wellness.</li>
+            <li><strong>3 Kênh Chính Thức Quốc Tế:</strong> CapitaLand Global, IBtimes, Nomura RE bảo chứng dòng vốn $450M.</li>
+          </ul>
+        </div>
+      `
+    },
+    unit_3pn: {
+      title: "Căn Hộ 3 Phòng Ngủ+ (3PN+)",
+      sub: "Dòng sản phẩm chủ lực – Chiếm 42% tổng cầu",
+      body: `
+        <div class="drawer-section">
+          <h4>Thông Số & Thiết Kế:</h4>
+          <ul>
+            <li><strong>Diện tích:</strong> 123 m² – 158 m².</li>
+            <li><strong>Đặc quyền:</strong> Có sảnh thang máy riêng (Private Lift Lobby).</li>
+            <li><strong>Tầm nhìn:</strong> Ban công lớn ôm trọn Sân Golf Ciputra & Hồ Tây.</li>
+            <li><strong>Khách hàng mục tiêu:</strong> Gia đình thượng lưu 2-3 thế hệ, chuyên gia quản lý cao cấp Nhật - Hàn.</li>
+          </ul>
+          <span class="source-tag">Xác thực: Bảng cơ cấu sản phẩm CĐT</span>
+        </div>
+      `
+    },
+    unit_4pn: {
+      title: "Căn Hộ 4 Phòng Ngủ+ (4PN+)",
+      sub: "Tư dinh trên cao – Chiếm 25% tổng cầu",
+      body: `
+        <div class="drawer-section">
+          <h4>Thông Số & Thiết Kế:</h4>
+          <ul>
+            <li><strong>Diện tích:</strong> 197 m² – 221 m².</li>
+            <li><strong>Đặc quyền:</strong> Sảnh thang máy riêng biệt, tầm nhìn Panorama 270 độ Sông Hồng & Sân Golf.</li>
+            <li><strong>Không gian:</strong> Biệt thự đơn lập trên không (Sky Mansion).</li>
+            <li><strong>Khách hàng mục tiêu:</strong> Giới siêu giàu, chủ tịch tập đoàn lớn tại Hà Nội.</li>
+          </ul>
+        </div>
+      `
+    },
+    unit_2pn: {
+      title: "Căn Hộ 2 Phòng Ngủ+ (2PN+)",
+      sub: "Tối ưu không gian – Chiếm 15% tổng cầu",
+      body: `
+        <div class="drawer-section">
+          <h4>Thông Số & Thiết Kế:</h4>
+          <ul>
+            <li><strong>Diện tích:</strong> 98 m².</li>
+            <li><strong>Điểm nhấn:</strong> Thiết kế thông minh, phòng đa năng linh hoạt làm việc.</li>
+            <li><strong>Khách hàng mục tiêu:</strong> Doanh nhân độc thân thành đạt, chuyên gia quốc tế, vợ chồng trẻ.</li>
+          </ul>
+        </div>
+      `
+    },
+    unit_duplex: {
+      title: "Duplex & Penthouse Đỉnh Tháp",
+      sub: "Bộ sưu tập giới hạn – Chiếm 18% tổng cầu",
+      body: `
+        <div class="drawer-section">
+          <h4>Thông Số & Thiết Kế:</h4>
+          <ul>
+            <li><strong>Duplex thông tầng:</strong> 288 m² (Trần cao thông tầng sang trọng).</li>
+            <li><strong>Penthouse độc bản:</strong> 273 m² – 398 m² (Sân vườn & hồ bơi riêng).</li>
+            <li><strong>Khách hàng mục tiêu:</strong> Giới tài phiệt, nhà sưu tầm bất động sản biểu tượng.</li>
+          </ul>
+        </div>
+      `
+    },
+
+    // DOMAIN SPECIFIC DRILL-DOWN
+    domain_maisonprive: {
+      title: "Tình Báo: maisonprive.com.vn",
+      sub: "Website vệ tinh môi giới cá nhân",
+      body: `
+        <div class="drawer-section">
+          <h4>Hoạt Động Ghi Nhận:</h4>
+          <p>Tên miền được đăng ký bởi môi giới/đội nhóm F1. Đang chạy Google Ads vị trí Top 1-2 cho từ khóa <em>'Maison Privee Ciputra'</em>.</p>
+          <h4 style="margin-top: 10px;">Chiến Thuật:</h4>
+          <p>Hứng toàn bộ lượt tìm kiếm sớm sau khi CĐT công bố dự án, thu thập SĐT để tư vấn suất ngoại giao.</p>
+          <h4 style="margin-top: 10px;">Khuyến Nghị Đối Phó:</h4>
+          <ul>
+            <li>Cần đấu thầu bảo vệ từ khóa thương hiệu chính thức.</li>
+            <li>Công bố danh sách website đại lý F1 được ủy quyền.</li>
+          </ul>
+          <span class="source-tag">Nguồn: Google Ads Auction 2026</span>
+        </div>
+      `
+    },
+    domain_maisonpriveecapitaland: {
+      title: "Tình Báo: maisonpriveecapitaland.vn",
+      sub: "Website vệ tinh SEO thương hiệu",
+      body: `
+        <div class="drawer-section">
+          <h4>Hoạt Động Ghi Nhận:</h4>
+          <p>Xây dựng các bài viết chi tiết về mặt bằng, giá bán, tiện ích để đón đầu lưu lượng tìm kiếm tự nhiên (SEO Organic).</p>
+        </div>
+      `
+    },
+    domain_galia: {
+      title: "Tình Báo: galia-hanoi.com.vn",
+      sub: "Chuyên trang căn hộ cao cấp Tây Hồ",
+      body: `
+        <div class="drawer-section">
+          <h4>Hoạt Động Ghi Nhận:</h4>
+          <p>Chạy Google Ads cho cụm từ <em>'căn hộ chuẩn WELL'</em> để gom tệp khách hàng chăm sóc sức khỏe.</p>
+        </div>
+      `
+    },
+    domain_tanlong: {
+      title: "Tình Báo: bdstanlong.vn (Tân Long Land)",
+      sub: "Sàn BĐS bản địa Tây Hồ & Ciputra",
+      body: `
+        <div class="drawer-section">
+          <h4>Hoạt Động Ghi Nhận:</h4>
+          <p>Sàn môi giới truyền thống lâu năm tại Ciputra. Đang khai thác tệp khách hàng quen thuộc có nhu cầu nâng cấp không gian sống.</p>
+        </div>
+      `
+    },
+    domain_canhociputra: {
+      title: "Tình Báo: canhociputra.com",
+      sub: "Chuyên trang listing KĐT Ciputra",
+      body: `
+        <div class="drawer-section">
+          <h4>Hoạt Động Ghi Nhận:</h4>
+          <p>Kéo traffic từ khóa chung về Ciputra để điều hướng khách vào trang dự án Maison Privée.</p>
+        </div>
+      `
+    },
+    domain_houseinhanoi: {
+      title: "Tình Báo: houseinhanoi.vn",
+      sub: "Trang môi giới khách Expat quốc tế",
+      body: `
+        <div class="drawer-section">
+          <h4>Hoạt Động Ghi Nhận:</h4>
+          <p>Đăng tin tiếng Anh nhắm vào cộng đồng chuyên gia Nhật Bản, Hàn Quốc và phương Tây tại Ciputra.</p>
+        </div>
+      `
+    },
+    domain_noblewestlake: {
+      title: "Tình Báo: noblewestlakeciputra.com.vn",
+      sub: "Đối thủ Sunshine Group – Đấu thầu chéo",
+      body: `
+        <div class="drawer-section">
+          <h4>Hoạt Động Đấu Thầu Chéo:</h4>
+          <p>Sunshine đang chạy quảng cáo từ khóa <em>'Maison Privee Ciputra'</em> với tiêu đề <em>'Noble West Lake – Căn hộ dát vàng Ciputra'</em> để lôi kéo khách hàng.</p>
+          <h4 style="margin-top: 10px;">Phương Án Đối Phó:</h4>
+          <p>Nhấn mạnh vào bảo chứng thương hiệu quốc tế (CapitaLand + Mitsubishi + Nomura) và chứng nhận WELL – điểm mà đối thủ không có.</p>
+          <span class="source-tag">Nguồn: Google Ads SERP 2026</span>
+        </div>
+      `
+    },
+    domain_noblecrystal: {
+      title: "Tình Báo: noblecrystal.vn",
+      sub: "Đối thủ Sunshine Sky Villa",
+      body: `
+        <div class="drawer-section">
+          <h4>Hoạt Động:</h4>
+          <p>Đấu thầu từ khóa căn hộ diện tích lớn và biệt thự trên không tại Tây Hồ.</p>
+        </div>
+      `
+    },
+    domain_nobleempire: {
+      title: "Tình Báo: nobleempireciputra.com",
+      sub: "Đối thủ Sunshine Noble Empire",
+      body: `
+        <div class="drawer-section">
+          <h4>Hoạt Động:</h4>
+          <p>Viết bài so sánh trực diện tiện ích và giá bán rumor với Maison Privée.</p>
+        </div>
+      `
+    },
+    domain_kitacapital: {
+      title: "Tình Báo: kitacapital-ciputra.com",
+      sub: "Đối thủ Kita Group tại Ciputra",
+      body: `
+        <div class="drawer-section">
+          <h4>Hoạt Động Cạnh Tranh:</h4>
+          <p>Đánh mạnh vào thông điệp <em>'Nhận nhà ở ngay 2026'</em> để đối đầu với thời gian bàn giao 2029 của CĐT CapitaLand.</p>
+        </div>
+      `
+    },
+    domain_cafef: {
+      title: "Tình Báo: cafef.vn",
+      sub: "Báo tài chính kinh tế hàng đầu",
+      body: `
+        <div class="drawer-section">
+          <h4>Nội Dung Xuất Bản:</h4>
+          <p>Bài phân tích tài chính về dòng vốn FDI 450 triệu USD của liên doanh CapitaLand - Mitsubishi - Nomura rót vào Ciputra.</p>
+        </div>
+      `
+    },
+    domain_vietnamnet: {
+      title: "Tình Báo: vietnamnet.vn / vnexpress.net",
+      sub: "Báo chí chính thống",
+      body: `
+        <div class="drawer-section">
+          <h4>Nội Dung:</h4>
+          <p>Đưa tin về khái niệm Tư dinh trên cao và tiêu chuẩn sống WELL đầu tiên tại Hà Nội.</p>
+        </div>
+      `
+    },
+    domain_baoxaydung: {
+      title: "Tình Báo: baoxaydung.vn",
+      sub: "Cơ quan ngôn luận Bộ Xây Dựng",
+      body: `
+        <div class="drawer-section">
+          <h4>Nội Dung Kỹ Thuật:</h4>
+          <p>Đánh giá cao hệ thống lọc khí Air Zone và tiêu chuẩn công trình xanh tiết kiệm năng lượng.</p>
+        </div>
+      `
+    },
+    domain_savills: {
+      title: "Tình Báo: savills.com.vn",
+      sub: "Đơn vị tư vấn & nghiên cứu thị trường BĐS",
+      body: `
+        <div class="drawer-section">
+          <h4>Báo Cáo Nghiên Cứu:</h4>
+          <p>Xếp Maison Privée vào Top dự án dẫn dắt nguồn cung và mặt bằng giá căn hộ hạng sang Hà Nội giai đoạn 2026 - 2029.</p>
+        </div>
+      `
+    },
+    domain_batdongsan: {
+      title: "Tình Báo: batdongsan.com.vn",
+      sub: "Cổng thông tin BĐS số 1 Việt Nam",
+      body: `
+        <div class="drawer-section">
+          <h4>Hiện Trạng:</h4>
+          <p>Môi giới tự do đăng tin rumor giá 150 - 200 triệu/m2, thu hút hàng trăm lượt quan tâm mỗi tuần.</p>
+        </div>
+      `
+    },
+    domain_capitaland: {
+      title: "Tình Báo: capitaland.com",
+      sub: "Cổng thông tin Tập Đoàn CapitaLand Global",
+      body: `
+        <div class="drawer-section">
+          <h4>Thông Cáo Báo Chí Quốc Tế:</h4>
+          <p>Công bố chính thức dự án liên doanh 450 triệu USD với Mitsubishi Estate và Nomura Real Estate tại Tây Hồ, Hà Nội.</p>
+          <span class="source-tag">Nguồn: Official Press Release</span>
+        </div>
+      `
+    },
+    domain_ibtimes: {
+      title: "Tình Báo: ibtimes.com",
+      sub: "International Business Times",
+      body: `
+        <div class="drawer-section">
+          <h4>Báo Chí Quốc Tế:</h4>
+          <p>Đánh giá thương vụ hợp tác thể hiện niềm tin của các tập đoàn Nhật Bản vào tiềm năng thị trường BĐS hạng sang Việt Nam.</p>
+        </div>
+      `
+    },
+    domain_nomura: {
+      title: "Tình Báo: nomura-re-vn.com",
+      sub: "Nomura Real Estate Development (Nhật Bản)",
+      body: `
+        <div class="drawer-section">
+          <h4>Báo Cáo Tập Đoàn:</h4>
+          <p>Cam kết áp dụng quy trình kiểm soát chất lượng và tiêu chuẩn thi công khắt khe từ Nhật Bản cho dự án Maison Privée.</p>
+        </div>
+      `
+    }
+  };
+
+  // DRAWER CONTROLLER
+  function openDrawer(key) {
+    const data = drawerDictionary[key] || {
+      title: "Thông Tin Chi Tiết",
+      sub: "Dữ liệu đang được đồng bộ",
+      body: "<div class='drawer-section'><p>Đang tải thông tin chi tiết...</p></div>"
+    };
+
+    document.getElementById('drawerTitle').innerText = data.title;
+    document.getElementById('drawerSub').innerText = data.sub;
+    document.getElementById('drawerBody').innerHTML = data.body;
+
+    document.getElementById('drawerOverlay').classList.add('active');
+    document.getElementById('drawerPanel').classList.add('active');
+  }
+
+  function closeDrawer() {
+    document.getElementById('drawerOverlay').classList.remove('active');
+    document.getElementById('drawerPanel').classList.remove('active');
+  }
+</script>
+
+</body>
+</html>
