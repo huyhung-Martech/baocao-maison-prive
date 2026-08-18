@@ -471,6 +471,92 @@
       width: 100%;
     }
 
+    .domain-table-link {
+      color: var(--gold-bright);
+      text-decoration: none;
+      font-weight: 700;
+      display: inline-flex;
+      align-items: center;
+      gap: 4px;
+      transition: color 0.2s;
+    }
+
+    .domain-table-link:hover {
+      text-decoration: underline;
+      color: #FFF;
+    }
+
+    .action-group {
+      display: flex;
+      align-items: center;
+      gap: 6px;
+    }
+
+    .btn-action-view {
+      background: rgba(197, 160, 89, 0.12);
+      border: 1px solid rgba(197, 160, 89, 0.25);
+      color: var(--gold-bright);
+      padding: 3px 8px;
+      border-radius: 4px;
+      font-size: 0.72rem;
+      font-weight: 600;
+      cursor: pointer;
+      transition: all 0.2s;
+      text-decoration: none;
+      display: inline-flex;
+      align-items: center;
+      gap: 3px;
+    }
+
+    .btn-action-view:hover {
+      background: var(--gold-primary);
+      color: #070B11;
+    }
+
+    .btn-action-link {
+      background: rgba(255, 255, 255, 0.05);
+      border: 1px solid var(--border-sub);
+      color: var(--text-sub);
+      padding: 3px 8px;
+      border-radius: 4px;
+      font-size: 0.72rem;
+      font-weight: 600;
+      text-decoration: none;
+      display: inline-flex;
+      align-items: center;
+      gap: 3px;
+      transition: all 0.2s;
+    }
+
+    .btn-action-link:hover {
+      background: rgba(255, 255, 255, 0.15);
+      color: #FFF;
+    }
+
+    .direct-link-card {
+      background: rgba(197, 160, 89, 0.08);
+      border: 1px solid var(--border-color);
+      border-radius: var(--radius-sm);
+      padding: 12px 14px;
+      margin-bottom: 14px;
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      flex-wrap: wrap;
+      gap: 8px;
+    }
+
+    .direct-link-url {
+      color: var(--gold-bright);
+      font-weight: 700;
+      text-decoration: none;
+      font-size: 0.84rem;
+    }
+
+    .direct-link-url:hover {
+      text-decoration: underline;
+    }
+
     .forecast-hidden { display: none !important; }
 
     /* MODERN OFF-CANVAS SLIDE-OVER DRAWER (SMOOTH & ELEGANT) */
@@ -807,155 +893,245 @@
             </thead>
             <tbody>
               <!-- VỆ TINH MÔI GIỚI -->
-              <tr class="clickable-row domain-row satellite" onclick="openDrawer('domain_maisonprive')">
-                <td><strong>maisonprive.com.vn</strong></td>
+              <tr class="clickable-row domain-row satellite">
+                <td><a href="https://maisonprive.com.vn" target="_blank" rel="noopener noreferrer" class="domain-table-link">maisonprive.com.vn ↗</a></td>
                 <td><span class="badge badge-gold">Vệ tinh Môi giới</span></td>
                 <td><span style="color: var(--emerald-accent);">Chạy Google Search Top 1</span></td>
                 <td>Maison Privée Ciputra – Trực Tiếp CĐT CapitaLand</td>
                 <td>Mua domain sát thương hiệu để hứng trọn traffic sớm.</td>
-                <td><span style="color: var(--gold-bright);">Chi tiết ➔</span></td>
+                <td>
+                  <div class="action-group">
+                    <button class="btn-action-view" onclick="openDrawer('domain_maisonprive')">🔍 Phân Tích</button>
+                    <a href="https://maisonprive.com.vn" target="_blank" rel="noopener noreferrer" class="btn-action-link">🌐 Mở Web ↗</a>
+                  </div>
+                </td>
               </tr>
-              <tr class="clickable-row domain-row satellite" onclick="openDrawer('domain_maisonpriveecapitaland')">
-                <td><strong>maisonpriveecapitaland.vn</strong></td>
+              <tr class="clickable-row domain-row satellite">
+                <td><a href="https://maisonpriveecapitaland.vn" target="_blank" rel="noopener noreferrer" class="domain-table-link">maisonpriveecapitaland.vn ↗</a></td>
                 <td><span class="badge badge-gold">Vệ tinh Môi giới</span></td>
                 <td><span>SEO & Lead Form</span></td>
                 <td>Maison Privée Tây Hồ – Tư Dinh Đẳng Cấp Thượng Lưu</td>
                 <td>Gom lead khách nét qua từ khóa thương hiệu + CĐT.</td>
-                <td><span style="color: var(--gold-bright);">Chi tiết ➔</span></td>
+                <td>
+                  <div class="action-group">
+                    <button class="btn-action-view" onclick="openDrawer('domain_maisonpriveecapitaland')">🔍 Phân Tích</button>
+                    <a href="https://maisonpriveecapitaland.vn" target="_blank" rel="noopener noreferrer" class="btn-action-link">🌐 Mở Web ↗</a>
+                  </div>
+                </td>
               </tr>
-              <tr class="clickable-row domain-row satellite" onclick="openDrawer('domain_galia')">
-                <td><strong>galia-hanoi.com.vn</strong></td>
+              <tr class="clickable-row domain-row satellite">
+                <td><a href="https://galia-hanoi.com.vn" target="_blank" rel="noopener noreferrer" class="domain-table-link">galia-hanoi.com.vn ↗</a></td>
                 <td><span class="badge badge-gold">Vệ tinh Môi giới</span></td>
                 <td><span style="color: var(--emerald-accent);">Google Ads Top 2-3</span></td>
                 <td>Maison Privée – Căn Hộ Chuẩn WELL Đầu Tiên VN</td>
                 <td>Khai thác mạnh yếu tố chứng nhận sức khỏe WELL.</td>
-                <td><span style="color: var(--gold-bright);">Chi tiết ➔</span></td>
+                <td>
+                  <div class="action-group">
+                    <button class="btn-action-view" onclick="openDrawer('domain_galia')">🔍 Phân Tích</button>
+                    <a href="https://galia-hanoi.com.vn" target="_blank" rel="noopener noreferrer" class="btn-action-link">🌐 Mở Web ↗</a>
+                  </div>
+                </td>
               </tr>
-              <tr class="clickable-row domain-row satellite" onclick="openDrawer('domain_tanlong')">
-                <td><strong>bdstanlong.vn (Tân Long Land)</strong></td>
+              <tr class="clickable-row domain-row satellite">
+                <td><a href="https://bdstanlong.vn" target="_blank" rel="noopener noreferrer" class="domain-table-link">bdstanlong.vn (Tân Long) ↗</a></td>
                 <td><span class="badge badge-gold">Sàn Bản Địa Tây Hồ</span></td>
                 <td><span>SEO & Ads Search</span></td>
                 <td>Tư Dinh Maison Privée Ciputra – Bảng Giá Đợt 1</td>
                 <td>Sàn thâm niên Tây Hồ chào bán tệp khách có sẵn.</td>
-                <td><span style="color: var(--gold-bright);">Chi tiết ➔</span></td>
+                <td>
+                  <div class="action-group">
+                    <button class="btn-action-view" onclick="openDrawer('domain_tanlong')">🔍 Phân Tích</button>
+                    <a href="https://bdstanlong.vn" target="_blank" rel="noopener noreferrer" class="btn-action-link">🌐 Mở Web ↗</a>
+                  </div>
+                </td>
               </tr>
-              <tr class="clickable-row domain-row satellite" onclick="openDrawer('domain_canhociputra')">
-                <td><strong>canhociputra.com</strong></td>
+              <tr class="clickable-row domain-row satellite">
+                <td><a href="https://canhociputra.com" target="_blank" rel="noopener noreferrer" class="domain-table-link">canhociputra.com ↗</a></td>
                 <td><span class="badge badge-gold">Chuyên Trang Ciputra</span></td>
                 <td><span>SEO Organic Top 3</span></td>
                 <td>Mặt Bằng Căn Hộ Maison Privée Ciputra Mới Nhất</td>
                 <td>Kéo traffic tìm kiếm căn hộ Ciputra sang dự án mới.</td>
-                <td><span style="color: var(--gold-bright);">Chi tiết ➔</span></td>
+                <td>
+                  <div class="action-group">
+                    <button class="btn-action-view" onclick="openDrawer('domain_canhociputra')">🔍 Phân Tích</button>
+                    <a href="https://canhociputra.com" target="_blank" rel="noopener noreferrer" class="btn-action-link">🌐 Mở Web ↗</a>
+                  </div>
+                </td>
               </tr>
-              <tr class="clickable-row domain-row satellite" onclick="openDrawer('domain_houseinhanoi')">
-                <td><strong>houseinhanoi.vn</strong></td>
+              <tr class="clickable-row domain-row satellite">
+                <td><a href="https://houseinhanoi.vn" target="_blank" rel="noopener noreferrer" class="domain-table-link">houseinhanoi.vn ↗</a></td>
                 <td><span class="badge badge-gold">Môi Giới Expat</span></td>
                 <td><span>Listing Tiếng Anh</span></td>
                 <td>Maison Privee Ciputra - Luxury Apartments for Sale</td>
                 <td>Đánh tệp chuyên gia quốc tế, khách Nhật - Hàn tại Ciputra.</td>
-                <td><span style="color: var(--gold-bright);">Chi tiết ➔</span></td>
+                <td>
+                  <div class="action-group">
+                    <button class="btn-action-view" onclick="openDrawer('domain_houseinhanoi')">🔍 Phân Tích</button>
+                    <a href="https://houseinhanoi.vn" target="_blank" rel="noopener noreferrer" class="btn-action-link">🌐 Mở Web ↗</a>
+                  </div>
+                </td>
               </tr>
 
               <!-- ĐỐI THỦ ĐẤU THẦU CHÉO -->
-              <tr class="clickable-row domain-row competitor" onclick="openDrawer('domain_noblewestlake')">
-                <td><strong>noblewestlakeciputra.com.vn</strong></td>
+              <tr class="clickable-row domain-row competitor">
+                <td><a href="https://noblewestlakeciputra.com.vn" target="_blank" rel="noopener noreferrer" class="domain-table-link">noblewestlakeciputra.com.vn ↗</a></td>
                 <td><span class="badge badge-forecast">Đối Thủ Sunshine</span></td>
                 <td><span style="color: var(--forecast-accent);">Đấu Thầu Chéo Từ Khóa</span></td>
                 <td>Noble West Lake Ciputra – Căn Hộ Dát Vàng Đẳng Cấp</td>
                 <td>Chặn từ khóa Maison Privée để lôi kéo khách sang Noble.</td>
-                <td><span style="color: var(--forecast-accent);">Chi tiết ➔</span></td>
+                <td>
+                  <div class="action-group">
+                    <button class="btn-action-view" onclick="openDrawer('domain_noblewestlake')">🔍 Phân Tích</button>
+                    <a href="https://noblewestlakeciputra.com.vn" target="_blank" rel="noopener noreferrer" class="btn-action-link">🌐 Mở Web ↗</a>
+                  </div>
+                </td>
               </tr>
-              <tr class="clickable-row domain-row competitor" onclick="openDrawer('domain_noblecrystal')">
-                <td><strong>noblecrystal.vn</strong></td>
+              <tr class="clickable-row domain-row competitor">
+                <td><a href="https://noblecrystal.vn" target="_blank" rel="noopener noreferrer" class="domain-table-link">noblecrystal.vn ↗</a></td>
                 <td><span class="badge badge-forecast">Đối Thủ Sunshine</span></td>
                 <td><span style="color: var(--forecast-accent);">Đấu Thầu Chéo</span></td>
                 <td>Noble Crystal Tây Hồ – Biệt Thự Trên Không Sky Villa</td>
                 <td>Thu hút khách tìm kiếm căn hộ diện tích lớn tại Ciputra.</td>
-                <td><span style="color: var(--forecast-accent);">Chi tiết ➔</span></td>
+                <td>
+                  <div class="action-group">
+                    <button class="btn-action-view" onclick="openDrawer('domain_noblecrystal')">🔍 Phân Tích</button>
+                    <a href="https://noblecrystal.vn" target="_blank" rel="noopener noreferrer" class="btn-action-link">🌐 Mở Web ↗</a>
+                  </div>
+                </td>
               </tr>
-              <tr class="clickable-row domain-row competitor" onclick="openDrawer('domain_nobleempire')">
-                <td><strong>nobleempireciputra.com</strong></td>
+              <tr class="clickable-row domain-row competitor">
+                <td><a href="https://nobleempireciputra.com" target="_blank" rel="noopener noreferrer" class="domain-table-link">nobleempireciputra.com ↗</a></td>
                 <td><span class="badge badge-forecast">Đối Thủ Sunshine</span></td>
                 <td><span>SEO & Bài So Sánh</span></td>
                 <td>So sánh Noble Empire & Maison Privée Ciputra</td>
                 <td>Viết bài so sánh tiện ích và vị trí để điều hướng người đọc.</td>
-                <td><span style="color: var(--forecast-accent);">Chi tiết ➔</span></td>
+                <td>
+                  <div class="action-group">
+                    <button class="btn-action-view" onclick="openDrawer('domain_nobleempire')">🔍 Phân Tích</button>
+                    <a href="https://nobleempireciputra.com" target="_blank" rel="noopener noreferrer" class="btn-action-link">🌐 Mở Web ↗</a>
+                  </div>
+                </td>
               </tr>
-              <tr class="clickable-row domain-row competitor" onclick="openDrawer('domain_kitacapital')">
-                <td><strong>kitacapital-ciputra.com</strong></td>
+              <tr class="clickable-row domain-row competitor">
+                <td><a href="https://kitacapital-ciputra.com" target="_blank" rel="noopener noreferrer" class="domain-table-link">kitacapital-ciputra.com ↗</a></td>
                 <td><span class="badge badge-forecast">Đối Thủ Kita Group</span></td>
                 <td><span>Chạy Ads Khu Vực</span></td>
                 <td>Kita Capital Ciputra – Nhận Nhà Ở Ngay 2026</td>
                 <td>Đánh vào tâm lý khách ngại chờ tiến độ đến 2029 của CĐT.</td>
-                <td><span style="color: var(--forecast-accent);">Chi tiết ➔</span></td>
+                <td>
+                  <div class="action-group">
+                    <button class="btn-action-view" onclick="openDrawer('domain_kitacapital')">🔍 Phân Tích</button>
+                    <a href="https://kitacapital-ciputra.com" target="_blank" rel="noopener noreferrer" class="btn-action-link">🌐 Mở Web ↗</a>
+                  </div>
+                </td>
               </tr>
 
               <!-- BÁO CHÍ & TÀI CHÍNH -->
-              <tr class="clickable-row domain-row press" onclick="openDrawer('domain_cafef')">
-                <td><strong>cafef.vn</strong></td>
+              <tr class="clickable-row domain-row press">
+                <td><a href="https://cafef.vn" target="_blank" rel="noopener noreferrer" class="domain-table-link">cafef.vn ↗</a></td>
                 <td><span class="badge badge-actual">Báo Tài Chính</span></td>
                 <td><span>Bài Phân Tích Chuyên Sâu</span></td>
                 <td>CapitaLand và liên doanh Nhật ra mắt 2 tòa tháp tại Ciputra</td>
                 <td>Phân tích liên doanh quốc tế và tiềm năng căn hộ siêu sang.</td>
-                <td><span style="color: var(--emerald-accent);">Chi tiết ➔</span></td>
+                <td>
+                  <div class="action-group">
+                    <button class="btn-action-view" onclick="openDrawer('domain_cafef')">🔍 Phân Tích</button>
+                    <a href="https://cafef.vn" target="_blank" rel="noopener noreferrer" class="btn-action-link">🌐 Mở Web ↗</a>
+                  </div>
+                </td>
               </tr>
-              <tr class="clickable-row domain-row press" onclick="openDrawer('domain_vietnamnet')">
-                <td><strong>vietnamnet.vn / vnexpress.net</strong></td>
+              <tr class="clickable-row domain-row press">
+                <td><a href="https://vietnamnet.vn" target="_blank" rel="noopener noreferrer" class="domain-table-link">vietnamnet.vn ↗</a></td>
                 <td><span class="badge badge-actual">Báo Chính Thống</span></td>
                 <td><span>Thông Cáo Báo Chí</span></td>
                 <td>Maison Privée: Khái niệm Tư dinh trên cao tại Ciputra</td>
                 <td>Bảo chứng pháp lý, quy hoạch kết nối hạ tầng giao thông.</td>
-                <td><span style="color: var(--emerald-accent);">Chi tiết ➔</span></td>
+                <td>
+                  <div class="action-group">
+                    <button class="btn-action-view" onclick="openDrawer('domain_vietnamnet')">🔍 Phân Tích</button>
+                    <a href="https://vietnamnet.vn" target="_blank" rel="noopener noreferrer" class="btn-action-link">🌐 Mở Web ↗</a>
+                  </div>
+                </td>
               </tr>
-              <tr class="clickable-row domain-row press" onclick="openDrawer('domain_baoxaydung')">
-                <td><strong>baoxaydung.vn</strong></td>
+              <tr class="clickable-row domain-row press">
+                <td><a href="https://baoxaydung.vn" target="_blank" rel="noopener noreferrer" class="domain-table-link">baoxaydung.vn ↗</a></td>
                 <td><span class="badge badge-actual">Báo Ngành Xây Dựng</span></td>
                 <td><span>Đánh Giá Kỹ Thuật</span></td>
                 <td>Tiêu chuẩn công trình xanh & chứng nhận WELL đầu tiên</td>
                 <td>Phân tích hệ thống lọc khí Air Zone & kính Low-E cản nhiệt.</td>
-                <td><span style="color: var(--emerald-accent);">Chi tiết ➔</span></td>
+                <td>
+                  <div class="action-group">
+                    <button class="btn-action-view" onclick="openDrawer('domain_baoxaydung')">🔍 Phân Tích</button>
+                    <a href="https://baoxaydung.vn" target="_blank" rel="noopener noreferrer" class="btn-action-link">🌐 Mở Web ↗</a>
+                  </div>
+                </td>
               </tr>
-              <tr class="clickable-row domain-row press" onclick="openDrawer('domain_savills')">
-                <td><strong>savills.com.vn</strong></td>
+              <tr class="clickable-row domain-row press">
+                <td><a href="https://savills.com.vn" target="_blank" rel="noopener noreferrer" class="domain-table-link">savills.com.vn ↗</a></td>
                 <td><span class="badge badge-actual">Đơn Vị Nghiên Cứu</span></td>
                 <td><span>Báo Cáo Quý</span></td>
                 <td>Hanoi Residential Market Review: The Rise of WELL</td>
                 <td>Đưa dự án vào danh mục dẫn dắt nguồn cung hạng sang 2026-2029.</td>
-                <td><span style="color: var(--emerald-accent);">Chi tiết ➔</span></td>
+                <td>
+                  <div class="action-group">
+                    <button class="btn-action-view" onclick="openDrawer('domain_savills')">🔍 Phân Tích</button>
+                    <a href="https://savills.com.vn" target="_blank" rel="noopener noreferrer" class="btn-action-link">🌐 Mở Web ↗</a>
+                  </div>
+                </td>
               </tr>
-              <tr class="clickable-row domain-row press" onclick="openDrawer('domain_batdongsan')">
-                <td><strong>batdongsan.com.vn</strong></td>
+              <tr class="clickable-row domain-row press">
+                <td><a href="https://batdongsan.com.vn" target="_blank" rel="noopener noreferrer" class="domain-table-link">batdongsan.com.vn ↗</a></td>
                 <td><span class="badge badge-actual">Cổng Listing</span></td>
                 <td><span>Tin Đăng & Ads Display</span></td>
                 <td>Bán căn hộ Maison Privée Ciputra – Suất ngoại giao</td>
                 <td>Môi giới tự do đăng tin rumor giá 150 - 200tr/m2.</td>
-                <td><span style="color: var(--emerald-accent);">Chi tiết ➔</span></td>
+                <td>
+                  <div class="action-group">
+                    <button class="btn-action-view" onclick="openDrawer('domain_batdongsan')">🔍 Phân Tích</button>
+                    <a href="https://batdongsan.com.vn" target="_blank" rel="noopener noreferrer" class="btn-action-link">🌐 Mở Web ↗</a>
+                  </div>
+                </td>
               </tr>
 
               <!-- CHỦ ĐẦU TƯ & QUỐC TẾ -->
-              <tr class="clickable-row domain-row official" onclick="openDrawer('domain_capitaland')">
-                <td><strong>capitaland.com (Tập Đoàn CLD)</strong></td>
+              <tr class="clickable-row domain-row official">
+                <td><a href="https://www.capitaland.com" target="_blank" rel="noopener noreferrer" class="domain-table-link">capitaland.com (CLD) ↗</a></td>
                 <td><span class="badge badge-actual">CĐT Chính Thức</span></td>
                 <td><span>Thông Cáo Toàn Cầu</span></td>
                 <td>CLD partners Mitsubishi Estate & Nomura Real Estate in Hanoi</td>
-                <td>Công bố dự án liên doanh 450 triệu USD quy mô 490 căn.</td>
-                <td><span style="color: var(--emerald-accent);">Chi tiết ➔</span></td>
+                <td>Công bố dự án căn hộ hạng sang 02 tòa 35 tầng tại Ciputra.</td>
+                <td>
+                  <div class="action-group">
+                    <button class="btn-action-view" onclick="openDrawer('domain_capitaland')">🔍 Phân Tích</button>
+                    <a href="https://www.capitaland.com" target="_blank" rel="noopener noreferrer" class="btn-action-link">🌐 Mở Web ↗</a>
+                  </div>
+                </td>
               </tr>
-              <tr class="clickable-row domain-row official" onclick="openDrawer('domain_ibtimes')">
-                <td><strong>ibtimes.com (International Business Times)</strong></td>
+              <tr class="clickable-row domain-row official">
+                <td><a href="https://www.ibtimes.com" target="_blank" rel="noopener noreferrer" class="domain-table-link">ibtimes.com ↗</a></td>
                 <td><span class="badge badge-actual">Quốc Tế</span></td>
                 <td><span>Báo Chí Kinh Tế</span></td>
                 <td>Luxury Residential Project in Hanoi's Ciputra</td>
                 <td>Đánh giá vị thế thị trường Việt Nam trong mắt NĐT Nhật Bản.</td>
-                <td><span style="color: var(--emerald-accent);">Chi tiết ➔</span></td>
+                <td>
+                  <div class="action-group">
+                    <button class="btn-action-view" onclick="openDrawer('domain_ibtimes')">🔍 Phân Tích</button>
+                    <a href="https://www.ibtimes.com" target="_blank" rel="noopener noreferrer" class="btn-action-link">🌐 Mở Web ↗</a>
+                  </div>
+                </td>
               </tr>
-              <tr class="clickable-row domain-row official" onclick="openDrawer('domain_nomura')">
-                <td><strong>nomura-re-vn.com (Nomura Real Estate)</strong></td>
+              <tr class="clickable-row domain-row official">
+                <td><a href="https://www.nomura-re-vn.com" target="_blank" rel="noopener noreferrer" class="domain-table-link">nomura-re-vn.com ↗</a></td>
                 <td><span class="badge badge-actual">Đối Tác Nhật</span></td>
                 <td><span>Báo Cáo Tập Đoàn</span></td>
                 <td>Kế hoạch mở rộng danh mục phát triển nhà ở tại Việt Nam</td>
                 <td>Cam kết tiêu chuẩn thi công và kiểm soát chất lượng Nhật Bản.</td>
-                <td><span style="color: var(--emerald-accent);">Chi tiết ➔</span></td>
+                <td>
+                  <div class="action-group">
+                    <button class="btn-action-view" onclick="openDrawer('domain_nomura')">🔍 Phân Tích</button>
+                    <a href="https://www.nomura-re-vn.com" target="_blank" rel="noopener noreferrer" class="btn-action-link">🌐 Mở Web ↗</a>
+                  </div>
+                </td>
               </tr>
             </tbody>
           </table>
@@ -1429,11 +1605,18 @@
       `
     },
 
-    // DOMAIN SPECIFIC DRILL-DOWN
+    // DOMAIN SPECIFIC DRILL-DOWN WITH DIRECT LIVE URLS
     domain_maisonprive: {
       title: "Tình Báo: maisonprive.com.vn",
       sub: "Website vệ tinh môi giới cá nhân",
       body: `
+        <div class="direct-link-card">
+          <div>
+            <span style="font-size: 0.72rem; color: var(--text-muted); text-transform: uppercase; display: block; margin-bottom: 2px;">🔗 Đường dẫn trực tiếp:</span>
+            <a href="https://maisonprive.com.vn" target="_blank" rel="noopener noreferrer" class="direct-link-url">https://maisonprive.com.vn ↗</a>
+          </div>
+          <a href="https://maisonprive.com.vn" target="_blank" rel="noopener noreferrer" class="btn-action-view" style="padding: 6px 12px; font-size: 0.8rem;">Truy Cập Web ↗</a>
+        </div>
         <div class="drawer-section">
           <h4>Hoạt Động Ghi Nhận:</h4>
           <p>Tên miền được đăng ký bởi môi giới/đội nhóm F1. Đang chạy Google Ads vị trí Top 1-2 cho từ khóa <em>'Maison Privee Ciputra'</em>.</p>
@@ -1444,7 +1627,7 @@
             <li>Cần đấu thầu bảo vệ từ khóa thương hiệu chính thức.</li>
             <li>Công bố danh sách website đại lý F1 được ủy quyền.</li>
           </ul>
-          <span class="source-tag">Nguồn: Google Ads Auction 2026</span>
+          <span class="source-tag">Nguồn: Google Ads SERP 2026</span>
         </div>
       `
     },
@@ -1452,6 +1635,13 @@
       title: "Tình Báo: maisonpriveecapitaland.vn",
       sub: "Website vệ tinh SEO thương hiệu",
       body: `
+        <div class="direct-link-card">
+          <div>
+            <span style="font-size: 0.72rem; color: var(--text-muted); text-transform: uppercase; display: block; margin-bottom: 2px;">🔗 Đường dẫn trực tiếp:</span>
+            <a href="https://maisonpriveecapitaland.vn" target="_blank" rel="noopener noreferrer" class="direct-link-url">https://maisonpriveecapitaland.vn ↗</a>
+          </div>
+          <a href="https://maisonpriveecapitaland.vn" target="_blank" rel="noopener noreferrer" class="btn-action-view" style="padding: 6px 12px; font-size: 0.8rem;">Truy Cập Web ↗</a>
+        </div>
         <div class="drawer-section">
           <h4>Hoạt Động Ghi Nhận:</h4>
           <p>Xây dựng các bài viết chi tiết về mặt bằng, giá bán, tiện ích để đón đầu lưu lượng tìm kiếm tự nhiên (SEO Organic).</p>
@@ -1462,6 +1652,13 @@
       title: "Tình Báo: galia-hanoi.com.vn",
       sub: "Chuyên trang căn hộ cao cấp Tây Hồ",
       body: `
+        <div class="direct-link-card">
+          <div>
+            <span style="font-size: 0.72rem; color: var(--text-muted); text-transform: uppercase; display: block; margin-bottom: 2px;">🔗 Đường dẫn trực tiếp:</span>
+            <a href="https://galia-hanoi.com.vn" target="_blank" rel="noopener noreferrer" class="direct-link-url">https://galia-hanoi.com.vn ↗</a>
+          </div>
+          <a href="https://galia-hanoi.com.vn" target="_blank" rel="noopener noreferrer" class="btn-action-view" style="padding: 6px 12px; font-size: 0.8rem;">Truy Cập Web ↗</a>
+        </div>
         <div class="drawer-section">
           <h4>Hoạt Động Ghi Nhận:</h4>
           <p>Chạy Google Ads cho cụm từ <em>'căn hộ chuẩn WELL'</em> để gom tệp khách hàng chăm sóc sức khỏe.</p>
@@ -1472,6 +1669,13 @@
       title: "Tình Báo: bdstanlong.vn (Tân Long Land)",
       sub: "Sàn BĐS bản địa Tây Hồ & Ciputra",
       body: `
+        <div class="direct-link-card">
+          <div>
+            <span style="font-size: 0.72rem; color: var(--text-muted); text-transform: uppercase; display: block; margin-bottom: 2px;">🔗 Đường dẫn trực tiếp:</span>
+            <a href="https://bdstanlong.vn" target="_blank" rel="noopener noreferrer" class="direct-link-url">https://bdstanlong.vn ↗</a>
+          </div>
+          <a href="https://bdstanlong.vn" target="_blank" rel="noopener noreferrer" class="btn-action-view" style="padding: 6px 12px; font-size: 0.8rem;">Truy Cập Web ↗</a>
+        </div>
         <div class="drawer-section">
           <h4>Hoạt Động Ghi Nhận:</h4>
           <p>Sàn môi giới truyền thống lâu năm tại Ciputra. Đang khai thác tệp khách hàng quen thuộc có nhu cầu nâng cấp không gian sống.</p>
@@ -1482,6 +1686,13 @@
       title: "Tình Báo: canhociputra.com",
       sub: "Chuyên trang listing KĐT Ciputra",
       body: `
+        <div class="direct-link-card">
+          <div>
+            <span style="font-size: 0.72rem; color: var(--text-muted); text-transform: uppercase; display: block; margin-bottom: 2px;">🔗 Đường dẫn trực tiếp:</span>
+            <a href="https://canhociputra.com" target="_blank" rel="noopener noreferrer" class="direct-link-url">https://canhociputra.com ↗</a>
+          </div>
+          <a href="https://canhociputra.com" target="_blank" rel="noopener noreferrer" class="btn-action-view" style="padding: 6px 12px; font-size: 0.8rem;">Truy Cập Web ↗</a>
+        </div>
         <div class="drawer-section">
           <h4>Hoạt Động Ghi Nhận:</h4>
           <p>Kéo traffic từ khóa chung về Ciputra để điều hướng khách vào trang dự án Maison Privée.</p>
@@ -1492,6 +1703,13 @@
       title: "Tình Báo: houseinhanoi.vn",
       sub: "Trang môi giới khách Expat quốc tế",
       body: `
+        <div class="direct-link-card">
+          <div>
+            <span style="font-size: 0.72rem; color: var(--text-muted); text-transform: uppercase; display: block; margin-bottom: 2px;">🔗 Đường dẫn trực tiếp:</span>
+            <a href="https://houseinhanoi.vn" target="_blank" rel="noopener noreferrer" class="direct-link-url">https://houseinhanoi.vn ↗</a>
+          </div>
+          <a href="https://houseinhanoi.vn" target="_blank" rel="noopener noreferrer" class="btn-action-view" style="padding: 6px 12px; font-size: 0.8rem;">Truy Cập Web ↗</a>
+        </div>
         <div class="drawer-section">
           <h4>Hoạt Động Ghi Nhận:</h4>
           <p>Đăng tin tiếng Anh nhắm vào cộng đồng chuyên gia Nhật Bản, Hàn Quốc và phương Tây tại Ciputra.</p>
@@ -1502,6 +1720,13 @@
       title: "Tình Báo: noblewestlakeciputra.com.vn",
       sub: "Đối thủ Sunshine Group – Đấu thầu chéo",
       body: `
+        <div class="direct-link-card">
+          <div>
+            <span style="font-size: 0.72rem; color: var(--text-muted); text-transform: uppercase; display: block; margin-bottom: 2px;">🔗 Đường dẫn trực tiếp:</span>
+            <a href="https://noblewestlakeciputra.com.vn" target="_blank" rel="noopener noreferrer" class="direct-link-url">https://noblewestlakeciputra.com.vn ↗</a>
+          </div>
+          <a href="https://noblewestlakeciputra.com.vn" target="_blank" rel="noopener noreferrer" class="btn-action-view" style="padding: 6px 12px; font-size: 0.8rem;">Truy Cập Web ↗</a>
+        </div>
         <div class="drawer-section">
           <h4>Hoạt Động Đấu Thầu Chéo:</h4>
           <p>Sunshine đang chạy quảng cáo từ khóa <em>'Maison Privee Ciputra'</em> với tiêu đề <em>'Noble West Lake – Căn hộ dát vàng Ciputra'</em> để lôi kéo khách hàng.</p>
@@ -1515,6 +1740,13 @@
       title: "Tình Báo: noblecrystal.vn",
       sub: "Đối thủ Sunshine Sky Villa",
       body: `
+        <div class="direct-link-card">
+          <div>
+            <span style="font-size: 0.72rem; color: var(--text-muted); text-transform: uppercase; display: block; margin-bottom: 2px;">🔗 Đường dẫn trực tiếp:</span>
+            <a href="https://noblecrystal.vn" target="_blank" rel="noopener noreferrer" class="direct-link-url">https://noblecrystal.vn ↗</a>
+          </div>
+          <a href="https://noblecrystal.vn" target="_blank" rel="noopener noreferrer" class="btn-action-view" style="padding: 6px 12px; font-size: 0.8rem;">Truy Cập Web ↗</a>
+        </div>
         <div class="drawer-section">
           <h4>Hoạt Động:</h4>
           <p>Đấu thầu từ khóa căn hộ diện tích lớn và biệt thự trên không tại Tây Hồ.</p>
@@ -1525,9 +1757,16 @@
       title: "Tình Báo: nobleempireciputra.com",
       sub: "Đối thủ Sunshine Noble Empire",
       body: `
+        <div class="direct-link-card">
+          <div>
+            <span style="font-size: 0.72rem; color: var(--text-muted); text-transform: uppercase; display: block; margin-bottom: 2px;">🔗 Đường dẫn trực tiếp:</span>
+            <a href="https://nobleempireciputra.com" target="_blank" rel="noopener noreferrer" class="direct-link-url">https://nobleempireciputra.com ↗</a>
+          </div>
+          <a href="https://nobleempireciputra.com" target="_blank" rel="noopener noreferrer" class="btn-action-view" style="padding: 6px 12px; font-size: 0.8rem;">Truy Cập Web ↗</a>
+        </div>
         <div class="drawer-section">
           <h4>Hoạt Động:</h4>
-          <p>Viết bài so sánh trực diện tiện ích và giá bán rumor với Maison Privée.</p>
+          <p>Viết bài so sánh trực diện tiện ích và vị trí để điều hướng người đọc.</p>
         </div>
       `
     },
@@ -1535,6 +1774,13 @@
       title: "Tình Báo: kitacapital-ciputra.com",
       sub: "Đối thủ Kita Group tại Ciputra",
       body: `
+        <div class="direct-link-card">
+          <div>
+            <span style="font-size: 0.72rem; color: var(--text-muted); text-transform: uppercase; display: block; margin-bottom: 2px;">🔗 Đường dẫn trực tiếp:</span>
+            <a href="https://kitacapital-ciputra.com" target="_blank" rel="noopener noreferrer" class="direct-link-url">https://kitacapital-ciputra.com ↗</a>
+          </div>
+          <a href="https://kitacapital-ciputra.com" target="_blank" rel="noopener noreferrer" class="btn-action-view" style="padding: 6px 12px; font-size: 0.8rem;">Truy Cập Web ↗</a>
+        </div>
         <div class="drawer-section">
           <h4>Hoạt Động Cạnh Tranh:</h4>
           <p>Đánh mạnh vào thông điệp <em>'Nhận nhà ở ngay 2026'</em> để đối đầu với thời gian bàn giao 2029 của CĐT CapitaLand.</p>
@@ -1545,19 +1791,33 @@
       title: "Tình Báo: cafef.vn",
       sub: "Báo tài chính kinh tế hàng đầu",
       body: `
+        <div class="direct-link-card">
+          <div>
+            <span style="font-size: 0.72rem; color: var(--text-muted); text-transform: uppercase; display: block; margin-bottom: 2px;">🔗 Đường dẫn bài viết / Chuyên trang:</span>
+            <a href="https://cafef.vn/bat-dong-san.chn" target="_blank" rel="noopener noreferrer" class="direct-link-url">https://cafef.vn/bat-dong-san.chn ↗</a>
+          </div>
+          <a href="https://cafef.vn/bat-dong-san.chn" target="_blank" rel="noopener noreferrer" class="btn-action-view" style="padding: 6px 12px; font-size: 0.8rem;">Mở Bài Báo ↗</a>
+        </div>
         <div class="drawer-section">
           <h4>Nội Dung Xuất Bản:</h4>
-          <p>Bài phân tích tài chính về dòng vốn FDI 450 triệu USD của liên doanh CapitaLand - Mitsubishi - Nomura rót vào Ciputra.</p>
+          <p>Phân tích dự án căn hộ hạng sang 490 căn tại KĐT Ciputra và dòng vốn đầu tư liên doanh quốc tế.</p>
         </div>
       `
     },
     domain_vietnamnet: {
-      title: "Tình Báo: vietnamnet.vn / vnexpress.net",
-      sub: "Báo chí chính thống",
+      title: "Tình Báo: vietnamnet.vn",
+      sub: "Báo chí chính thống Quốc gia",
       body: `
+        <div class="direct-link-card">
+          <div>
+            <span style="font-size: 0.72rem; color: var(--text-muted); text-transform: uppercase; display: block; margin-bottom: 2px;">🔗 Đường dẫn bài viết / Chuyên trang:</span>
+            <a href="https://vietnamnet.vn/bat-dong-san" target="_blank" rel="noopener noreferrer" class="direct-link-url">https://vietnamnet.vn/bat-dong-san ↗</a>
+          </div>
+          <a href="https://vietnamnet.vn/bat-dong-san" target="_blank" rel="noopener noreferrer" class="btn-action-view" style="padding: 6px 12px; font-size: 0.8rem;">Mở Bài Báo ↗</a>
+        </div>
         <div class="drawer-section">
           <h4>Nội Dung:</h4>
-          <p>Đưa tin về khái niệm Tư dinh trên cao và tiêu chuẩn sống WELL đầu tiên tại Hà Nội.</p>
+          <p>Đưa tin về khái niệm Tư dinh trên cao và tiêu chuẩn sống WELL đầu tiên tại Ciputra Hà Nội.</p>
         </div>
       `
     },
@@ -1565,6 +1825,13 @@
       title: "Tình Báo: baoxaydung.vn",
       sub: "Cơ quan ngôn luận Bộ Xây Dựng",
       body: `
+        <div class="direct-link-card">
+          <div>
+            <span style="font-size: 0.72rem; color: var(--text-muted); text-transform: uppercase; display: block; margin-bottom: 2px;">🔗 Đường dẫn bài viết / Chuyên trang:</span>
+            <a href="https://baoxaydung.vn" target="_blank" rel="noopener noreferrer" class="direct-link-url">https://baoxaydung.vn ↗</a>
+          </div>
+          <a href="https://baoxaydung.vn" target="_blank" rel="noopener noreferrer" class="btn-action-view" style="padding: 6px 12px; font-size: 0.8rem;">Mở Báo ↗</a>
+        </div>
         <div class="drawer-section">
           <h4>Nội Dung Kỹ Thuật:</h4>
           <p>Đánh giá cao hệ thống lọc khí Air Zone và tiêu chuẩn công trình xanh tiết kiệm năng lượng.</p>
@@ -1575,6 +1842,13 @@
       title: "Tình Báo: savills.com.vn",
       sub: "Đơn vị tư vấn & nghiên cứu thị trường BĐS",
       body: `
+        <div class="direct-link-card">
+          <div>
+            <span style="font-size: 0.72rem; color: var(--text-muted); text-transform: uppercase; display: block; margin-bottom: 2px;">🔗 Đường dẫn báo cáo:</span>
+            <a href="https://www.savills.com.vn/research.html" target="_blank" rel="noopener noreferrer" class="direct-link-url">https://www.savills.com.vn/research.html ↗</a>
+          </div>
+          <a href="https://www.savills.com.vn/research.html" target="_blank" rel="noopener noreferrer" class="btn-action-view" style="padding: 6px 12px; font-size: 0.8rem;">Xem Báo Cáo ↗</a>
+        </div>
         <div class="drawer-section">
           <h4>Báo Cáo Nghiên Cứu:</h4>
           <p>Xếp Maison Privée vào Top dự án dẫn dắt nguồn cung và mặt bằng giá căn hộ hạng sang Hà Nội giai đoạn 2026 - 2029.</p>
@@ -1585,6 +1859,13 @@
       title: "Tình Báo: batdongsan.com.vn",
       sub: "Cổng thông tin BĐS số 1 Việt Nam",
       body: `
+        <div class="direct-link-card">
+          <div>
+            <span style="font-size: 0.72rem; color: var(--text-muted); text-transform: uppercase; display: block; margin-bottom: 2px;">🔗 Đường dẫn trang tin:</span>
+            <a href="https://batdongsan.com.vn/ban-can-ho-chung-cu-ciputra-tay-ho" target="_blank" rel="noopener noreferrer" class="direct-link-url">https://batdongsan.com.vn/ban-can-ho-chung-cu-ciputra-tay-ho ↗</a>
+          </div>
+          <a href="https://batdongsan.com.vn/ban-can-ho-chung-cu-ciputra-tay-ho" target="_blank" rel="noopener noreferrer" class="btn-action-view" style="padding: 6px 12px; font-size: 0.8rem;">Mở Listing ↗</a>
+        </div>
         <div class="drawer-section">
           <h4>Hiện Trạng:</h4>
           <p>Môi giới tự do đăng tin rumor giá 150 - 200 triệu/m2, thu hút hàng trăm lượt quan tâm mỗi tuần.</p>
@@ -1595,10 +1876,17 @@
       title: "Tình Báo: capitaland.com",
       sub: "Cổng thông tin Tập Đoàn CapitaLand Global",
       body: `
+        <div class="direct-link-card">
+          <div>
+            <span style="font-size: 0.72rem; color: var(--text-muted); text-transform: uppercase; display: block; margin-bottom: 2px;">🔗 Đường dẫn thông cáo CĐT:</span>
+            <a href="https://www.capitaland.com/en/about-capitaland/newsroom/news-releases.html" target="_blank" rel="noopener noreferrer" class="direct-link-url">https://www.capitaland.com/.../news-releases.html ↗</a>
+          </div>
+          <a href="https://www.capitaland.com/en/about-capitaland/newsroom/news-releases.html" target="_blank" rel="noopener noreferrer" class="btn-action-view" style="padding: 6px 12px; font-size: 0.8rem;">Mở Newsroom ↗</a>
+        </div>
         <div class="drawer-section">
-          <h4>Thông Cáo Báo Chí Quốc Tế:</h4>
-          <p>Công bố chính thức dự án liên doanh 450 triệu USD với Mitsubishi Estate và Nomura Real Estate tại Tây Hồ, Hà Nội.</p>
-          <span class="source-tag">Nguồn: Official Press Release</span>
+          <h4>Thông Cáo Báo Chí:</h4>
+          <p>Công bố chính thức dự án liên doanh căn hộ hạng sang 02 tòa tháp 35 tầng tại KĐT Ciputra Tây Hồ, Hà Nội.</p>
+          <span class="source-tag">Nguồn: Official Newsroom</span>
         </div>
       `
     },
@@ -1606,6 +1894,13 @@
       title: "Tình Báo: ibtimes.com",
       sub: "International Business Times",
       body: `
+        <div class="direct-link-card">
+          <div>
+            <span style="font-size: 0.72rem; color: var(--text-muted); text-transform: uppercase; display: block; margin-bottom: 2px;">🔗 Đường dẫn bài báo quốc tế:</span>
+            <a href="https://www.ibtimes.com" target="_blank" rel="noopener noreferrer" class="direct-link-url">https://www.ibtimes.com ↗</a>
+          </div>
+          <a href="https://www.ibtimes.com" target="_blank" rel="noopener noreferrer" class="btn-action-view" style="padding: 6px 12px; font-size: 0.8rem;">Mở Báo ↗</a>
+        </div>
         <div class="drawer-section">
           <h4>Báo Chí Quốc Tế:</h4>
           <p>Đánh giá thương vụ hợp tác thể hiện niềm tin của các tập đoàn Nhật Bản vào tiềm năng thị trường BĐS hạng sang Việt Nam.</p>
@@ -1616,6 +1911,13 @@
       title: "Tình Báo: nomura-re-vn.com",
       sub: "Nomura Real Estate Development (Nhật Bản)",
       body: `
+        <div class="direct-link-card">
+          <div>
+            <span style="font-size: 0.72rem; color: var(--text-muted); text-transform: uppercase; display: block; margin-bottom: 2px;">🔗 Đường dẫn Cổng Đối tác Nomura:</span>
+            <a href="https://www.nomura-re-vn.com" target="_blank" rel="noopener noreferrer" class="direct-link-url">https://www.nomura-re-vn.com ↗</a>
+          </div>
+          <a href="https://www.nomura-re-vn.com" target="_blank" rel="noopener noreferrer" class="btn-action-view" style="padding: 6px 12px; font-size: 0.8rem;">Mở Cổng Tin ↗</a>
+        </div>
         <div class="drawer-section">
           <h4>Báo Cáo Tập Đoàn:</h4>
           <p>Cam kết áp dụng quy trình kiểm soát chất lượng và tiêu chuẩn thi công khắt khe từ Nhật Bản cho dự án Maison Privée.</p>
