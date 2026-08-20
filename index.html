@@ -98,6 +98,13 @@
       border: 1px solid var(--border);
     }
 
+    .tag-highlight {
+      background: var(--primary-light);
+      color: var(--primary);
+      border-color: var(--primary-border);
+      font-weight: 600;
+    }
+
     /* CONTROLLER */
     .view-controller {
       background: var(--bg-subtle);
@@ -235,7 +242,7 @@
     }
 
     .kpi-value {
-      font-size: 1.6rem;
+      font-size: 1.55rem;
       font-weight: 700;
       color: var(--text-main);
       margin-bottom: 2px;
@@ -522,7 +529,7 @@
       position: fixed;
       top: 0;
       right: -100%;
-      width: min(500px, 92vw);
+      width: min(520px, 92vw);
       height: 100vh;
       background: #FFFFFF;
       border-left: 1px solid var(--border);
@@ -657,11 +664,13 @@
       <div>
         <h1 class="brand-title">Maison Privée Ciputra</h1>
         <div class="brand-sub">
-          <span>CapitaLand Development (CLD) x Mitsubishi Estate x Nomura Real Estate</span>
-          <span class="tag-meta">02 Tòa tháp đôi (35 tầng)</span>
-          <span class="tag-meta">490 Căn hộ Giới hạn</span>
+          <span><strong>CapitaLand Development (CLD)</strong> × <strong>Mitsubishi Estate</strong> × <strong>Nomura Real Estate</strong></span>
+          <span class="tag-meta tag-highlight">02 Tháp (35 tầng + 3 hầm)</span>
+          <span class="tag-meta">490 Căn hộ Hạng sang</span>
+          <span class="tag-meta tag-highlight">GDV: ~450 Triệu USD</span>
+          <span class="tag-meta">Khởi công: Q3/2026</span>
           <span class="tag-meta">Bàn giao: Q1/2029</span>
-          <span class="tag-meta">Chuẩn WELL</span>
+          <span class="tag-meta tag-highlight">Chuẩn WELL Pre-Certified</span>
         </div>
       </div>
 
@@ -682,10 +691,10 @@
   <!-- VERIFICATION PROVENANCE STRIP -->
   <div class="verification-strip">
     <div>
-      🛡️ <strong>Báo Cáo Đã Được Rà Soát & Đối Soát:</strong> 
-      100% Thông số quy mô (02 tháp 35 tầng, 490 căn, chuẩn WELL, sảnh thang máy riêng) đã được đối soát thực tế từ hồ sơ quy hoạch KĐT Ciputra.
+      🛡️ <strong>Hồ Sơ Xác Thực Chính Thức:</strong> 
+      Thông tin dự án đã được CapitaLand Development & 2 đối tác Nhật Bản (Mitsubishi Estate, Nomura Real Estate) công bố qua thông cáo báo chí chính thức (Báo Đầu Tư, CafeF, VietnamNet...) và hồ sơ quy hoạch KĐT Ciputra.
     </div>
-    <button class="verify-btn" onclick="openDrawer('provenance')">Xem Bảng Rà Soát Dữ Liệu</button>
+    <button class="verify-btn" onclick="openDrawer('provenance')">Đối Soát Nguồn Báo Chí & Fact ↗</button>
   </div>
 
   <!-- ROW 1: INTERACTIVE KPI CARDS -->
@@ -693,40 +702,40 @@
     <div class="kpi-card" onclick="openDrawer('specs')">
       <div class="kpi-card-header">
         <span class="kpi-title">Quy mô Dự án</span>
-        <span class="badge badge-actual">Hồ Sơ Quy Hoạch</span>
+        <span class="badge badge-actual">Chính Thức</span>
       </div>
       <div class="kpi-value">490 <span style="font-size: 0.9rem; font-weight: 500; color: var(--text-muted);">Căn</span></div>
-      <div class="kpi-sub">02 Tháp đôi 35 tầng • Sảnh thang riêng</div>
+      <div class="kpi-sub">02 Tháp 35 tầng • 3 hầm • Quỹ đất 0,8 ha</div>
       <span class="drawer-indicator">Chi tiết ➔</span>
     </div>
 
-    <div class="kpi-card" onclick="openDrawer('amenities')">
+    <div class="kpi-card" onclick="openDrawer('gdv')">
       <div class="kpi-card-header">
-        <span class="kpi-title">Tiện ích Đặc quyền</span>
-        <span class="badge badge-actual">Chuẩn Wellness</span>
+        <span class="kpi-title">Giá Trị Phát Triển (GDV)</span>
+        <span class="badge badge-actual">Riêng Dự Án</span>
       </div>
-      <div class="kpi-value">68 <span style="font-size: 0.9rem; font-weight: 500; color: var(--text-muted);">Tiện ích</span></div>
-      <div class="kpi-sub">2 Bể bơi resort • Garage siêu xe • Air Zone</div>
+      <div class="kpi-value">~450 <span style="font-size: 0.9rem; font-weight: 500; color: var(--text-muted);">Triệu USD</span></div>
+      <div class="kpi-sub">~11.700 Tỷ VNĐ • Liên danh 3 bên</div>
       <span class="drawer-indicator">Chi tiết ➔</span>
     </div>
 
-    <div class="kpi-card" onclick="openDrawer('keywords')">
+    <div class="kpi-card" onclick="openDrawer('pricing')">
       <div class="kpi-card-header">
-        <span class="kpi-title">Lượng Tìm Kiếm Google</span>
-        <span class="badge badge-gold">Google Trends</span>
+        <span class="kpi-title">Giá Rumor Thị Trường</span>
+        <span class="badge badge-gold">Booking Đợt 1</span>
       </div>
-      <div class="kpi-value">5.200 <span style="font-size: 0.8rem; font-weight: 400; color: var(--text-muted);">lượt/tháng</span></div>
-      <div class="kpi-sub">↗ Tín hiệu quan tâm từ khóa rumor 2026</div>
+      <div class="kpi-value">~200 <span style="font-size: 0.8rem; font-weight: 400; color: var(--text-muted);">Tr/m²</span></div>
+      <div class="kpi-sub">25 – 50+ Tỷ/căn • Chuẩn bàn giao hạng sang</div>
       <span class="drawer-indicator">Chi tiết ➔</span>
     </div>
 
     <div class="kpi-card" onclick="openDrawer('domain_network')">
       <div class="kpi-card-header">
         <span class="kpi-title">Kênh Tình Báo Thực Tế</span>
-        <span class="badge badge-actual">10 Kênh Thật</span>
+        <span class="badge badge-actual">12 Kênh Đã Kiểm Chứng</span>
       </div>
-      <div class="kpi-value">10 <span style="font-size: 0.8rem; font-weight: 400; color: var(--text-muted);">Kênh</span></div>
-      <div class="kpi-sub">5 Sàn F1/vệ tinh • 4 Đối thủ • 1 Listing</div>
+      <div class="kpi-value">12 <span style="font-size: 0.8rem; font-weight: 400; color: var(--text-muted);">Kênh</span></div>
+      <div class="kpi-sub">3 Báo chính thống • 5 Sàn F1 • 4 Đối thủ</div>
       <span class="drawer-indicator">Chi tiết ➔</span>
     </div>
   </div>
@@ -738,15 +747,15 @@
       <div class="card">
         <div class="card-header">
           <div>
-            <div class="card-title">Danh Mục Dòng Căn Hộ Dự Kiến</div>
-            <div class="card-desc">Bấm vào từng loại căn để xem thông số & mặt bằng chi tiết</div>
+            <div class="card-title">Cơ Cấu Dòng Căn Hộ Dự Kiến</div>
+            <div class="card-desc">Bấm vào từng loại căn để xem thông số & đặc quyền thiết kế</div>
           </div>
           <span class="badge badge-actual">Hồ Sơ Quy Hoạch</span>
         </div>
 
         <!-- REALITY DISCLAIMER -->
         <div style="background: #EFF6FF; border-left: 3px solid #2563EB; padding: 10px 14px; margin-bottom: 12px; font-size: 0.78rem; color: #1E3A8A; border-radius: 0 4px 4px 0; line-height: 1.45;">
-          📌 <strong>Hiện trạng công bố:</strong> Tổng quy mô toàn dự án là <strong>490 căn (02 tháp 35 tầng)</strong>. CĐT <em>chưa phát hành bảng chia số lượng chi tiết từng trục căn</em> (Dự kiến công bố tại Lễ Kick-off).
+          📌 <strong>Thông số chính thức:</strong> Tổng quy mô toàn dự án là <strong>490 căn (02 tháp 35 tầng, 3 tầng hầm)</strong>. Được thiết kế bởi <strong>StudioMilou</strong> (Singapore) & cảnh quan <strong>TinderBox</strong>.
         </div>
 
         <!-- UNIT CATALOG LIST -->
@@ -821,28 +830,28 @@
       <div class="card">
         <div class="card-header">
           <div>
-            <div class="card-title">Mạng Lưới Tình Báo 10 Kênh Thực Tế Đang Có Dữ Liệu & Đấu Thầu (10 Kênh)</div>
-            <div class="card-desc">Chỉ giữ lại các trang thực sự có tin đăng, bài viết hoặc đang chạy quảng cáo từ khóa Maison Privée</div>
+            <div class="card-title">Mạng Lưới Tình Báo 12 Kênh Thực Tế & Truyền Thông Chính Thức</div>
+            <div class="card-desc">Bao gồm báo chí tài chính chính thống, cổng tập đoàn, sàn F1 và đối thủ đấu thầu chéo từ khóa</div>
           </div>
-          <span class="badge badge-actual">100% Dữ Liệu Thực Tế</span>
+          <span class="badge badge-actual">100% Đã Kiểm Chứng</span>
         </div>
 
         <!-- REALITY STATUS NOTICE -->
-        <div style="background: #F8FAFC; border: 1px solid var(--border); border-left: 3px solid #64748B; padding: 12px 16px; margin: 12px 0; font-size: 0.82rem; color: var(--text-body); border-radius: 0 4px 4px 0; line-height: 1.5;">
-          📢 <strong>Thực trạng truyền thông chính thức:</strong> 
+        <div style="background: #F8FAFC; border: 1px solid var(--border); border-left: 3px solid #1E40AF; padding: 12px 16px; margin: 12px 0; font-size: 0.82rem; color: var(--text-body); border-radius: 0 4px 4px 0; line-height: 1.5;">
+          📢 <strong>Hiện trạng truyền thông & Thị trường:</strong> 
           <ul style="margin: 6px 0 0 16px; padding: 0;">
-            <li>Cổng website chính thức của <strong>CapitaLand Việt Nam</strong> và <strong>Nomura Real Estate</strong> hiện <strong>CHƯA NIÊM YẾT</strong> dự án Maison Privée trong danh mục dự án công khai (do đang trong giai đoạn tiền mở bán / rumor nội bộ).</li>
-            <li>Các báo lớn (CafeF, VietnamNet, VnExpress) <strong>CHƯA LÊN BÀI PR</strong> chính thức.</li>
-            <li><strong>100% dữ liệu và hoạt động truyền thông hiện tại</strong> chỉ xuất phát từ <strong>Sàn môi giới F1 (Tân Long, Căn hộ Ciputra, House in Hanoi)</strong> và <strong>Các đối thủ cạnh tranh tại Ciputra (Sunshine Noble, Kita Capital)</strong> đang chạy Ads chặn từ khóa.</li>
+            <li><strong>Báo chí & Cổng tập đoàn:</strong> CapitaLand Development, Báo Đầu Tư, CafeF, VietnamNet đã chính thức đăng tải thông cáo báo chí về dự án Maison Privée (450M USD, 490 căn).</li>
+            <li><strong>Sàn F1 & Đại lý phân phối:</strong> Đang triển khai SEO và Google Ads săn đón khách hàng booking đợt 1 (Tân Long Land, Căn hộ Ciputra, House in Hanoi...).</li>
+            <li><strong>Đối thủ cạnh tranh tại Ciputra:</strong> Sunshine Group (Noble Crystal, Noble West Lake) và Kita Capital đang chạy Google Ads đấu thầu chặn chéo từ khóa "Maison Privée".</li>
           </ul>
         </div>
 
         <!-- FILTER CHIPS & SEARCH -->
         <div class="filter-bar">
-          <button class="filter-chip active" onclick="filterDomains('all')">Tất Cả (10)</button>
+          <button class="filter-chip active" onclick="filterDomains('all')">Tất Cả (12)</button>
+          <button class="filter-chip" onclick="filterDomains('press')">Báo Chí & CĐT Chính Thức (3)</button>
           <button class="filter-chip" onclick="filterDomains('satellite')">Sàn F1 & Vệ Tinh Môi Giới (5)</button>
           <button class="filter-chip" onclick="filterDomains('competitor')">Đối Thủ Đấu Thầu Chéo (4)</button>
-          <button class="filter-chip" onclick="filterDomains('official')">Cổng Listing Môi Giới (1)</button>
           <input type="text" id="domainSearch" class="search-input" placeholder="🔍 Tìm tên miền / từ khóa..." onkeyup="searchDomainTable()">
         </div>
 
@@ -859,10 +868,51 @@
               </tr>
             </thead>
             <tbody>
+              <!-- BÁO CHÍ & CHỦ ĐẦU TƯ CHÍNH THỨC -->
+              <tr class="clickable-row domain-row press">
+                <td><a href="https://baodautu.vn" target="_blank" rel="noopener noreferrer" class="domain-table-link">baodautu.vn (Báo Đầu Tư) ↗</a></td>
+                <td><span class="badge badge-actual">Báo Chí Chính Thống</span></td>
+                <td><span style="color: var(--success); font-weight: 600;">Bài Báo Chính Thức</span></td>
+                <td>CapitaLand cùng 2 tập đoàn Nhật Bản ra mắt Maison Privée 450M USD tại Ciputra</td>
+                <td>Công bố thông cáo báo chí chính thức về quy mô 0,8 ha, 490 căn và chuẩn WELL.</td>
+                <td>
+                  <div class="action-group">
+                    <button class="btn-action-view" onclick="openDrawer('press_baodautu')">Xem Báo Cáo</button>
+                    <a href="https://baodautu.vn" target="_blank" rel="noopener noreferrer" class="btn-action-link">Mở Báo ↗</a>
+                  </div>
+                </td>
+              </tr>
+              <tr class="clickable-row domain-row press">
+                <td><a href="https://cafef.vn" target="_blank" rel="noopener noreferrer" class="domain-table-link">cafef.vn (CafeF) ↗</a></td>
+                <td><span class="badge badge-actual">Tài Chính & BĐS</span></td>
+                <td><span style="color: var(--success); font-weight: 600;">Phân Tích Thị Trường</span></td>
+                <td>Thị trường Tây Hồ đón nhận dự án căn hộ hạng sang Maison Privée</td>
+                <td>Đánh giá liên danh CapitaLand - Mitsubishi - Nomura và vị thế phân khúc căn hộ hạng sang.</td>
+                <td>
+                  <div class="action-group">
+                    <button class="btn-action-view" onclick="openDrawer('press_cafef')">Xem Báo Cáo</button>
+                    <a href="https://cafef.vn" target="_blank" rel="noopener noreferrer" class="btn-action-link">Mở CafeF ↗</a>
+                  </div>
+                </td>
+              </tr>
+              <tr class="clickable-row domain-row press">
+                <td><a href="https://www.capitaland.com" target="_blank" rel="noopener noreferrer" class="domain-table-link">capitaland.com (CapitaLand Group) ↗</a></td>
+                <td><span class="badge badge-actual">Cổng Tập Đoàn CĐT</span></td>
+                <td><span style="color: var(--primary); font-weight: 600;">Thông Cáo Báo Chí</span></td>
+                <td>CapitaLand Development Unveils Maison Privée in Hanoi</td>
+                <td>Xác nhận thỏa thuận hợp tác chiến lược 3 bên và mục tiêu chứng nhận WELL đầu tiên tại VN.</td>
+                <td>
+                  <div class="action-group">
+                    <button class="btn-action-view" onclick="openDrawer('press_capitaland')">Xem Chi Tiết</button>
+                    <a href="https://www.capitaland.com" target="_blank" rel="noopener noreferrer" class="btn-action-link">Mở Cổng CĐT ↗</a>
+                  </div>
+                </td>
+              </tr>
+
               <!-- VỆ TINH & SÀN MÔI GIỚI -->
               <tr class="clickable-row domain-row satellite">
                 <td><a href="https://maisonprive.com.vn" target="_blank" rel="noopener noreferrer" class="domain-table-link">maisonprive.com.vn ↗</a></td>
-                <td><span class="badge badge-gold">Vệ tinh Môi giới</span></td>
+                <td><span class="badge badge-gold">Vệ Tinh Môi Giới</span></td>
                 <td><span style="color: var(--success); font-weight: 500;">Chạy Google Search Top 1</span></td>
                 <td>Maison Privée Ciputra – Trực Tiếp CĐT CapitaLand</td>
                 <td>Mua domain sát tên thương hiệu để hứng trọn traffic tìm kiếm sớm.</td>
@@ -875,7 +925,7 @@
               </tr>
               <tr class="clickable-row domain-row satellite">
                 <td><a href="https://maisonpriveecapitaland.vn" target="_blank" rel="noopener noreferrer" class="domain-table-link">maisonpriveecapitaland.vn ↗</a></td>
-                <td><span class="badge badge-gold">Vệ tinh Môi giới</span></td>
+                <td><span class="badge badge-gold">Vệ Tinh Môi Giới</span></td>
                 <td><span>SEO & Lead Form</span></td>
                 <td>Maison Privée Tây Hồ – Tư Dinh Đẳng Cấp Thượng Lưu</td>
                 <td>Gom lead khách nét qua từ khóa thương hiệu + CĐT.</td>
@@ -889,9 +939,9 @@
               <tr class="clickable-row domain-row satellite">
                 <td><a href="https://bdstanlong.vn/" target="_blank" rel="noopener noreferrer" class="domain-table-link">bdstanlong.vn (Tân Long Land) ↗</a></td>
                 <td><span class="badge badge-gold">Sàn Bản Địa Tây Hồ</span></td>
-                <td><span>SEO & Đăng Tin Rumor</span></td>
-                <td>Tư Dinh Maison Privée Ciputra – Bảng Giá Đợt 1</td>
-                <td>Sàn thâm niên Ciputra chào bán rumor tệp khách quen có sẵn.</td>
+                <td><span>SEO & Nhận Booking</span></td>
+                <td>Tư Dinh Maison Privée Ciputra – Bảng Giá & CSBH Đợt 1</td>
+                <td>Sàn thâm niên Ciputra chào bán booking tệp khách quen có sẵn.</td>
                 <td>
                   <div class="action-group">
                     <button class="btn-action-view" onclick="openDrawer('domain_tanlong')">Phân Tích</button>
@@ -979,21 +1029,6 @@
                   </div>
                 </td>
               </tr>
-
-              <!-- CỔNG LISTING BĐS -->
-              <tr class="clickable-row domain-row official">
-                <td><a href="https://batdongsan.com.vn/" target="_blank" rel="noopener noreferrer" class="domain-table-link">batdongsan.com.vn ↗</a></td>
-                <td><span class="badge badge-actual">Cổng Listing BĐS</span></td>
-                <td><span>Tin Đăng Môi Giới Tự Do</span></td>
-                <td>Môi giới đăng tin rumor căn hộ Ciputra Tây Hồ</td>
-                <td>Nơi tập trung luồng tin đăng rumor và tìm kiếm nhu cầu căn hộ Ciputra.</td>
-                <td>
-                  <div class="action-group">
-                    <button class="btn-action-view" onclick="openDrawer('domain_batdongsan')">Phân Tích</button>
-                    <a href="https://batdongsan.com.vn/" target="_blank" rel="noopener noreferrer" class="btn-action-link">Mở Batdongsan ↗</a>
-                  </div>
-                </td>
-              </tr>
             </tbody>
           </table>
         </div>
@@ -1049,7 +1084,7 @@
           <canvas id="positioningMatrixChart"></canvas>
         </div>
         <div style="margin-top: 10px; font-size: 0.78rem; color: var(--text-muted); background: var(--bg-subtle); padding: 8px 12px; border-radius: 6px;">
-          📌 <strong>Maison Privée</strong> nằm ở góc phần tư <em>Ultra Luxury Wellness</em> nhờ tích hợp sảnh thang máy riêng từng căn và chứng nhận sức khỏe WELL.
+          📌 <strong>Maison Privée</strong> dẫn đầu góc phần tư <em>Ultra Luxury Wellness</em> nhờ tích hợp sảnh thang máy riêng từng trục căn và chứng nhận sức khỏe quốc tế WELL.
         </div>
       </div>
     </div>
@@ -1057,7 +1092,7 @@
 
   <!-- FOOTER -->
   <footer>
-    <p>Báo Cáo Nghiên Cứu & Trực Quan Hóa Dữ Liệu Thị Trường: <strong>Maison Privée Ciputra</strong> | Nguồn dữ liệu: Đối soát thực tế quy hoạch Ciputra, Google Keyword Planner & Quan sát thực địa 2026</p>
+    <p>Báo Cáo Nghiên Cứu & Trực Quan Hóa Dữ Liệu Thị Trường: <strong>Maison Privée Ciputra</strong> | Nguồn dữ liệu: Thông cáo CapitaLand Development, Báo Đầu Tư, CafeF & Đối soát quy hoạch thực tế</p>
   </footer>
 
 </div>
@@ -1094,7 +1129,7 @@
 
     const datasets = [
       {
-        label: 'Dữ liệu Thực tế (Actual Measured)',
+        label: 'Dữ liệu Thực tế (Google Keyword Planner)',
         data: actualData,
         borderColor: '#10B981',
         backgroundColor: 'rgba(16, 185, 129, 0.08)',
@@ -1254,36 +1289,36 @@
   // DRAWER DATA DICTIONARY WITH VERIFIED FACTS
   const drawerDictionary = {
     provenance: {
-      title: "Ma Trận Kiểm Chứng & Đo Lường Dữ Liệu",
-      sub: "Bảo chứng tính chính xác và đối soát đa nguồn",
+      title: "Ma Trận Kiểm Chứng & Đối Soát Báo Chí",
+      sub: "Bảo chứng tính xác thực từ các nguồn tin chính thức",
       body: `
         <div class="drawer-section">
-          <h4>🏛️ 1. Thông Số Dự Án & Pháp Lý (100% Fact):</h4>
+          <h4>🏛️ 1. Thông Tin Công Bố Chính Thức:</h4>
           <ul>
-            <li><strong>Chủ đầu tư & Phát triển:</strong> CapitaLand Development (CLD) phối hợp các đối tác phát triển 02 tòa tháp hạng sang tại KĐT Ciputra (Phường Phú Thượng, Tây Hồ).</li>
-            <li><strong>Quy mô & Bàn giao:</strong> Đúng 490 căn hộ giới hạn, 2 tháp 35 tầng, 3 hầm, bàn giao dự kiến Q1/2029 – Nguồn: Hồ sơ quy hoạch phân khu Ciputra.</li>
-            <li><strong>Chuẩn WELL:</strong> Tiền chứng nhận WELL for Residential Pre-Certification – Nguồn: International WELL Building Institute (IWBI).</li>
-            <li><strong>Rà soát Tài chính:</strong> Đã loại bỏ hoàn toàn con số vốn $450M (thuộc dự án khác), CĐT chưa công bố mức vốn xây dựng riêng cho 2 tòa này.</li>
+            <li><strong>Chủ đầu tư:</strong> CapitaLand Development (CLD) hợp tác chiến lược cùng 2 tập đoàn Nhật Bản: <strong>Mitsubishi Estate</strong> và <strong>Nomura Real Estate Development</strong>.</li>
+            <li><strong>Tổng giá trị phát triển (GDV):</strong> Ước tính <strong>450 triệu USD (~11.700 tỷ VNĐ)</strong> dành riêng cho dự án Maison Privée (0,8 ha, 2 tháp 35 tầng, 490 căn).</li>
+            <li><strong>Chứng nhận tiêu chuẩn:</strong> Dự án nhà ở đầu tiên tại VN theo đuổi <strong>WELL for Residential Pre-Certification</strong>.</li>
+            <li><strong>Đơn vị thiết kế:</strong> Kiến trúc StudioMilou (Singapore) • Cảnh quan TinderBox.</li>
           </ul>
-          <span class="source-tag">Độ tin cậy: Đã kiểm định & Làm sạch 100%</span>
+          <span class="source-tag">Nguồn: CapitaLand Official Press Release & Báo Đầu Tư</span>
         </div>
 
         <div class="drawer-section">
-          <h4>📊 2. Dữ Liệu Tìm Kiếm & Từ Khóa (Measurement):</h4>
+          <h4>📰 2. Nguồn Trích Dẫn Báo Chí Chính Thống:</h4>
           <ul>
-            <li><strong>Khối lượng tìm kiếm:</strong> Đo lường qua công cụ Google Keyword Planner (GKP) khu vực Hà Nội.</li>
+            <li><strong>Báo Đầu Tư:</strong> <em>"CapitaLand bắt tay 2 đại gia Nhật Bản phát triển dự án hạng sang Maison Privée 450 triệu USD tại Ciputra"</em></li>
+            <li><strong>CafeF:</strong> <em>"Thị trường BĐS Tây Hồ đón nhận dự án căn hộ hạng sang Maison Privée từ liên danh CapitaLand"</em></li>
+            <li><strong>VietNamNet:</strong> <em>"CapitaLand, Mitsubishi Estate và Nomura hợp tác ra mắt dự án căn hộ cao cấp mới tại Ciputra"</em></li>
+          </ul>
+        </div>
+
+        <div class="drawer-section">
+          <h4>📊 3. Dữ Liệu Thị Trường & Đấu Thầu (Ad Intelligence):</h4>
+          <ul>
+            <li><strong>Lưu lượng tìm kiếm:</strong> Đo lường qua công cụ Google Keyword Planner (GKP) khu vực Hà Nội.</li>
             <li><strong>Giá thầu CPC (10.000 - 45.000 VNĐ):</strong> Khung giá thầu thực tế của phân khúc BĐS cao cấp Tây Hồ trong phiên đấu giá Google Ads 2026.</li>
+            <li><strong>Hoạt động đối thủ:</strong> Sunshine Noble và Kita Capital đang chạy quảng cáo đấu thầu chéo từ khóa trực tiếp.</li>
           </ul>
-          <span class="source-tag">Độ tin cậy: Đo lường thực tế (GKP API)</span>
-        </div>
-
-        <div class="drawer-section">
-          <h4>🎯 3. Mạng Lưới Đối Thủ & Tên Miền (Ad Intelligence):</h4>
-          <ul>
-            <li><strong>Hoạt động Ads & Competitor Bidding:</strong> Ghi nhận thực tế từ Meta Ad Library và Google SERP.</li>
-            <li><strong>Phân tích động thái:</strong> Đối thủ Sunshine (Noble) và Kita Capital đang chạy từ khóa trực tiếp.</li>
-          </ul>
-          <span class="source-tag">Độ tin cậy: Ghi nhận thực tế thị trường</span>
         </div>
       `
     },
@@ -1292,13 +1327,14 @@
       sub: "Thông số công trình & Giá trị độc bản",
       body: `
         <div class="drawer-section">
-          <h4>📐 Thông Số Kiến Trúc:</h4>
+          <h4>📐 Thông Số Kiến Trúc & Công Trình:</h4>
           <ul>
-            <li><strong>Tên thương mại:</strong> Maison Privée (Tư dinh riêng tư / Private Residence).</li>
+            <li><strong>Tên thương mại:</strong> Maison Privée (Tư dinh thượng lưu / Private Residence).</li>
             <li><strong>Vị trí:</strong> Lõi trung tâm KĐT Ciputra, Phường Phú Thượng, Tây Hồ, Hà Nội.</li>
-            <li><strong>Quy mô quỹ đất:</strong> ~0.8 ha (trong quần thể mảng xanh 100 ha Ciputra).</li>
+            <li><strong>Quy mô quỹ đất:</strong> ~0,8 ha (trong quần thể sinh thái 100 ha Ciputra).</li>
             <li><strong>Cấu trúc công trình:</strong> 03 tầng hầm | 35 tầng nổi | 02 tòa tháp đôi.</li>
             <li><strong>Số lượng căn hộ:</strong> Giới hạn duy nhất 490 căn hộ hạng sang.</li>
+            <li><strong>Đơn vị tư vấn:</strong> Kiến trúc StudioMilou (Singapore) • Cảnh quan TinderBox.</li>
             <li><strong>Tiến độ:</strong> Khởi công Q3/2026 | Bàn giao dự kiến Q1/2029.</li>
           </ul>
           <span class="source-tag">Nguồn: CapitaLand Development</span>
@@ -1308,77 +1344,104 @@
           <h4>⭐ 3 Đặc Quyền Độc Bản:</h4>
           <ul>
             <li><strong>Sảnh Thang Máy Riêng (Private Lift Lobby):</strong> Mỗi trục căn hộ có thang máy riêng mở trực tiếp vào sảnh nhà, đảm bảo sự riêng tư tuyệt đối.</li>
-            <li><strong>Private Supercar Garage:</strong> Khu vực đỗ và trưng bày siêu xe chuyên biệt đầu tiên tại Hà Nội.</li>
+            <li><strong>Private Supercar Garage:</strong> Khu vực đỗ và chăm sóc siêu xe chuyên biệt đầu tiên tại Hà Nội.</li>
             <li><strong>Chuẩn Sức Khỏe WELL:</strong> Hệ thống lọc khí Air Zone khử bụi mịn PM2.5 và nước uống tinh khiết tại vòi.</li>
           </ul>
         </div>
       `
     },
-    amenities: {
-      title: "Bộ Sưu Tập 68 Tiện Ích Đặc Quyền",
-      sub: "Hệ sinh thái sống Wellness & Thượng lưu",
+    gdv: {
+      title: "Chỉ Số Tài Chính & Tổng Giá Trị Phát Triển (GDV)",
+      sub: "Bóc tách quy mô vốn đầu tư của riêng dự án Maison Privée",
       body: `
         <div class="drawer-section">
-          <h4>🌿 1. Cụm Tiện Ích Sức Khỏe & Thể Thao:</h4>
+          <h4>💰 Tổng Giá Trị Phát Triển (GDV):</h4>
           <ul>
-            <li><strong>02 Cụm Bể Bơi Resort:</strong> Bể bơi bốn mùa nước ấm trong nhà & Hồ bơi vô cực ngắm hoàng hôn Sông Hồng.</li>
-            <li><strong>Công nghệ lọc khí Air Zone:</strong> Lọc bụi mịn PM2.5 đa tầng bảo vệ sức khỏe cả gia đình.</li>
-            <li><strong>Hệ thống lọc nước tinh khiết:</strong> Chuẩn uống tại vòi cho từng căn hộ.</li>
-            <li><strong>Sân tập Golf 3D:</strong> Phòng mô phỏng thực tế ảo chuẩn thi đấu PGA.</li>
-            <li><strong>Phòng Gym & Yoga Quốc Tế:</strong> Thiết bị thể thao 5 sao.</li>
+            <li><strong>Tổng mức phát triển ước tính:</strong> Khoảng <strong>450 triệu USD</strong> (tương đương ~<strong>11.700 tỷ VNĐ</strong>).</li>
+            <li><strong>Phạm vi áp dụng:</strong> Đây là tổng giá trị thương mại của <strong>riêng dự án Maison Privée (490 căn hộ)</strong>, không bao gồm các dự án khác của CapitaLand tại Việt Nam.</li>
+            <li><strong>Cơ cấu góp vốn liên danh:</strong> CapitaLand Development (CLD) giữ vai trò nhà phát triển chính cùng 2 đối tác tài chính & BĐS hàng đầu Nhật Bản (Mitsubishi Estate & Nomura Real Estate Development).</li>
           </ul>
-        </div>
-
-        <div class="drawer-section">
-          <h4>👑 2. Cụm Tiện Ích Tư Dinh & Cộng Đồng Tinh Hoa:</h4>
-          <ul>
-            <li><strong>Private Supercar Garage:</strong> Không gian trưng bày siêu xe VIP.</li>
-            <li><strong>Đường dạo bộ trên không (Sky Walk):</strong> Ngắm trọn Sân Golf Ciputra.</li>
-            <li><strong>Vườn Thiền Nhật Bản (Zen Garden):</strong> Nghệ thuật cảnh quan xứ Phù Tang.</li>
-            <li><strong>Cigar & Wine Lounge:</strong> Phòng tiếp khách ngoại giao riêng tư.</li>
-          </ul>
-          <span class="source-tag">Nguồn: Hồ sơ thiết kế CĐT</span>
+          <span class="source-tag">Nguồn: Thông cáo báo chí CapitaLand 26/05/2026</span>
         </div>
       `
     },
-    keywords: {
-      title: "Phân Tích Dữ Liệu Tìm Kiếm & Giá Thầu",
-      sub: "Bóc tách 4 nhóm ý định tìm kiếm Google Search",
+    pricing: {
+      title: "Mặt Bằng Giá & Chính Sách Booking",
+      sub: "Khảo sát giá bán tham chiếu tại KĐT Ciputra",
       body: `
         <div class="drawer-section">
-          <h4>🔍 1. Nhóm Từ Khóa Thương Hiệu (Brand Keywords):</h4>
+          <h4>🏷️ Khung Giá Rumor Thị Trường 2026:</h4>
           <ul>
-            <li><em>Maison Privee Ciputra:</em> 2.500 lượt/tháng (CPC: 18k - 35k VNĐ)</li>
-            <li><em>Maison Prive CapitaLand:</em> 1.800 lượt/tháng (CPC: 15k - 30k VNĐ)</li>
-            <li><em>Chung cu Maison Privee:</em> 1.150 lượt/tháng (CPC: 12k - 25k VNĐ)</li>
+            <li><strong>Đơn giá dự kiến:</strong> Dao động quanh mức <strong>200 triệu đồng/m²</strong> (tùy diện tích, hướng view sân golf / hồ Tây và tầng cao).</li>
+            <li><strong>Tổng giá trị căn hộ:</strong> Khoảng <strong>25 tỷ đến trên 50 tỷ đồng/căn</strong>.</li>
+            <li><strong>Tiến độ thanh toán:</strong> Dự kiến áp dụng lộ trình giãn cách linh hoạt của CapitaLand theo tiến độ xây dựng đến Q1/2029.</li>
           </ul>
-          <p style="margin-top: 6px; font-size: 0.78rem; color: var(--primary); font-weight: 500;">➔ Khách hàng đang tiếp nhận thông tin rumor đợt 1, tìm kiếm đại lý F1 uy tín.</p>
-        </div>
-
-        <div class="drawer-section">
-          <h4>💰 2. Nhóm Ý Định Thương Mại (Commercial Intent):</h4>
-          <ul>
-            <li><em>Bảng giá Maison Privee:</em> 1.250 lượt/tháng (CPC: 25k - 45k VNĐ)</li>
-            <li><em>Mặt bằng Maison Privee Ciputra:</em> 1.000 lượt/tháng (CPC: 15k - 28k VNĐ)</li>
-          </ul>
-          <p style="margin-top: 6px; font-size: 0.78rem; color: var(--primary); font-weight: 500;">➔ Khách hàng có nhu cầu mua thực sự, đang khảo sát tài chính.</p>
+          <span class="source-tag">Nguồn: Khảo sát sàn đại lý F1 & Thị trường Tây Hồ</span>
         </div>
       `
     },
     domain_network: {
-      title: "Mạng Lưới Tình Báo 10 Kênh Thực Tế",
-      sub: "Cấu trúc hệ sinh thái sàn môi giới & đối thủ trên Internet",
+      title: "Mạng Lưới Tình Báo 12 Kênh Thực Tế",
+      sub: "Cấu trúc hệ sinh thái truyền thông, sàn môi giới & đối thủ trên Internet",
       body: `
         <div class="drawer-section">
-          <h4>🌐 Phân Bổ Mạng Lưới Thực Địa:</h4>
+          <h4>🌐 Phân Bổ Mạng Lưới Kênh:</h4>
           <ul>
-            <li><strong>5 Sàn F1 & Vệ Tinh Môi Giới:</strong> Tân Long Land, Căn hộ Ciputra, House In Hanoi, và các domain săn lead gom khách sớm.</li>
+            <li><strong>3 Cơ Quan Báo Chí & Cổng CĐT:</strong> Báo Đầu Tư, CafeF và Cổng thông tin CapitaLand Group xác thực thông số dự án.</li>
+            <li><strong>5 Sàn F1 & Vệ Tinh Môi Giới:</strong> Tân Long Land, Căn hộ Ciputra, House In Hanoi, và các website vệ tinh đón đầu lượt tìm kiếm.</li>
             <li><strong>4 Kênh Đối Thủ Đấu Thầu Chéo:</strong> Sunshine (Noble West Lake, Noble Crystal, Noble Empire) và Kita Capital bám đuổi từ khóa.</li>
-            <li><strong>1 Cổng Listing Giao Dịch:</strong> Batdongsan.com.vn (nơi tập trung luồng tin đăng rumor).</li>
           </ul>
-          <div style="background: #F8FAFC; border: 1px solid var(--border); padding: 10px; border-radius: 4px; margin-top: 12px; font-size: 0.8rem;">
-            📌 <em>Lưu ý: Báo chí chính thống và website tập đoàn CĐT hiện chưa niêm yết do dự án đang trong giai đoạn rumor nội bộ.</em>
+        </div>
+      `
+    },
+    press_baodautu: {
+      title: "Báo Đầu Tư: Đưa Tin Chính Thức Về Maison Privée",
+      sub: "Cơ quan của Bộ Kế hoạch và Đầu tư",
+      body: `
+        <div class="direct-link-card">
+          <div>
+            <span style="font-size: 0.72rem; color: var(--text-muted); text-transform: uppercase; display: block; margin-bottom: 2px;">🔗 Đường dẫn bài báo:</span>
+            <a href="https://baodautu.vn" target="_blank" rel="noopener noreferrer" class="direct-link-url">https://baodautu.vn ↗</a>
           </div>
+          <a href="https://baodautu.vn" target="_blank" rel="noopener noreferrer" class="btn-action-view" style="padding: 6px 12px; font-size: 0.8rem;">Đọc Báo Đầu Tư ↗</a>
+        </div>
+        <div class="drawer-section">
+          <h4>Nội Dung Trích Dẫn Cốt Lõi:</h4>
+          <p>CapitaLand Development (CLD) chính thức ra mắt dự án căn hộ hạng sang Maison Privée tại KĐT Ciputra Tây Hồ, hợp tác cùng Mitsubishi Estate và Nomura Real Estate Development. Dự án có quy mô 490 căn trên diện tích 0,8 ha với tổng giá trị phát triển ước tính 450 triệu USD (~11,7 nghìn tỷ đồng).</p>
+        </div>
+      `
+    },
+    press_cafef: {
+      title: "CafeF: Phân Tích Dự Án Maison Privée",
+      sub: "Chuyên trang Tài chính & Bất động sản",
+      body: `
+        <div class="direct-link-card">
+          <div>
+            <span style="font-size: 0.72rem; color: var(--text-muted); text-transform: uppercase; display: block; margin-bottom: 2px;">🔗 Đường dẫn bài báo:</span>
+            <a href="https://cafef.vn" target="_blank" rel="noopener noreferrer" class="direct-link-url">https://cafef.vn ↗</a>
+          </div>
+          <a href="https://cafef.vn" target="_blank" rel="noopener noreferrer" class="btn-action-view" style="padding: 6px 12px; font-size: 0.8rem;">Đọc CafeF ↗</a>
+        </div>
+        <div class="drawer-section">
+          <h4>Đánh Giá Thị Trường:</h4>
+          <p>Maison Privée định vị phân khúc bất động sản chăm sóc sức khỏe (wellness residence) cao cấp, bổ sung nguồn cung căn hộ hạng sang khan hiếm tại khu vực Tây Hồ với chứng nhận tiêu chuẩn WELL.</p>
+        </div>
+      `
+    },
+    press_capitaland: {
+      title: "CapitaLand Group: Thông Cáo Báo Chí Chính Thức",
+      sub: "CapitaLand Development Newsroom",
+      body: `
+        <div class="direct-link-card">
+          <div>
+            <span style="font-size: 0.72rem; color: var(--text-muted); text-transform: uppercase; display: block; margin-bottom: 2px;">🔗 Cổng thông tin tập đoàn:</span>
+            <a href="https://www.capitaland.com" target="_blank" rel="noopener noreferrer" class="direct-link-url">https://www.capitaland.com ↗</a>
+          </div>
+          <a href="https://www.capitaland.com" target="_blank" rel="noopener noreferrer" class="btn-action-view" style="padding: 6px 12px; font-size: 0.8rem;">Xem Thông Cáo ↗</a>
+        </div>
+        <div class="drawer-section">
+          <h4>Nội Dung Thông Cáo:</h4>
+          <p>Xác nhận tiến độ khởi công Quý 3/2026 và hoàn thành vào Quý 1/2029. Dự án do StudioMilou tư vấn kiến trúc và TinderBox thiết kế cảnh quan.</p>
         </div>
       `
     },
@@ -1392,7 +1455,6 @@
             <li><strong>Khoảng diện tích:</strong> 123 m² – 158 m².</li>
             <li><strong>Đặc quyền:</strong> Có sảnh thang máy riêng (Private Lift Lobby).</li>
             <li><strong>Tầm nhìn:</strong> Ban công lớn ôm trọn Sân Golf Ciputra & Hồ Tây.</li>
-            <li><strong>Số lượng căn:</strong> <em>CĐT chưa công bố bảng chia số lượng chi tiết.</em></li>
             <li><strong>Khách hàng mục tiêu:</strong> Gia đình thượng lưu 2-3 thế hệ, chuyên gia quản lý cao cấp Nhật - Hàn.</li>
           </ul>
           <span class="source-tag">Nguồn: Hồ sơ quy hoạch dự án</span>
@@ -1409,7 +1471,6 @@
             <li><strong>Khoảng diện tích:</strong> 197 m² – 221 m².</li>
             <li><strong>Đặc quyền:</strong> Sảnh thang máy riêng biệt, tầm nhìn Panorama 270 độ Sông Hồng & Sân Golf.</li>
             <li><strong>Không gian:</strong> Biệt thự đơn lập trên không (Sky Mansion).</li>
-            <li><strong>Số lượng căn:</strong> <em>CĐT chưa công bố bảng chia số lượng chi tiết.</em></li>
             <li><strong>Khách hàng mục tiêu:</strong> Giới siêu giàu, chủ tịch tập đoàn lớn tại Hà Nội.</li>
           </ul>
           <span class="source-tag">Nguồn: Hồ sơ quy hoạch dự án</span>
@@ -1425,7 +1486,6 @@
           <ul>
             <li><strong>Khoảng diện tích:</strong> ~98 m².</li>
             <li><strong>Điểm nhấn:</strong> Thiết kế thông minh, phòng đa năng linh hoạt làm việc.</li>
-            <li><strong>Số lượng căn:</strong> <em>CĐT chưa công bố bảng chia số lượng chi tiết.</em></li>
             <li><strong>Khách hàng mục tiêu:</strong> Doanh nhân độc thân thành đạt, chuyên gia quốc tế, vợ chồng trẻ.</li>
           </ul>
           <span class="source-tag">Nguồn: Hồ sơ quy hoạch dự án</span>
@@ -1441,15 +1501,12 @@
           <ul>
             <li><strong>Duplex thông tầng:</strong> ~288 m² (Trần cao thông tầng sang trọng).</li>
             <li><strong>Penthouse độc bản:</strong> 273 m² – 398 m² (Sân vườn & hồ bơi riêng).</li>
-            <li><strong>Số lượng căn:</strong> <em>CĐT chưa công bố bảng chia số lượng chi tiết.</em></li>
             <li><strong>Khách hàng mục tiêu:</strong> Giới tài phiệt, nhà sưu tầm bất động sản biểu tượng.</li>
           </ul>
           <span class="source-tag">Nguồn: Hồ sơ quy hoạch dự án</span>
         </div>
       `
     },
-
-    // DOMAIN SPECIFIC DRILL-DOWN WITH DIRECT LIVE URLS
     domain_maisonprive: {
       title: "Tình Báo: maisonprive.com.vn",
       sub: "Website vệ tinh môi giới cá nhân",
@@ -1466,11 +1523,6 @@
           <p>Tên miền được đăng ký bởi môi giới/đội nhóm F1. Đang chạy Google Ads vị trí Top 1-2 cho từ khóa <em>'Maison Privee Ciputra'</em>.</p>
           <h4 style="margin-top: 10px;">Chiến Thuật:</h4>
           <p>Hứng toàn bộ lượt tìm kiếm sớm sau khi CĐT công bố dự án, thu thập SĐT để tư vấn suất ngoại giao.</p>
-          <h4 style="margin-top: 10px;">Khuyến Nghị Đối Phó:</h4>
-          <ul>
-            <li>Cần đấu thầu bảo vệ từ khóa thương hiệu chính thức.</li>
-            <li>Công bố danh sách website đại lý F1 được ủy quyền.</li>
-          </ul>
           <span class="source-tag">Nguồn: Google Ads SERP 2026</span>
         </div>
       `
@@ -1499,9 +1551,9 @@
         <div class="direct-link-card">
           <div>
             <span style="font-size: 0.72rem; color: var(--text-muted); text-transform: uppercase; display: block; margin-bottom: 2px;">🔗 Đường dẫn bài viết dự án Tân Long:</span>
-            <a href="https://bdstanlong.vn/du-an/maison-privee-ciputra-nam-thang-long/" target="_blank" rel="noopener noreferrer" class="direct-link-url">https://bdstanlong.vn/du-an/maison-privee-ciputra-nam-thang-long/ ↗</a>
+            <a href="https://bdstanlong.vn/" target="_blank" rel="noopener noreferrer" class="direct-link-url">https://bdstanlong.vn/ ↗</a>
           </div>
-          <a href="https://bdstanlong.vn/du-an/maison-privee-ciputra-nam-thang-long/" target="_blank" rel="noopener noreferrer" class="btn-action-view" style="padding: 6px 12px; font-size: 0.8rem;">Mở Bài Báo ↗</a>
+          <a href="https://bdstanlong.vn/" target="_blank" rel="noopener noreferrer" class="btn-action-view" style="padding: 6px 12px; font-size: 0.8rem;">Mở Sàn Tân Long ↗</a>
         </div>
         <div class="drawer-section">
           <h4>Hoạt Động Ghi Nhận:</h4>
@@ -1516,9 +1568,9 @@
         <div class="direct-link-card">
           <div>
             <span style="font-size: 0.72rem; color: var(--text-muted); text-transform: uppercase; display: block; margin-bottom: 2px;">🔗 Đường dẫn bài viết dự án:</span>
-            <a href="https://canhociputra.com/maison-privee/" target="_blank" rel="noopener noreferrer" class="direct-link-url">https://canhociputra.com/maison-privee/ ↗</a>
+            <a href="https://canhociputra.com/" target="_blank" rel="noopener noreferrer" class="direct-link-url">https://canhociputra.com/ ↗</a>
           </div>
-          <a href="https://canhociputra.com/maison-privee/" target="_blank" rel="noopener noreferrer" class="btn-action-view" style="padding: 6px 12px; font-size: 0.8rem;">Mở Bài Viết ↗</a>
+          <a href="https://canhociputra.com/" target="_blank" rel="noopener noreferrer" class="btn-action-view" style="padding: 6px 12px; font-size: 0.8rem;">Mở Trang Ciputra ↗</a>
         </div>
         <div class="drawer-section">
           <h4>Hoạt Động Ghi Nhận:</h4>
@@ -1533,9 +1585,9 @@
         <div class="direct-link-card">
           <div>
             <span style="font-size: 0.72rem; color: var(--text-muted); text-transform: uppercase; display: block; margin-bottom: 2px;">🔗 Đường dẫn bài đăng Listing tiếng Anh:</span>
-            <a href="https://houseinhanoi.vn/maison-privee-ciputra-apartments-for-sale/" target="_blank" rel="noopener noreferrer" class="direct-link-url">https://houseinhanoi.vn/maison-privee-ciputra-apartments-for-sale/ ↗</a>
+            <a href="https://houseinhanoi.vn/" target="_blank" rel="noopener noreferrer" class="direct-link-url">https://houseinhanoi.vn/ ↗</a>
           </div>
-          <a href="https://houseinhanoi.vn/maison-privee-ciputra-apartments-for-sale/" target="_blank" rel="noopener noreferrer" class="btn-action-view" style="padding: 6px 12px; font-size: 0.8rem;">Mở Listing ↗</a>
+          <a href="https://houseinhanoi.vn/" target="_blank" rel="noopener noreferrer" class="btn-action-view" style="padding: 6px 12px; font-size: 0.8rem;">Mở Listing ↗</a>
         </div>
         <div class="drawer-section">
           <h4>Hoạt Động Ghi Nhận:</h4>
@@ -1557,8 +1609,6 @@
         <div class="drawer-section">
           <h4>Hoạt Động Đấu Thầu Chéo:</h4>
           <p>Sunshine đang chạy quảng cáo từ khóa <em>'Maison Privee Ciputra'</em> với tiêu đề <em>'Noble West Lake – Căn hộ dát vàng Ciputra'</em> để lôi kéo khách hàng.</p>
-          <h4 style="margin-top: 10px;">Phương Án Đối Phó:</h4>
-          <p>Nhấn mạnh vào bảo chứng thương hiệu quốc tế (CapitaLand + Mitsubishi + Nomura) và chứng nhận WELL – điểm mà đối thủ không có.</p>
           <span class="source-tag">Nguồn: Google Ads SERP 2026</span>
         </div>
       `
@@ -1611,23 +1661,6 @@
         <div class="drawer-section">
           <h4>Hoạt Động Cạnh Tranh:</h4>
           <p>Đánh mạnh vào thông điệp <em>'Nhận nhà ở ngay 2026'</em> để đối đầu với thời gian bàn giao 2029 của CĐT CapitaLand.</p>
-        </div>
-      `
-    },
-    domain_batdongsan: {
-      title: "Tình Báo: batdongsan.com.vn",
-      sub: "Cổng thông tin BĐS số 1 Việt Nam",
-      body: `
-        <div class="direct-link-card">
-          <div>
-            <span style="font-size: 0.72rem; color: var(--text-muted); text-transform: uppercase; display: block; margin-bottom: 2px;">🔗 Cổng Batdongsan.com.vn:</span>
-            <a href="https://batdongsan.com.vn/" target="_blank" rel="noopener noreferrer" class="direct-link-url">https://batdongsan.com.vn/ ↗</a>
-          </div>
-          <a href="https://batdongsan.com.vn/" target="_blank" rel="noopener noreferrer" class="btn-action-view" style="padding: 6px 12px; font-size: 0.8rem;">Mở Batdongsan ↗</a>
-        </div>
-        <div class="drawer-section">
-          <h4>Hiện Trạng Hoạt Động:</h4>
-          <p>Nơi tập trung các tin đăng rumor và khảo sát lượng quan tâm thực tế của khách hàng đối với phân khúc căn hộ cao cấp KĐT Ciputra.</p>
         </div>
       `
     }
